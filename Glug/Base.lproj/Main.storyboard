@@ -100,7 +100,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uIN-EH-Ynu" kind="unwind" unwindAction="unwindToMainMenu:" id="yEc-iT-8i4"/>
+                                    <action selector="backToMainMenu:" destination="kr5-93-LnU" eventType="touchUpInside" id="Z4q-Ru-DMp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -108,7 +108,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQ1-bW-VrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="uIN-EH-Ynu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-324" y="1178"/>
         </scene>
@@ -130,7 +129,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vBc-L7-DvO" kind="unwind" unwindAction="unwindToMainMenu:" id="7zV-DR-raP"/>
+                                    <action selector="backToMainMenu:" destination="yut-o2-Q1H" eventType="touchUpInside" id="sFD-X2-yc8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -138,7 +137,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Spt-O8-iVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="vBc-L7-DvO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1652" y="1178"/>
         </scene>
@@ -160,7 +158,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="89i-Mz-xVs" kind="unwind" unwindAction="unwindToMainMenu:" id="KGH-Xx-ZHv"/>
+                                    <action selector="backToMainMenu:" destination="q4P-Rh-7ci" eventType="touchUpInside" id="Eog-i3-7nh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -168,7 +166,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNt-3w-CgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="89i-Mz-xVs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="337" y="1178"/>
         </scene>
@@ -190,7 +187,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="g3d-HR-1mZ" kind="unwind" unwindAction="unwindToMainMenu:" id="G80-ex-TRd"/>
+                                    <action selector="backToMainMenu:" destination="RZT-QH-7Oh" eventType="touchUpInside" id="xAI-Wa-jCK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -198,7 +195,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCt-DK-KmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="g3d-HR-1mZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="988" y="1178"/>
         </scene>
