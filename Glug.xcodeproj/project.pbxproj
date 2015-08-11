@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FDCFF6F1B7A684C00362DB8 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF6E1B7A684C00362DB8 /* Level.swift */; };
+		1FDCFF711B7A69B700362DB8 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF701B7A69B600362DB8 /* LevelManager.swift */; };
 		1FEE867B1B73F22B009F5F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE867A1B73F22B009F5F96 /* AppDelegate.swift */; };
 		1FEE86801B73F22B009F5F96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FEE867E1B73F22B009F5F96 /* Main.storyboard */; };
 		1FEE86821B73F22B009F5F96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FEE86811B73F22B009F5F96 /* Images.xcassets */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FDCFF6E1B7A684C00362DB8 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		1FDCFF701B7A69B600362DB8 /* LevelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 		1FEE86751B73F22B009F5F96 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEE86791B73F22B009F5F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FEE867A1B73F22B009F5F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				1FEE867A1B73F22B009F5F96 /* AppDelegate.swift */,
+				1FDCFF6E1B7A684C00362DB8 /* Level.swift */,
+				1FDCFF701B7A69B600362DB8 /* LevelManager.swift */,
 				1FEE869E1B73F336009F5F96 /* View */,
 				1FEE869D1B73F318009F5F96 /* Model */,
 				1FEE869C1B73F2D2009F5F96 /* Controller */,
@@ -248,7 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FDCFF711B7A69B700362DB8 /* LevelManager.swift in Sources */,
 				1FEE86A61B73F929009F5F96 /* AboutViewController.swift in Sources */,
+				1FDCFF6F1B7A684C00362DB8 /* Level.swift in Sources */,
 				1FEE867B1B73F22B009F5F96 /* AppDelegate.swift in Sources */,
 				1FEE86A01B73F76B009F5F96 /* GameSceneViewController.swift in Sources */,
 				1FEE86A81B740126009F5F96 /* LevelViewController.swift in Sources */,
@@ -451,6 +459,7 @@
 				1FEE86961B73F22B009F5F96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FEE86971B73F22B009F5F96 /* Build configuration list for PBXNativeTarget "GlugTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +468,7 @@
 				1FEE86991B73F22B009F5F96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
