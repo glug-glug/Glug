@@ -12,7 +12,7 @@ class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UITableView
         // Do any additional setup after loading the view.
     }
 
