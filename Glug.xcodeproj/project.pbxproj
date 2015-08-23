@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F7FB0CA1B89FBDA008A0608 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB0C91B89FBDA008A0608 /* TestTableViewController.swift */; };
+		1F7FB0CC1B89FBFF008A0608 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB0CB1B89FBFF008A0608 /* Cell.swift */; };
 		1FDCFF6F1B7A684C00362DB8 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF6E1B7A684C00362DB8 /* Level.swift */; };
 		1FDCFF711B7A69B700362DB8 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF701B7A69B600362DB8 /* LevelManager.swift */; };
 		1FDCFF731B7A73E700362DB8 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF721B7A73E700362DB8 /* ParentViewController.swift */; };
+		1FEC032B1B7FAFFB0061A932 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC032A1B7FAFFB0061A932 /* Levels.plist */; };
 		1FEE867B1B73F22B009F5F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE867A1B73F22B009F5F96 /* AppDelegate.swift */; };
 		1FEE86801B73F22B009F5F96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FEE867E1B73F22B009F5F96 /* Main.storyboard */; };
 		1FEE86821B73F22B009F5F96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FEE86811B73F22B009F5F96 /* Images.xcassets */; };
@@ -33,9 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F7FB0C91B89FBDA008A0608 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		1F7FB0CB1B89FBFF008A0608 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		1FDCFF6E1B7A684C00362DB8 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		1FDCFF701B7A69B600362DB8 /* LevelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 		1FDCFF721B7A73E700362DB8 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		1FEC032A1B7FAFFB0061A932 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		1FEE86751B73F22B009F5F96 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEE86791B73F22B009F5F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FEE867A1B73F22B009F5F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F7FB0CD1B8A0DEA008A0608 /* ExampleLevel */ = {
+			isa = PBXGroup;
+			children = (
+				1F7FB0C91B89FBDA008A0608 /* TestTableViewController.swift */,
+				1F7FB0CB1B89FBFF008A0608 /* Cell.swift */,
+			);
+			name = ExampleLevel;
+			sourceTree = "<group>";
+		};
 		1FEE866C1B73F22A009F5F96 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +109,7 @@
 				1FEE867A1B73F22B009F5F96 /* AppDelegate.swift */,
 				1FDCFF6E1B7A684C00362DB8 /* Level.swift */,
 				1FDCFF701B7A69B600362DB8 /* LevelManager.swift */,
+				1F7FB0CD1B8A0DEA008A0608 /* ExampleLevel */,
 				1FEE869E1B73F336009F5F96 /* View */,
 				1FEE869D1B73F318009F5F96 /* Model */,
 				1FEE869C1B73F2D2009F5F96 /* Controller */,
@@ -109,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				1FEE86791B73F22B009F5F96 /* Info.plist */,
+				1FEC032A1B7FAFFB0061A932 /* Levels.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FEE86801B73F22B009F5F96 /* Main.storyboard in Resources */,
+				1FEC032B1B7FAFFB0061A932 /* Levels.plist in Resources */,
 				1FEE86851B73F22B009F5F96 /* LaunchScreen.xib in Resources */,
 				1FEE86821B73F22B009F5F96 /* Images.xcassets in Resources */,
 			);
@@ -258,12 +276,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FDCFF711B7A69B700362DB8 /* LevelManager.swift in Sources */,
+				1F7FB0CA1B89FBDA008A0608 /* TestTableViewController.swift in Sources */,
 				1FEE86A61B73F929009F5F96 /* AboutViewController.swift in Sources */,
 				1FDCFF6F1B7A684C00362DB8 /* Level.swift in Sources */,
 				1FEE867B1B73F22B009F5F96 /* AppDelegate.swift in Sources */,
 				1FEE86A01B73F76B009F5F96 /* GameSceneViewController.swift in Sources */,
 				1FEE86A81B740126009F5F96 /* LevelViewController.swift in Sources */,
 				1FEE86A41B73F7B5009F5F96 /* SettingsViewController.swift in Sources */,
+				1F7FB0CC1B89FBFF008A0608 /* Cell.swift in Sources */,
 				1FEE869B1B73F2BC009F5F96 /* MenuViewController.swift in Sources */,
 				1FDCFF731B7A73E700362DB8 /* ParentViewController.swift in Sources */,
 			);
