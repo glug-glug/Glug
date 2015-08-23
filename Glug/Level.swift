@@ -8,20 +8,18 @@
 
 import Foundation
 
-protocol LevelProtocol {
-    
-    var count: Int { get set }
-    
-    subscript (number: Int) -> Level? { get set }
-    
-    func level(number: Int) -> Level?
-    func next(level: Level) -> Level?
-    func complete(level: Level)
-    
-}
-
 class Level {
     
+    var name: String!
+    var number: Int!
+    var isComplete: Bool!
     
+    init(dictionary: NSDictionary) {
+        
+        name = dictionary.objectForKey("Name") as! String
+        number = dictionary.objectForKey("Number") as! Int
+        isComplete = dictionary.objectForKey("isComplete") as! Bool
+        
+    }
     
 }
