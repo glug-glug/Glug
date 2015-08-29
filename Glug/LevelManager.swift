@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum Complete {
+    case Yes
+    case No
+}
+
 class LevelManager {
     
     static let sharedManager = LevelManager()
@@ -29,39 +34,35 @@ class LevelManager {
                 
                 fileManager.copyItemAtPath(bundlePath, toPath: path, error: nil)
                 
-                plistArray = NSMutableArray(contentsOfFile: bundlePath)
-                
+                plistArray = NSMutableArray()
                 createLevel(count: 10)
             }
         }
         
-        if plistArray == nil {
-            plistArray = NSMutableArray(contentsOfFile: path)
-        }
+        plistArray = NSMutableArray(contentsOfFile: path)
     }
     
     func getPlistArray() -> NSMutableArray {
         return plistArray
     }
     
-    func completeLevel(index: Int) {
+    func levelComplete(complete: Complete, index: Int) {
         
-        if index >= 0 && index <= plistArray.count - 1 {
-    
-            plistArray.objectAtIndex(index).setObject(true, forKey: "isComplete")
-            plistArray.writeToFile(path, atomically: false)
+        if index >= 0 && index < plistArray.count {
             
+            if complete == .Yes {
+                
+                plistArray.objectAtIndex(index).setObject(true, forKey: "isComplete")
+                plistArray.writeToFile(path, atomically: true)
+                
+            } else if complete == .No {
+                
+                plistArray.objectAtIndex(index).setObject(false, forKey: "isComplete")
+                plistArray.writeToFile(path, atomically: true)
+                
+            }
         }
-    }
-    
-    func notCompleteLevel(index: Int) {
         
-        if index >= 0 && index <= plistArray.count - 1 {
-            
-            plistArray.objectAtIndex(index).setObject(false, forKey: "isComplete")
-            plistArray.writeToFile(path, atomically: false)
-            
-        }
     }
     
     //MARK: - Helpers Methods
@@ -76,12 +77,12 @@ class LevelManager {
             plistArray.addObject(levelData)
         }
         
-        plistArray.writeToFile(path, atomically: false)
+        plistArray.writeToFile(path, atomically: true)
     }
     
     private func getPlistPath() -> (String) {
         
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as Array
         let documentsDirectory = paths[0] as! String
         let path = documentsDirectory.stringByAppendingPathComponent("Levels.plist")
         

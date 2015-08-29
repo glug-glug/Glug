@@ -10,15 +10,15 @@ import Foundation
 
 class Level {
     
-    var name: String!
-    var number: Int!
-    var isComplete: Bool!
+    var name: String
+    var number: Int
+    var isComplete: Bool
     
-    init(dictionary: NSDictionary) {
+    init(dictionary: [String: AnyObject]) {
         
-        name = dictionary.objectForKey("Name") as! String
-        number = dictionary.objectForKey("Number") as! Int
-        isComplete = dictionary.objectForKey("isComplete") as! Bool
+        name = dictionary["Name"] as! String
+        number = dictionary["Number"] as! Int
+        isComplete = dictionary["isComplete"] as! Bool
         
     }
     
