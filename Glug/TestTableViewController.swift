@@ -29,7 +29,7 @@ class TestTableViewController: UITableViewController {
         
         for i in 0...plistArray.count - 1 {
             
-            let level = Level(dictionary: plistArray.objectAtIndex(i) as! NSDictionary)
+            let level = Level(dictionary: plistArray.objectAtIndex(i) as! Dictionary)
             levelArray.addObject(level)
         }
     }
@@ -42,7 +42,6 @@ class TestTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return levelArray.count
     }
@@ -56,7 +55,7 @@ class TestTableViewController: UITableViewController {
         cell.numberLabel.text = String(level.number)
         cell.nameLabel.text = level.name
         cell.isCompleteLabel.text = level.isComplete == true ? "Complete" : "Not Complete"
-        cell.isCompleteLabel.textColor = level.isComplete == true ? UIColor.greenColor() : UIColor.redColor()
+        cell.isCompleteLabel.textColor = level.isComplete == true ? .greenColor() : .redColor()
         
         return cell
     }
@@ -78,9 +77,9 @@ class TestTableViewController: UITableViewController {
             let level = levelArray.objectAtIndex(indexPath.row) as! Level
             
             if level.isComplete == true {
-                LevelManager.sharedManager.notCompleteLevel(indexPath.row)
+                LevelManager.sharedManager.levelComplete(.No, index: indexPath.row)
             } else {
-                LevelManager.sharedManager.completeLevel(indexPath.row)
+                LevelManager.sharedManager.levelComplete(.Yes, index: indexPath.row)
             }
             
             getLevelArray()
@@ -94,30 +93,5 @@ class TestTableViewController: UITableViewController {
         
         return level.isComplete == true ? "Not Complete" : "Complete"
     }
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
