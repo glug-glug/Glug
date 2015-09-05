@@ -18,7 +18,7 @@ class LevelManager {
     static let sharedManager = LevelManager()
     
     private var plistArray: NSMutableArray!
-    private var path: (String)!
+    private var path: String!
     
     init() {
         path = getPlistPath()
@@ -80,7 +80,7 @@ class LevelManager {
         plistArray.writeToFile(path, atomically: true)
     }
     
-    private func getPlistPath() -> (String) {
+    private func getPlistPath() -> String {
         
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as Array
         let documentsDirectory = paths[0] as! String
