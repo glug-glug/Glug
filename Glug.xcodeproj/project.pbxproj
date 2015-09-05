@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F7FB0CA1B89FBDA008A0608 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB0C91B89FBDA008A0608 /* TestTableViewController.swift */; };
 		1F7FB0CC1B89FBFF008A0608 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB0CB1B89FBFF008A0608 /* Cell.swift */; };
+		1FBCB6081B94C40B0021E49F /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FBCB6071B94C40B0021E49F /* Minecraft.ttf */; };
 		1FDCFF6F1B7A684C00362DB8 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF6E1B7A684C00362DB8 /* Level.swift */; };
 		1FDCFF711B7A69B700362DB8 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF701B7A69B600362DB8 /* LevelManager.swift */; };
 		1FDCFF731B7A73E700362DB8 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF721B7A73E700362DB8 /* ParentViewController.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		1F7FB0C91B89FBDA008A0608 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		1F7FB0CB1B89FBFF008A0608 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		1FBCB6071B94C40B0021E49F /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
 		1FDCFF6E1B7A684C00362DB8 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		1FDCFF701B7A69B600362DB8 /* LevelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 		1FDCFF721B7A73E700362DB8 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		1FEE86781B73F22B009F5F96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1FBCB6071B94C40B0021E49F /* Minecraft.ttf */,
 				1FEE86791B73F22B009F5F96 /* Info.plist */,
 				1FEC032A1B7FAFFB0061A932 /* Levels.plist */,
 			);
@@ -256,6 +259,7 @@
 			files = (
 				1FEE86801B73F22B009F5F96 /* Main.storyboard in Resources */,
 				1FEC032B1B7FAFFB0061A932 /* Levels.plist in Resources */,
+				1FBCB6081B94C40B0021E49F /* Minecraft.ttf in Resources */,
 				1FEE86851B73F22B009F5F96 /* LaunchScreen.xib in Resources */,
 				1FEE86821B73F22B009F5F96 /* Images.xcassets in Resources */,
 			);
