@@ -22,7 +22,7 @@ class GameSceneViewController: ParentViewController {
     }
     
     deinit {
-        println("GameSceneViewController deinit")
+        print("GameSceneViewController deinit")
     }
     
 

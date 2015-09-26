@@ -21,9 +21,6 @@
 		1FEE86911B73F22B009F5F96 /* GlugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE86901B73F22B009F5F96 /* GlugTests.swift */; };
 		1FEE869B1B73F2BC009F5F96 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE869A1B73F2BC009F5F96 /* MenuViewController.swift */; };
 		1FEE86A01B73F76B009F5F96 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE869F1B73F76B009F5F96 /* GameSceneViewController.swift */; };
-		1FEE86A41B73F7B5009F5F96 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE86A31B73F7B5009F5F96 /* SettingsViewController.swift */; };
-		1FEE86A61B73F929009F5F96 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE86A51B73F929009F5F96 /* AboutViewController.swift */; };
-		1FEE86A81B740126009F5F96 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE86A71B740126009F5F96 /* LevelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +52,6 @@
 		1FEE86901B73F22B009F5F96 /* GlugTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlugTests.swift; sourceTree = "<group>"; };
 		1FEE869A1B73F2BC009F5F96 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		1FEE869F1B73F76B009F5F96 /* GameSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
-		1FEE86A31B73F7B5009F5F96 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		1FEE86A51B73F929009F5F96 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		1FEE86A71B740126009F5F96 /* LevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +150,6 @@
 				1FDCFF721B7A73E700362DB8 /* ParentViewController.swift */,
 				1FEE869A1B73F2BC009F5F96 /* MenuViewController.swift */,
 				1FEE869F1B73F76B009F5F96 /* GameSceneViewController.swift */,
-				1FEE86A31B73F7B5009F5F96 /* SettingsViewController.swift */,
-				1FEE86A51B73F929009F5F96 /* AboutViewController.swift */,
-				1FEE86A71B740126009F5F96 /* LevelViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -221,11 +212,14 @@
 		1FEE866D1B73F22A009F5F96 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = iOSDevCourse;
 				TargetAttributes = {
 					1FEE86741B73F22B009F5F96 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = FXS2GW5LYK;
 					};
 					1FEE86891B73F22B009F5F96 = {
 						CreatedOnToolsVersion = 6.4;
@@ -281,12 +275,9 @@
 			files = (
 				1FDCFF711B7A69B700362DB8 /* LevelManager.swift in Sources */,
 				1F7FB0CA1B89FBDA008A0608 /* TestTableViewController.swift in Sources */,
-				1FEE86A61B73F929009F5F96 /* AboutViewController.swift in Sources */,
 				1FDCFF6F1B7A684C00362DB8 /* Level.swift in Sources */,
 				1FEE867B1B73F22B009F5F96 /* AppDelegate.swift in Sources */,
 				1FEE86A01B73F76B009F5F96 /* GameSceneViewController.swift in Sources */,
-				1FEE86A81B740126009F5F96 /* LevelViewController.swift in Sources */,
-				1FEE86A41B73F7B5009F5F96 /* SettingsViewController.swift in Sources */,
 				1F7FB0CC1B89FBFF008A0608 /* Cell.swift in Sources */,
 				1FEE869B1B73F2BC009F5F96 /* MenuViewController.swift in Sources */,
 				1FDCFF731B7A73E700362DB8 /* ParentViewController.swift in Sources */,
@@ -352,6 +343,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -418,8 +410,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Glug/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iosdevcourse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -428,8 +422,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Glug/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iosdevcourse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -438,16 +434,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = GlugTests/Info.plist;
+				LD_MAP_FILE_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iosdevcourse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glug.app/Glug";
 			};
@@ -457,12 +452,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = GlugTests/Info.plist;
+				LD_MAP_FILE_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iosdevcourse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glug.app/Glug";
 			};

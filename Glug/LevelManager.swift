@@ -32,7 +32,10 @@ class LevelManager {
             
             if let bundlePath = NSBundle.mainBundle().pathForResource("Levels", ofType: "plist") {
                 
-                fileManager.copyItemAtPath(bundlePath, toPath: path, error: nil)
+                do {
+                    try fileManager.copyItemAtPath(bundlePath, toPath: path)
+                } catch _ {
+                }
                 
                 plistArray = NSMutableArray()
                 createLevel(count: 10)
@@ -67,7 +70,7 @@ class LevelManager {
     
     //MARK: - Helpers Methods
     
-    private func createLevel(#count: Int) {
+    private func createLevel(count count: Int) {
         
         for i in 1...count {
             
@@ -83,7 +86,7 @@ class LevelManager {
     private func getPlistPath() -> String {
         
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as Array
-        let documentsDirectory = paths[0] as! String
+        let documentsDirectory: NSString = paths[0]
         let path = documentsDirectory.stringByAppendingPathComponent("Levels.plist")
         
         return path
