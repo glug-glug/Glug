@@ -87,7 +87,7 @@ class TestTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String! {
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
         
         let level = levelArray.objectAtIndex(indexPath.row) as! Level
         

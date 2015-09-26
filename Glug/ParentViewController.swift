@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum GlugSize {
+    case Small
+    case Medium
+    case Big
+}
+
 class ParentViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -36,14 +42,14 @@ class ParentViewController: UIViewController {
     
     func addAttributeLabel(label: UILabel, text: String, firstCharColor: UIColor, otherCharsColor: UIColor, size: CGFloat) {
         
-        let firstChar = text.substringToIndex(advance(text.startIndex, 1))
-        let otherChars = text.substringFromIndex(advance(text.startIndex, 1))
+        let firstChar = text.substringToIndex(text.startIndex.advancedBy(1))
+        let otherChars = text.substringFromIndex(text.startIndex.advancedBy(1))
         
         let attr1 = [NSForegroundColorAttributeName : firstCharColor]
         let attr2 = [NSForegroundColorAttributeName : otherCharsColor]
         
-        var attrString1 = NSMutableAttributedString(string: firstChar, attributes: attr1)
-        var attrString2 = NSMutableAttributedString(string: otherChars, attributes: attr2)
+        let attrString1 = NSMutableAttributedString(string: firstChar, attributes: attr1)
+        let attrString2 = NSMutableAttributedString(string: otherChars, attributes: attr2)
         
         attrString1.appendAttributedString(attrString2)
         

@@ -19,16 +19,6 @@ class MenuViewController: ParentViewController {
         
         addAttributeLabelAndButton()
         
-        var imageView = UIImageView(frame: CGRectMake(30, 30, 81, 59))
-        imageView.image = UIImage(named: "bathyscaphe")
-        self.view.addSubview(imageView)
-        
-        UIView.animateWithDuration(3, animations: { () -> Void in
-            
-            imageView.center = CGPointMake(30, 300)
-            
-        })
-        
     }
 
     override func didReceiveMemoryWarning() {
