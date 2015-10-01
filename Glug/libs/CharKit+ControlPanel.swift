@@ -1,0 +1,145 @@
+//
+//  CharKit+ControlPanel.swift
+//  Glug
+//
+//  Created by piton on 13.09.15.
+//  Copyright (c) 2015 anukhov. All rights reserved.
+//
+
+import UIKit
+
+extension CharKit {
+    
+    class ControlPanel: UIView {
+        
+        enum Options {
+            case Home, Restart, Play
+        }
+        
+        var onSelect: ((Options) -> ())?
+        var onExpand: (() -> ())?
+        
+        struct Preferences {
+            var normalSize: CGSize = CGSizeMake(120, 320)
+            var collapsedSize: CGSize = CGSizeMake(110, 110)
+            var center = CGPoint(x: 0, y: statusBarHidden ? 0 : 10)
+            var radius: CGFloat = 50
+            var alpha: CGFloat = 0.7
+            var borderWidth: CGFloat = 2
+            var initState = States.Collapsed
+            var colors = (
+                background: UIColor(white: 0.5, alpha: 0.5),
+                border: UIColor(hex: 0xcccccc)
+            )
+            var images: (home: UIImage?, restart: UIImage?, play: UIImage?) = (nil, nil, nil)
+        }
+        
+        enum States {
+            case Collapsed
+            case Normal
+            mutating func invert() {
+                self = self == .Collapsed ? .Normal : .Collapsed
+            }
+        }
+        
+        var preferences = Preferences()
+        
+        var size: CGSize {
+            return state == .Collapsed ? preferences.collapsedSize : preferences.normalSize
+        }
+        
+        var rect: CGRect {
+            let size = self.size
+            return CGRectMake(0, 0, size.width, size.height)
+        }
+        
+        var state: States = .Collapsed {
+            didSet {
+                UIView.animateWithDuration(0.4) {
+                    self.bounds = self.rect
+                    self.layoutSubviews()
+                }
+            }
+        }
+
+        private func addImageSubview(image: UIImage?) -> UIImageView {
+            let view = UIImageView(image: image)
+            view.userInteractionEnabled = true
+            self.addSubview(view)
+            return view
+        }
+        
+        lazy var homeImageView: UIImageView = {
+            return self.addImageSubview(self.preferences.images.home)
+        }()
+
+        lazy var restartImageView: UIImageView = {
+            return self.addImageSubview(self.preferences.images.restart)
+            }()
+        
+        lazy var playImageView: UIImageView = {
+            return self.addImageSubview(self.preferences.images.play)
+            }()
+        
+        init(preferences: Preferences? = nil, onSelect: ((Options) -> ())? = nil, onExpand: (() -> ())? = nil) {
+           
+            self.preferences = preferences ?? Preferences()
+            let pref = self.preferences
+            state = pref.initState
+            let size = state == .Collapsed ? pref.collapsedSize : pref.normalSize
+            super.init(frame: CGRectMake(0, 0, size.width, size.height))
+            
+            center = pref.center
+            clipsToBounds = true
+            alpha = pref.alpha
+            backgroundColor = pref.colors.background
+            layer.cornerRadius = pref.radius
+            layer.borderColor = pref.colors.border.CGColor
+            layer.borderWidth = pref.borderWidth
+
+            self.onSelect = onSelect
+            self.onExpand = onExpand
+            
+            configureConstraints()
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+        }
+        
+        private func configureConstraints() {
+            
+            let _ = [homeImageView, restartImageView, playImageView].map {
+                $0.translatesAutoresizingMaskIntoConstraints = false
+            }
+
+            Constraint.add(self, "H:[v(32)]-15-|", ["v": homeImageView])
+            Constraint.add(self, "H:[v(32)]-15-|", ["v": restartImageView])
+            Constraint.add(self, "H:[v(32)]-15-|", ["v": playImageView])
+            Constraint.add(self, "V:[hv(32)]-15-[rv(32)]-15-[mv(32)]-15-|", ["hv": homeImageView, "rv": restartImageView, "mv": playImageView])
+        }
+        
+        override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+            
+            if state == .Normal {
+                
+                if let view = touches.first?.view {
+                    switch view {
+                    case homeImageView:
+                        onSelect?(.Home)
+                    case restartImageView:
+                        onSelect?(.Restart)
+                    case playImageView:
+                        onSelect?(.Play)
+                    default:
+                        return
+                    }
+                }
+            } else {
+                onExpand?()
+            }
+            
+            state.invert()
+        }
+    }
+}
