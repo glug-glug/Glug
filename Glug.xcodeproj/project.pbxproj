@@ -7,51 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F7FB0CA1B89FBDA008A0608 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB0C91B89FBDA008A0608 /* TestTableViewController.swift */; };
-		1F7FB0CC1B89FBFF008A0608 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FB0CB1B89FBFF008A0608 /* Cell.swift */; };
-		1FBCB6081B94C40B0021E49F /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FBCB6071B94C40B0021E49F /* Minecraft.ttf */; };
-		1FDCFF6F1B7A684C00362DB8 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF6E1B7A684C00362DB8 /* Level.swift */; };
-		1FDCFF711B7A69B700362DB8 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF701B7A69B600362DB8 /* LevelManager.swift */; };
-		1FDCFF731B7A73E700362DB8 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDCFF721B7A73E700362DB8 /* ParentViewController.swift */; };
-		1FEC032B1B7FAFFB0061A932 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC032A1B7FAFFB0061A932 /* Levels.plist */; };
-		1FEE867B1B73F22B009F5F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE867A1B73F22B009F5F96 /* AppDelegate.swift */; };
-		1FEE86801B73F22B009F5F96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FEE867E1B73F22B009F5F96 /* Main.storyboard */; };
-		1FEE86821B73F22B009F5F96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FEE86811B73F22B009F5F96 /* Images.xcassets */; };
-		1FEE86851B73F22B009F5F96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FEE86831B73F22B009F5F96 /* LaunchScreen.xib */; };
-		1FEE86911B73F22B009F5F96 /* GlugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE86901B73F22B009F5F96 /* GlugTests.swift */; };
-		1FEE869B1B73F2BC009F5F96 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE869A1B73F2BC009F5F96 /* MenuViewController.swift */; };
-		1FEE86A01B73F76B009F5F96 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEE869F1B73F76B009F5F96 /* GameSceneViewController.swift */; };
+		95566CF71BC1C439005B0A9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CE21BC1C439005B0A9A /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		95566CF81BC1C439005B0A9A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CE41BC1C439005B0A9A /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		95566CF91BC1C439005B0A9A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CE51BC1C439005B0A9A /* TestTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		95566CFA1BC1C439005B0A9A /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CE91BC1C439005B0A9A /* Cells.swift */; settings = {ASSET_TAGS = (); }; };
+		95566CFB1BC1C439005B0A9A /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CEA1BC1C439005B0A9A /* Level.swift */; settings = {ASSET_TAGS = (); }; };
+		95566CFC1BC1C439005B0A9A /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CEC1BC1C439005B0A9A /* LevelManager.swift */; settings = {ASSET_TAGS = (); }; };
+		95566CFD1BC1C439005B0A9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95566CEE1BC1C439005B0A9A /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		95566CFF1BC1C439005B0A9A /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95566CF01BC1C439005B0A9A /* Levels.plist */; settings = {ASSET_TAGS = (); }; };
+		95566D001BC1C439005B0A9A /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95566CF11BC1C439005B0A9A /* Minecraft.ttf */; settings = {ASSET_TAGS = (); }; };
+		95566D011BC1C439005B0A9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95566CF31BC1C439005B0A9A /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
+		95566D021BC1C439005B0A9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95566CF51BC1C439005B0A9A /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1FEE868B1B73F22B009F5F96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FEE866D1B73F22A009F5F96 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1FEE86741B73F22B009F5F96;
-			remoteInfo = Glug;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		1F7FB0C91B89FBDA008A0608 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
-		1F7FB0CB1B89FBFF008A0608 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		1FBCB6071B94C40B0021E49F /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
-		1FDCFF6E1B7A684C00362DB8 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		1FDCFF701B7A69B600362DB8 /* LevelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
-		1FDCFF721B7A73E700362DB8 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
-		1FEC032A1B7FAFFB0061A932 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		1FEE86751B73F22B009F5F96 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FEE86791B73F22B009F5F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FEE867A1B73F22B009F5F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FEE867F1B73F22B009F5F96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1FEE86811B73F22B009F5F96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1FEE86841B73F22B009F5F96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1FEE868A1B73F22B009F5F96 /* GlugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlugTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FEE868F1B73F22B009F5F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FEE86901B73F22B009F5F96 /* GlugTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlugTests.swift; sourceTree = "<group>"; };
-		1FEE869A1B73F2BC009F5F96 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		1FEE869F1B73F76B009F5F96 /* GameSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
+		95566CE21BC1C439005B0A9A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		95566CE41BC1C439005B0A9A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		95566CE51BC1C439005B0A9A /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		95566CE91BC1C439005B0A9A /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		95566CEA1BC1C439005B0A9A /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		95566CEC1BC1C439005B0A9A /* LevelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
+		95566CEE1BC1C439005B0A9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		95566CEF1BC1C439005B0A9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95566CF01BC1C439005B0A9A /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
+		95566CF11BC1C439005B0A9A /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
+		95566CF41BC1C439005B0A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		95566CF61BC1C439005B0A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,30 +44,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FEE86871B73F22B009F5F96 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F7FB0CD1B8A0DEA008A0608 /* ExampleLevel */ = {
-			isa = PBXGroup;
-			children = (
-				1F7FB0C91B89FBDA008A0608 /* TestTableViewController.swift */,
-				1F7FB0CB1B89FBFF008A0608 /* Cell.swift */,
-			);
-			name = ExampleLevel;
-			sourceTree = "<group>";
-		};
 		1FEE866C1B73F22A009F5F96 = {
 			isa = PBXGroup;
 			children = (
 				1FEE86771B73F22B009F5F96 /* Glug */,
-				1FEE868D1B73F22B009F5F96 /* GlugTests */,
 				1FEE86761B73F22B009F5F96 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				1FEE86751B73F22B009F5F96 /* Glug.app */,
-				1FEE868A1B73F22B009F5F96 /* GlugTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,70 +66,84 @@
 		1FEE86771B73F22B009F5F96 /* Glug */ = {
 			isa = PBXGroup;
 			children = (
-				1FEE867A1B73F22B009F5F96 /* AppDelegate.swift */,
-				1FDCFF6E1B7A684C00362DB8 /* Level.swift */,
-				1FDCFF701B7A69B600362DB8 /* LevelManager.swift */,
-				1F7FB0CD1B8A0DEA008A0608 /* ExampleLevel */,
-				1FEE869E1B73F336009F5F96 /* View */,
-				1FEE869D1B73F318009F5F96 /* Model */,
-				1FEE869C1B73F2D2009F5F96 /* Controller */,
-				1FEE867E1B73F22B009F5F96 /* Main.storyboard */,
-				1FEE86811B73F22B009F5F96 /* Images.xcassets */,
-				1FEE86831B73F22B009F5F96 /* LaunchScreen.xib */,
-				1FEE86781B73F22B009F5F96 /* Supporting Files */,
+				95566CE71BC1C439005B0A9A /* Libs */,
+				95566CE11BC1C439005B0A9A /* App */,
+				95566CE81BC1C439005B0A9A /* Models */,
+				95566CF21BC1C439005B0A9A /* Views */,
+				95566CE31BC1C439005B0A9A /* Controllers */,
+				95566CE61BC1C439005B0A9A /* Helpers */,
+				95566CEB1BC1C439005B0A9A /* Services */,
+				95566CED1BC1C439005B0A9A /* Supporting Files */,
 			);
 			path = Glug;
 			sourceTree = "<group>";
 		};
-		1FEE86781B73F22B009F5F96 /* Supporting Files */ = {
+		95566CE11BC1C439005B0A9A /* App */ = {
 			isa = PBXGroup;
 			children = (
-				1FBCB6071B94C40B0021E49F /* Minecraft.ttf */,
-				1FEE86791B73F22B009F5F96 /* Info.plist */,
-				1FEC032A1B7FAFFB0061A932 /* Levels.plist */,
+				95566CE21BC1C439005B0A9A /* AppDelegate.swift */,
 			);
-			name = "Supporting Files";
+			path = App;
 			sourceTree = "<group>";
 		};
-		1FEE868D1B73F22B009F5F96 /* GlugTests */ = {
+		95566CE31BC1C439005B0A9A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1FEE86901B73F22B009F5F96 /* GlugTests.swift */,
-				1FEE868E1B73F22B009F5F96 /* Supporting Files */,
+				95566CE41BC1C439005B0A9A /* MenuViewController.swift */,
+				95566CE51BC1C439005B0A9A /* TestTableViewController.swift */,
 			);
-			path = GlugTests;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		1FEE868E1B73F22B009F5F96 /* Supporting Files */ = {
+		95566CE61BC1C439005B0A9A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1FEE868F1B73F22B009F5F96 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = Helpers;
 			sourceTree = "<group>";
 		};
-		1FEE869C1B73F2D2009F5F96 /* Controller */ = {
+		95566CE71BC1C439005B0A9A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				1FDCFF721B7A73E700362DB8 /* ParentViewController.swift */,
-				1FEE869A1B73F2BC009F5F96 /* MenuViewController.swift */,
-				1FEE869F1B73F76B009F5F96 /* GameSceneViewController.swift */,
 			);
-			name = Controller;
+			path = Libs;
 			sourceTree = "<group>";
 		};
-		1FEE869D1B73F318009F5F96 /* Model */ = {
+		95566CE81BC1C439005B0A9A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95566CE91BC1C439005B0A9A /* Cells.swift */,
+				95566CEA1BC1C439005B0A9A /* Level.swift */,
 			);
-			name = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		1FEE869E1B73F336009F5F96 /* View */ = {
+		95566CEB1BC1C439005B0A9A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				95566CEC1BC1C439005B0A9A /* LevelManager.swift */,
 			);
-			name = View;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		95566CED1BC1C439005B0A9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95566CEE1BC1C439005B0A9A /* Images.xcassets */,
+				95566CEF1BC1C439005B0A9A /* Info.plist */,
+				95566CF01BC1C439005B0A9A /* Levels.plist */,
+				95566CF11BC1C439005B0A9A /* Minecraft.ttf */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95566CF21BC1C439005B0A9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95566CF31BC1C439005B0A9A /* LaunchScreen.xib */,
+				95566CF51BC1C439005B0A9A /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,24 +166,6 @@
 			productReference = 1FEE86751B73F22B009F5F96 /* Glug.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1FEE86891B73F22B009F5F96 /* GlugTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1FEE86971B73F22B009F5F96 /* Build configuration list for PBXNativeTarget "GlugTests" */;
-			buildPhases = (
-				1FEE86861B73F22B009F5F96 /* Sources */,
-				1FEE86871B73F22B009F5F96 /* Frameworks */,
-				1FEE86881B73F22B009F5F96 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1FEE868C1B73F22B009F5F96 /* PBXTargetDependency */,
-			);
-			name = GlugTests;
-			productName = GlugTests;
-			productReference = 1FEE868A1B73F22B009F5F96 /* GlugTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,10 +180,6 @@
 					1FEE86741B73F22B009F5F96 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = FXS2GW5LYK;
-					};
-					1FEE86891B73F22B009F5F96 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 1FEE86741B73F22B009F5F96;
 					};
 				};
 			};
@@ -241,7 +197,6 @@
 			projectRoot = "";
 			targets = (
 				1FEE86741B73F22B009F5F96 /* Glug */,
-				1FEE86891B73F22B009F5F96 /* GlugTests */,
 			);
 		};
 /* End PBXProject section */
@@ -251,18 +206,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FEE86801B73F22B009F5F96 /* Main.storyboard in Resources */,
-				1FEC032B1B7FAFFB0061A932 /* Levels.plist in Resources */,
-				1FBCB6081B94C40B0021E49F /* Minecraft.ttf in Resources */,
-				1FEE86851B73F22B009F5F96 /* LaunchScreen.xib in Resources */,
-				1FEE86821B73F22B009F5F96 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1FEE86881B73F22B009F5F96 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				95566D011BC1C439005B0A9A /* LaunchScreen.xib in Resources */,
+				95566CFD1BC1C439005B0A9A /* Images.xcassets in Resources */,
+				95566D021BC1C439005B0A9A /* Main.storyboard in Resources */,
+				95566D001BC1C439005B0A9A /* Minecraft.ttf in Resources */,
+				95566CFF1BC1C439005B0A9A /* Levels.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,50 +221,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FDCFF711B7A69B700362DB8 /* LevelManager.swift in Sources */,
-				1F7FB0CA1B89FBDA008A0608 /* TestTableViewController.swift in Sources */,
-				1FDCFF6F1B7A684C00362DB8 /* Level.swift in Sources */,
-				1FEE867B1B73F22B009F5F96 /* AppDelegate.swift in Sources */,
-				1FEE86A01B73F76B009F5F96 /* GameSceneViewController.swift in Sources */,
-				1F7FB0CC1B89FBFF008A0608 /* Cell.swift in Sources */,
-				1FEE869B1B73F2BC009F5F96 /* MenuViewController.swift in Sources */,
-				1FDCFF731B7A73E700362DB8 /* ParentViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1FEE86861B73F22B009F5F96 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1FEE86911B73F22B009F5F96 /* GlugTests.swift in Sources */,
+				95566CF71BC1C439005B0A9A /* AppDelegate.swift in Sources */,
+				95566CFA1BC1C439005B0A9A /* Cells.swift in Sources */,
+				95566CF81BC1C439005B0A9A /* MenuViewController.swift in Sources */,
+				95566CFB1BC1C439005B0A9A /* Level.swift in Sources */,
+				95566CFC1BC1C439005B0A9A /* LevelManager.swift in Sources */,
+				95566CF91BC1C439005B0A9A /* TestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1FEE868C1B73F22B009F5F96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1FEE86741B73F22B009F5F96 /* Glug */;
-			targetProxy = 1FEE868B1B73F22B009F5F96 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		1FEE867E1B73F22B009F5F96 /* Main.storyboard */ = {
+		95566CF31BC1C439005B0A9A /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1FEE867F1B73F22B009F5F96 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1FEE86831B73F22B009F5F96 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1FEE86841B73F22B009F5F96 /* Base */,
+				95566CF41BC1C439005B0A9A /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		95566CF51BC1C439005B0A9A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95566CF61BC1C439005B0A9A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -411,7 +341,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Glug/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Glug/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iosdevcourse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,42 +353,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = Glug/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Glug/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iosdevcourse.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		1FEE86981B73F22B009F5F96 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GlugTests/Info.plist;
-				LD_MAP_FILE_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iosdevcourse.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glug.app/Glug";
-			};
-			name = Debug;
-		};
-		1FEE86991B73F22B009F5F96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = GlugTests/Info.plist;
-				LD_MAP_FILE_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iosdevcourse.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glug.app/Glug";
 			};
 			name = Release;
 		};
@@ -479,15 +377,6 @@
 			buildConfigurations = (
 				1FEE86951B73F22B009F5F96 /* Debug */,
 				1FEE86961B73F22B009F5F96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1FEE86971B73F22B009F5F96 /* Build configuration list for PBXNativeTarget "GlugTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1FEE86981B73F22B009F5F96 /* Debug */,
-				1FEE86991B73F22B009F5F96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

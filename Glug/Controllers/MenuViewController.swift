@@ -19,6 +19,7 @@ class MenuViewController: UIViewController {
         
         addAttributeLabelAndButton()
         
+        view.backgroundColor = UIColor(red: 29 / 255, green: 34 / 255, blue: 46 / 255, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {
