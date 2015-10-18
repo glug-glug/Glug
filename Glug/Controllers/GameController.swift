@@ -18,6 +18,10 @@ class GameController: CKController {
         print(text)
     }
     
+    override var color: UIColor {
+        return Constants.Colors.background
+    }
+    
     override func initializeScene() -> CKScene {
         let scene = super.initializeScene()
         

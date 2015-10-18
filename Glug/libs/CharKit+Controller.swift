@@ -69,7 +69,7 @@ extension CharKit {
         }
         
         var color: UIColor {
-            return UIColor(hex: 0x222222)
+            return UIColor.blackColor()
         }
         
         var scene: Scene {
@@ -119,9 +119,6 @@ extension CharKit {
                 case .Home:
                     self?.home()
                     print("Home")
-                case .Restart:
-                    // TODO:
-                    print("Restart")
                 case .Play:
                     print("Play")
                     self?.play()

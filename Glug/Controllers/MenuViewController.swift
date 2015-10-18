@@ -17,31 +17,27 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addAttributeLabelAndButton()
-        
-        view.backgroundColor = UIColor(red: 29 / 255, green: 34 / 255, blue: 46 / 255, alpha: 1)
+        addAttributeLabelAndButton()        
+        view.backgroundColor = Constants.Colors.background
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //MARK: - Helpers Methods
     
+    func font(size: CGFloat) -> UIFont {
+        return UIFont(name: "Minecraft", size: size) ?? UIFont.systemFontOfSize(size)
+    }
+    
     private func addAttributeLabelAndButton() {
-        
+
         addAttributeLabel(menuTitleLabel, text: "Glug", firstCharColor: .yellowColor(), otherCharsColor: .whiteColor(), size: 64)
         
         addAttributeButton(tapToPlayButton, text: "Play", size: 20, color: .whiteColor())
         addAttributeButton(creditsButton, text: "Credits", size: 20, color: .whiteColor())
-        
     }
     
     func addAttributeButton(button: UIButton, text: String, size: CGFloat, color: UIColor) {
-        
-        let attribute = [NSFontAttributeName : UIFont(name: "Minecraft", size: size)!]
-        
+
+        let attribute = [NSFontAttributeName: font(size)]
         let attributeString = NSAttributedString(string: text, attributes: attribute)
         
         button.setAttributedTitle(attributeString, forState: UIControlState.Normal)
@@ -62,7 +58,6 @@ class MenuViewController: UIViewController {
         attrString1.appendAttributedString(attrString2)
         
         label.attributedText = attrString1
-        label.font = UIFont(name: "Minecraft", size: size)
+        label.font = font(size)
     }
-
 }

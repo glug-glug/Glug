@@ -13,26 +13,11 @@ extension CharKit {
     class ControlPanel: UIView {
         
         enum Options {
-            case Home, Restart, Play
+            case Home, Play
         }
         
         var onSelect: ((Options) -> ())?
         var onExpand: (() -> ())?
-        
-        struct Preferences {
-            var normalSize: CGSize = CGSizeMake(120, 320)
-            var collapsedSize: CGSize = CGSizeMake(110, 110)
-            var center = CGPoint(x: 0, y: statusBarHidden ? 0 : 10)
-            var radius: CGFloat = 50
-            var alpha: CGFloat = 0.7
-            var borderWidth: CGFloat = 2
-            var initState = States.Collapsed
-            var colors = (
-                background: UIColor(white: 0.5, alpha: 0.5),
-                border: UIColor(hex: 0xcccccc)
-            )
-            var images: (home: UIImage?, restart: UIImage?, play: UIImage?) = (nil, nil, nil)
-        }
         
         enum States {
             case Collapsed
@@ -73,10 +58,6 @@ extension CharKit {
             return self.addImageSubview(self.preferences.images.home)
         }()
 
-        lazy var restartImageView: UIImageView = {
-            return self.addImageSubview(self.preferences.images.restart)
-            }()
-        
         lazy var playImageView: UIImageView = {
             return self.addImageSubview(self.preferences.images.play)
             }()
@@ -109,28 +90,32 @@ extension CharKit {
         
         private func configureConstraints() {
             
-            let _ = [homeImageView, restartImageView, playImageView].map {
+            let _ = [homeImageView, playImageView].map {
                 $0.translatesAutoresizingMaskIntoConstraints = false
             }
 
             Constraint.add(self, "H:[v(32)]-15-|", ["v": homeImageView])
-            Constraint.add(self, "H:[v(32)]-15-|", ["v": restartImageView])
             Constraint.add(self, "H:[v(32)]-15-|", ["v": playImageView])
-            Constraint.add(self, "V:[hv(32)]-15-[rv(32)]-15-[mv(32)]-15-|", ["hv": homeImageView, "rv": restartImageView, "mv": playImageView])
+            Constraint.add(self, "V:[hv(32)]-20-[mv(32)]-15-|", ["hv": homeImageView, "mv": playImageView])
         }
         
         override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+            
+            let onSelect: (Options) -> () = { option in
+                if option == .Home {
+                    self.hidden = true
+                }
+                self.onSelect?(option)
+            }
             
             if state == .Normal {
                 
                 if let view = touches.first?.view {
                     switch view {
                     case homeImageView:
-                        onSelect?(.Home)
-                    case restartImageView:
-                        onSelect?(.Restart)
+                        onSelect(.Home)
                     case playImageView:
-                        onSelect?(.Play)
+                        onSelect(.Play)
                     default:
                         return
                     }
@@ -141,5 +126,23 @@ extension CharKit {
             
             state.invert()
         }
+    }
+}
+
+extension CharKit.ControlPanel {
+    
+    struct Preferences {
+        var normalSize: CGSize = CGSizeMake(120, 240)
+        var collapsedSize: CGSize = CGSizeMake(110, 110)
+        var center = CGPoint(x: 0, y: CharKit.statusBarHidden ? 0 : 10)
+        var radius: CGFloat = 50
+        var alpha: CGFloat = 0.7
+        var borderWidth: CGFloat = 2
+        var initState = States.Collapsed
+        var colors = (
+            background: UIColor(white: 0.5, alpha: 0.5),
+            border: UIColor(hex: 0xcccccc)
+        )
+        var images: (home: UIImage?, restart: UIImage?, play: UIImage?) = (nil, nil, nil)
     }
 }

@@ -23,21 +23,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npk-Oo-dIQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npk-Oo-dIQ">
                                 <rect key="frame" x="268" y="504" width="65" height="36"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Credits">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Hu9-5r-Jd1" kind="show" id="8yK-Za-fjt"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="450-tk-vqI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="450-tk-vqI">
                                 <rect key="frame" x="281" y="443" width="38" height="36"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="g6a-k6-M6f" kind="show" id="zmO-2M-LE7"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathyscaphe" translatesAutoresizingMaskIntoConstraints="NO" id="DN1-7Y-Luk">
                                 <rect key="frame" x="484" y="96" width="81" height="59"/>
@@ -338,6 +344,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MH1-kq-o92" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="351" y="462"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="Zmq-x8-ELK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Game" id="g6a-k6-M6f" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qrk-yf-zba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801.5" y="387"/>
+        </scene>
+        <!--Credits-->
+        <scene sceneID="i5u-EE-w48">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Credits" id="Hu9-5r-Jd1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMN-xn-vDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806.5" y="534"/>
         </scene>
     </scenes>
     <resources>
