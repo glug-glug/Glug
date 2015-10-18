@@ -15,6 +15,7 @@
 		95185CB71BD3EEF7001396C3 /* Levels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95185CB61BD3EEF7001396C3 /* Levels.storyboard */; settings = {ASSET_TAGS = (); }; };
 		95185CBD1BD3F28F001396C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95185CBC1BD3F28F001396C3 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		95185CBF1BD426B1001396C3 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95185CBE1BD426B1001396C3 /* Cells.swift */; settings = {ASSET_TAGS = (); }; };
+		95185CC11BD43088001396C3 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95185CC01BD43088001396C3 /* Updater.swift */; settings = {ASSET_TAGS = (); }; };
 		952A086A1BD3B05B00C194F2 /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A08691BD3B05B00C194F2 /* CreditsController.swift */; settings = {ASSET_TAGS = (); }; };
 		95A498C11BD3AEF200179B99 /* Credits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A498C01BD3AEF200179B99 /* Credits.storyboard */; settings = {ASSET_TAGS = (); }; };
 		95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18281BD3AA3500126E8C /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
@@ -43,6 +44,7 @@
 		95185CB61BD3EEF7001396C3 /* Levels.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Levels.storyboard; sourceTree = "<group>"; };
 		95185CBC1BD3F28F001396C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		95185CBE1BD426B1001396C3 /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		95185CC01BD43088001396C3 /* Updater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		952A08691BD3B05B00C194F2 /* CreditsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
 		95A498C01BD3AEF200179B99 /* Credits.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credits.storyboard; sourceTree = "<group>"; };
 		95C227F51B8A33B5005BBBC2 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 				95FD18301BD3AA3500126E8C /* ControlPanel.swift */,
 				95FD18331BD3AA3500126E8C /* Directions.swift */,
 				95FD18341BD3AA3500126E8C /* JoystickPad.swift */,
+				95185CC01BD43088001396C3 /* Updater.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				95FD18461BD3AA3500126E8C /* CharKit.swift in Sources */,
 				95FD18471BD3AA3500126E8C /* Directions.swift in Sources */,
 				95FD18441BD3AA3500126E8C /* ControlPanel.swift in Sources */,
+				95185CC11BD43088001396C3 /* Updater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

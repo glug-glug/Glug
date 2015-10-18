@@ -13,30 +13,92 @@ class MenuController: UIViewController {
     @IBOutlet weak var menuTitleLabel: UILabel!
     @IBOutlet weak var tapToPlayButton: UIButton!
     @IBOutlet weak var creditsButton: UIButton!
+
+    //
+    
+    @IBOutlet var bigGlugsConstraints: [NSLayoutConstraint]!
+    @IBOutlet var mediumGlugsConstraints: [NSLayoutConstraint]!
+    @IBOutlet var smallGlugsConstraints: [NSLayoutConstraint]!
+
+    @IBOutlet weak var bathyscapheConstraint: NSLayoutConstraint!
+    var bathyscapheDirection: Directions?
+    //
+    
+    lazy var updater: Updater = {
+        return Updater(ti: 0.01) { [weak self] _ in
+            self?.animate()
+        }
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addAttributeLabelAndButton()        
         view.backgroundColor = Constants.Colors.background
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        updater.play()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        updater.stop()
+    }
+}
 
-    //MARK: - Helpers Methods
+extension MenuController {
+    
+    func animate() {
+        animateGlugs(bigGlugsConstraints, speed: 2)
+        animateGlugs(mediumGlugsConstraints, speed: 1)
+        animateGlugs(smallGlugsConstraints, speed: 0.3)
+        animateBathyscaphe(bathyscapheConstraint, speed: 0.2)
+        
+        view.layoutSubviews()
+    }
+    
+    func animateGlugs(constraints: [NSLayoutConstraint], speed: CGFloat) {
+        
+        let h = view.bounds.height
+        let delay: CGFloat = 200
+        
+        for v in constraints {
+            var next = v.constant + speed
+            if next - delay > h {
+                next = 0
+            }
+            v.constant = next
+        }
+    }
+    
+    func animateBathyscaphe(constraint: NSLayoutConstraint, speed: CGFloat) {
+        
+        let p: (CGFloat, CGFloat) = (15, 100)
+        let val = constraint.constant
+        var dir = bathyscapheDirection ?? .Left
+        if val < p.0 || val > p.1 {
+            dir.invert()
+        }
+        bathyscapheDirection = dir
+        constraint.constant += speed * (dir == .Left ? 1 : -1)
+    }
+}
+
+extension MenuController {
     
     func font(size: CGFloat) -> UIFont {
         return UIFont(name: "Minecraft", size: size) ?? UIFont.systemFontOfSize(size)
     }
     
     private func addAttributeLabelAndButton() {
-
         addAttributeLabel(menuTitleLabel, text: "Glug", firstCharColor: .yellowColor(), otherCharsColor: .whiteColor(), size: 64)
-        
         addAttributeButton(tapToPlayButton, text: "Play", size: 20, color: .whiteColor())
         addAttributeButton(creditsButton, text: "Credits", size: 20, color: .whiteColor())
     }
     
     func addAttributeButton(button: UIButton, text: String, size: CGFloat, color: UIColor) {
-
+        
         let attribute = [NSFontAttributeName: font(size)]
         let attributeString = NSAttributedString(string: text, attributes: attribute)
         
@@ -61,3 +123,5 @@ class MenuController: UIViewController {
         label.font = font(size)
     }
 }
+
+

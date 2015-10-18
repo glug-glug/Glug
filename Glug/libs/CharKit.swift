@@ -66,8 +66,6 @@ extension CGRect {
     }
 }
 
-typealias UpdateTime = Int
-
 class CharKit {
     
     struct Point {
@@ -317,35 +315,41 @@ class CharKit {
     
     class View: UITextView {
         
+        private let ti = 0.08
+        
+        private lazy var updater: Updater = {
+            return Updater(ti: self.ti) { [weak self] time in
+                self?.update(time)
+            }
+            }()
+        
         var scene: CKScene? {
             didSet {
-                time = 0
+                updater.reset()
             }
         }
-        
-        private var time: UpdateTime = 0
         
         private var timer: NSTimer? {
             willSet{
                 stop()
             }
         }
-
+        
         var presentation: String {
             return scene?.presentation ?? ""
         }
         
+        private func update(time: UpdateTime) {
+            scene?.update(time)
+            render()
+        }
+        
         func play() {
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.08, target: self, selector: "update", userInfo: nil, repeats: true)
+            updater.play()
         }
         
         func stop() {
-            timer?.invalidate()
-        }
-        
-        func update() {
-            scene?.update(time++)
-            render()
+            updater.stop()
         }
         
         func render() {

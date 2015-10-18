@@ -53,7 +53,7 @@ extension CharKit {
             // testing grid
             // backgroundColor = UIColor.whiteColor()
             backgroundColor = color
-        }
+        }        
     }
     
     class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol {
