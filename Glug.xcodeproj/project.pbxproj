@@ -9,12 +9,7 @@
 /* Begin PBXBuildFile section */
 		95566CF71BC1C439005B0A9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CE21BC1C439005B0A9A /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		95566CF81BC1C439005B0A9A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CE41BC1C439005B0A9A /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		95566CF91BC1C439005B0A9A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CE51BC1C439005B0A9A /* TestTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		95566CFA1BC1C439005B0A9A /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CE91BC1C439005B0A9A /* Cells.swift */; settings = {ASSET_TAGS = (); }; };
-		95566CFB1BC1C439005B0A9A /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CEA1BC1C439005B0A9A /* Level.swift */; settings = {ASSET_TAGS = (); }; };
-		95566CFC1BC1C439005B0A9A /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95566CEC1BC1C439005B0A9A /* LevelManager.swift */; settings = {ASSET_TAGS = (); }; };
 		95566CFD1BC1C439005B0A9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95566CEE1BC1C439005B0A9A /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
-		95566CFF1BC1C439005B0A9A /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95566CF01BC1C439005B0A9A /* Levels.plist */; settings = {ASSET_TAGS = (); }; };
 		95566D001BC1C439005B0A9A /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95566CF11BC1C439005B0A9A /* Minecraft.ttf */; settings = {ASSET_TAGS = (); }; };
 		95566D011BC1C439005B0A9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95566CF31BC1C439005B0A9A /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
 		95566D021BC1C439005B0A9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95566CF51BC1C439005B0A9A /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -24,13 +19,8 @@
 		1FEE86751B73F22B009F5F96 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95566CE21BC1C439005B0A9A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95566CE41BC1C439005B0A9A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		95566CE51BC1C439005B0A9A /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
-		95566CE91BC1C439005B0A9A /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
-		95566CEA1BC1C439005B0A9A /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		95566CEC1BC1C439005B0A9A /* LevelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 		95566CEE1BC1C439005B0A9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		95566CEF1BC1C439005B0A9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95566CF01BC1C439005B0A9A /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		95566CF11BC1C439005B0A9A /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
 		95566CF41BC1C439005B0A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		95566CF61BC1C439005B0A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				95566CE41BC1C439005B0A9A /* MenuViewController.swift */,
-				95566CE51BC1C439005B0A9A /* TestTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,8 +101,6 @@
 		95566CE81BC1C439005B0A9A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95566CE91BC1C439005B0A9A /* Cells.swift */,
-				95566CEA1BC1C439005B0A9A /* Level.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,7 +108,6 @@
 		95566CEB1BC1C439005B0A9A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				95566CEC1BC1C439005B0A9A /* LevelManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -131,7 +117,6 @@
 			children = (
 				95566CEE1BC1C439005B0A9A /* Images.xcassets */,
 				95566CEF1BC1C439005B0A9A /* Info.plist */,
-				95566CF01BC1C439005B0A9A /* Levels.plist */,
 				95566CF11BC1C439005B0A9A /* Minecraft.ttf */,
 			);
 			path = "Supporting Files";
@@ -210,7 +195,6 @@
 				95566CFD1BC1C439005B0A9A /* Images.xcassets in Resources */,
 				95566D021BC1C439005B0A9A /* Main.storyboard in Resources */,
 				95566D001BC1C439005B0A9A /* Minecraft.ttf in Resources */,
-				95566CFF1BC1C439005B0A9A /* Levels.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,11 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95566CF71BC1C439005B0A9A /* AppDelegate.swift in Sources */,
-				95566CFA1BC1C439005B0A9A /* Cells.swift in Sources */,
 				95566CF81BC1C439005B0A9A /* MenuViewController.swift in Sources */,
-				95566CFB1BC1C439005B0A9A /* Level.swift in Sources */,
-				95566CFC1BC1C439005B0A9A /* LevelManager.swift in Sources */,
-				95566CF91BC1C439005B0A9A /* TestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
