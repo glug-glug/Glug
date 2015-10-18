@@ -103,28 +103,17 @@ extension CharKit {
         
         private lazy var controlPanel: ControlPanel = {
             var preferenses = ControlPanel.Preferences()
-            preferenses.images = (
-                UIImage(named: "home"),
-                UIImage(named: "restart"),
-                UIImage(named: "play")
-            )
-            
             let onExpand: () -> () = { [weak self] in
-                print("on expanded")
                 self?.stop()
             }
-
             let onSelect: (ControlPanel.Options) -> () = { [weak self] option in
                 switch option {
                 case .Home:
                     self?.home()
-                    print("Home")
                 case .Play:
-                    print("Play")
                     self?.play()
                 }
-            }
-            
+            }            
             let view = ControlPanel(preferences: preferenses, onSelect: onSelect, onExpand: onExpand)
             self.view.addSubview(view)
             return view
@@ -256,4 +245,6 @@ extension CKController {
         return res
     }
 }
+
+
 

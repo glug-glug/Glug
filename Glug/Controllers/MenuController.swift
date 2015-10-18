@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  MenuController.swift
 //  Glug
 //
 //  Created by Александр on 06.08.15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class MenuController: UIViewController {
     
     @IBOutlet weak var menuTitleLabel: UILabel!
     @IBOutlet weak var tapToPlayButton: UIButton!

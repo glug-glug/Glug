@@ -1,5 +1,5 @@
 //
-//  CharKit+Helper.swift
+//  Constraint.swift
 //  Glug
 //
 //  Created by piton on 23.08.15.
@@ -16,9 +16,4 @@ extension NSLayoutConstraint {
     }
 }
 
-extension CharKit {
-    static var statusBarHidden: Bool {
-        return UIApplication.sharedApplication().statusBarHidden
-    }    
-}
 

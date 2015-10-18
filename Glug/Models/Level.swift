@@ -8,18 +8,21 @@
 
 import Foundation
 
+typealias Levels = [Level]
+
 class Level {
     
-    var name: String
-    var number: Int
-    var isComplete: Bool
+    var name: String!
+    var number: Int!
+    var isComplete: Bool = false
     
-    init(dictionary: [String: AnyObject]) {
-        
-        name = dictionary["Name"] as! String
-        number = dictionary["Number"] as! Int
-        isComplete = dictionary["isComplete"] as! Bool
-        
+    init(dictionary d: [String: AnyObject]) {
+        name   <! d["name"]
+        number <! d["number"]
     }
-    
+
+    func complete() {
+        isComplete = true
+        LevelsService().complete(self)
+    }
 }

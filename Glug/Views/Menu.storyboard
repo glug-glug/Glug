@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Menu View Controller-->
+        <!--Menu Controller-->
         <scene sceneID="vKO-wM-vcG">
             <objects>
-                <viewController id="FaM-9M-w8c" customClass="MenuViewController" customModule="Glug" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FaM-9M-w8c" customClass="MenuController" customModule="Glug" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IH5-Eb-KEC"/>
                         <viewControllerLayoutGuide type="bottom" id="EGy-Rq-smC"/>
@@ -345,10 +345,10 @@
             </objects>
             <point key="canvasLocation" x="351" y="462"/>
         </scene>
-        <!--Game-->
+        <!--Levels-->
         <scene sceneID="Zmq-x8-ELK">
             <objects>
-                <viewControllerPlaceholder storyboardName="Game" id="g6a-k6-M6f" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Levels" id="g6a-k6-M6f" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qrk-yf-zba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="801.5" y="387"/>
