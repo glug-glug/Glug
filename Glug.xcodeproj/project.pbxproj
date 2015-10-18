@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95185CAB1BD3BDFF001396C3 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95185CAA1BD3BDFF001396C3 /* Levels.plist */; settings = {ASSET_TAGS = (); }; };
+		95185CAD1BD3BE0E001396C3 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95185CAC1BD3BE0E001396C3 /* Level.swift */; settings = {ASSET_TAGS = (); }; };
+		95185CAF1BD3BE14001396C3 /* LevelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95185CAE1BD3BE14001396C3 /* LevelService.swift */; settings = {ASSET_TAGS = (); }; };
 		952A086A1BD3B05B00C194F2 /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A08691BD3B05B00C194F2 /* CreditsController.swift */; settings = {ASSET_TAGS = (); }; };
 		95A498C11BD3AEF200179B99 /* Credits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A498C01BD3AEF200179B99 /* Credits.storyboard */; settings = {ASSET_TAGS = (); }; };
 		95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18281BD3AA3500126E8C /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95185CAA1BD3BDFF001396C3 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
+		95185CAC1BD3BE0E001396C3 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		95185CAE1BD3BE14001396C3 /* LevelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelService.swift; sourceTree = "<group>"; };
 		952A08691BD3B05B00C194F2 /* CreditsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
 		95A498C01BD3AEF200179B99 /* Credits.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credits.storyboard; sourceTree = "<group>"; };
 		95C227F51B8A33B5005BBBC2 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +138,7 @@
 		95FD18351BD3AA3500126E8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95185CAC1BD3BE0E001396C3 /* Level.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 		95FD18361BD3AA3500126E8C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				95185CAE1BD3BE14001396C3 /* LevelService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 		95FD18371BD3AA3500126E8C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				95185CAA1BD3BDFF001396C3 /* Levels.plist */,
 				95FD18381BD3AA3500126E8C /* Images.xcassets */,
 				95FD18391BD3AA3500126E8C /* Info.plist */,
 				95FD183A1BD3AA3500126E8C /* Minecraft.ttf */,
@@ -226,6 +235,7 @@
 				95A498C11BD3AEF200179B99 /* Credits.storyboard in Resources */,
 				95FD184D1BD3AA3500126E8C /* Game.storyboard in Resources */,
 				95FD184B1BD3AA3500126E8C /* Minecraft.ttf in Resources */,
+				95185CAB1BD3BDFF001396C3 /* Levels.plist in Resources */,
 				95FD184E1BD3AA3500126E8C /* Menu.storyboard in Resources */,
 				95FD18491BD3AA3500126E8C /* Images.xcassets in Resources */,
 			);
@@ -241,9 +251,11 @@
 				95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */,
 				95FD18411BD3AA3500126E8C /* MenuViewController.swift in Sources */,
 				95FD18401BD3AA3500126E8C /* GameController.swift in Sources */,
+				95185CAF1BD3BE14001396C3 /* LevelService.swift in Sources */,
 				95FD18481BD3AA3500126E8C /* JoystickPad.swift in Sources */,
 				952A086A1BD3B05B00C194F2 /* CreditsController.swift in Sources */,
 				95FD18451BD3AA3500126E8C /* CharKit+Helper.swift in Sources */,
+				95185CAD1BD3BE0E001396C3 /* Level.swift in Sources */,
 				95FD18421BD3AA3500126E8C /* Constants.swift in Sources */,
 				95FD18431BD3AA3500126E8C /* CharKit+Controller.swift in Sources */,
 				95FD18461BD3AA3500126E8C /* CharKit.swift in Sources */,
