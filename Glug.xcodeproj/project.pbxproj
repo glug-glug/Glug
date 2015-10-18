@@ -7,35 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		954B90AC1B8A4972003A82B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B90AB1B8A4972003A82B6 /* Constants.swift */; };
-		9550DAAE1BA58B750082E30E /* CharKit+ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9550DAAD1BA58B750082E30E /* CharKit+ControlPanel.swift */; };
-		9571E0371B9B191F004709C9 /* CharKit+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571E0361B9B191F004709C9 /* CharKit+Controller.swift */; };
-		95C227FB1B8A33B5005BBBC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C227FA1B8A33B5005BBBC2 /* AppDelegate.swift */; };
-		95C228001B8A33B5005BBBC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C227FE1B8A33B5005BBBC2 /* Main.storyboard */; };
-		95C228021B8A33B5005BBBC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C228011B8A33B5005BBBC2 /* Images.xcassets */; };
-		95C228051B8A33B5005BBBC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95C228031B8A33B5005BBBC2 /* LaunchScreen.xib */; };
-		95C2281C1B8A341A005BBBC2 /* CharKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2281A1B8A341A005BBBC2 /* CharKit.swift */; };
-		95C2281D1B8A341A005BBBC2 /* JoystickPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2281B1B8A341A005BBBC2 /* JoystickPad.swift */; };
-		95C2281F1B8A343B005BBBC2 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2281E1B8A343B005BBBC2 /* GameController.swift */; };
-		95C228211B8A3983005BBBC2 /* CharKit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C228201B8A3983005BBBC2 /* CharKit+Helper.swift */; };
-		95C389911B9B75EF00D4D04F /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C389901B9B75EF00D4D04F /* Directions.swift */; };
+		95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18281BD3AA3500126E8C /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18401BD3AA3500126E8C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD182A1BD3AA3500126E8C /* GameController.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18411BD3AA3500126E8C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD182B1BD3AA3500126E8C /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18421BD3AA3500126E8C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD182D1BD3AA3500126E8C /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18431BD3AA3500126E8C /* CharKit+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD182F1BD3AA3500126E8C /* CharKit+Controller.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18441BD3AA3500126E8C /* CharKit+ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18301BD3AA3500126E8C /* CharKit+ControlPanel.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18451BD3AA3500126E8C /* CharKit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18311BD3AA3500126E8C /* CharKit+Helper.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18461BD3AA3500126E8C /* CharKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18321BD3AA3500126E8C /* CharKit.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18471BD3AA3500126E8C /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18331BD3AA3500126E8C /* Directions.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18481BD3AA3500126E8C /* JoystickPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18341BD3AA3500126E8C /* JoystickPad.swift */; settings = {ASSET_TAGS = (); }; };
+		95FD18491BD3AA3500126E8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95FD18381BD3AA3500126E8C /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		95FD184A1BD3AA3500126E8C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95FD18391BD3AA3500126E8C /* Info.plist */; settings = {ASSET_TAGS = (); }; };
+		95FD184B1BD3AA3500126E8C /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95FD183A1BD3AA3500126E8C /* Minecraft.ttf */; settings = {ASSET_TAGS = (); }; };
+		95FD184C1BD3AA3500126E8C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95FD183C1BD3AA3500126E8C /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
+		95FD184D1BD3AA3500126E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FD183D1BD3AA3500126E8C /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		95FD184E1BD3AA3500126E8C /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FD183E1BD3AA3500126E8C /* Menu.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		954B90AB1B8A4972003A82B6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9550DAAD1BA58B750082E30E /* CharKit+ControlPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+ControlPanel.swift"; sourceTree = "<group>"; };
-		9571E0361B9B191F004709C9 /* CharKit+Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+Controller.swift"; sourceTree = "<group>"; };
 		95C227F51B8A33B5005BBBC2 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		95C227F91B8A33B5005BBBC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95C227FA1B8A33B5005BBBC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95C227FF1B8A33B5005BBBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		95C228011B8A33B5005BBBC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		95C228041B8A33B5005BBBC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		95C2281A1B8A341A005BBBC2 /* CharKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharKit.swift; sourceTree = "<group>"; };
-		95C2281B1B8A341A005BBBC2 /* JoystickPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickPad.swift; sourceTree = "<group>"; };
-		95C2281E1B8A343B005BBBC2 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		95C228201B8A3983005BBBC2 /* CharKit+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CharKit+Helper.swift"; path = "../Helper/CharKit+Helper.swift"; sourceTree = "<group>"; };
-		95C389901B9B75EF00D4D04F /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
+		95FD18281BD3AA3500126E8C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		95FD182A1BD3AA3500126E8C /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		95FD182B1BD3AA3500126E8C /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		95FD182D1BD3AA3500126E8C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		95FD182F1BD3AA3500126E8C /* CharKit+Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+Controller.swift"; sourceTree = "<group>"; };
+		95FD18301BD3AA3500126E8C /* CharKit+ControlPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+ControlPanel.swift"; sourceTree = "<group>"; };
+		95FD18311BD3AA3500126E8C /* CharKit+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+Helper.swift"; sourceTree = "<group>"; };
+		95FD18321BD3AA3500126E8C /* CharKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharKit.swift; sourceTree = "<group>"; };
+		95FD18331BD3AA3500126E8C /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
+		95FD18341BD3AA3500126E8C /* JoystickPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickPad.swift; sourceTree = "<group>"; };
+		95FD18381BD3AA3500126E8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		95FD18391BD3AA3500126E8C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95FD183A1BD3AA3500126E8C /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
+		95FD183C1BD3AA3500126E8C /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		95FD183D1BD3AA3500126E8C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		95FD183E1BD3AA3500126E8C /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,45 +56,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		954B90AD1B8A4B1D003A82B6 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				95C389901B9B75EF00D4D04F /* Directions.swift */,
-				95C2281A1B8A341A005BBBC2 /* CharKit.swift */,
-				95C2281B1B8A341A005BBBC2 /* JoystickPad.swift */,
-				9550DAAD1BA58B750082E30E /* CharKit+ControlPanel.swift */,
-				95C228201B8A3983005BBBC2 /* CharKit+Helper.swift */,
-				9571E0361B9B191F004709C9 /* CharKit+Controller.swift */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		95942C0D1B9392E3003E2FA2 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				95C2281E1B8A343B005BBBC2 /* GameController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		95942C0E1B9392FC003E2FA2 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				954B90AB1B8A4972003A82B6 /* Constants.swift */,
-			);
-			name = Helpers;
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		95942C0F1B939310003E2FA2 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				95C227FE1B8A33B5005BBBC2 /* Main.storyboard */,
-				95C228031B8A33B5005BBBC2 /* LaunchScreen.xib */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
 		95C227EC1B8A33B5005BBBC2 = {
 			isa = PBXGroup;
 			children = (
@@ -107,23 +75,88 @@
 		95C227F71B8A33B5005BBBC2 /* Glug */ = {
 			isa = PBXGroup;
 			children = (
-				954B90AD1B8A4B1D003A82B6 /* libs */,
-				95942C0F1B939310003E2FA2 /* UI */,
-				95942C0E1B9392FC003E2FA2 /* Helpers */,
-				95942C0D1B9392E3003E2FA2 /* Controllers */,
-				95C227FA1B8A33B5005BBBC2 /* AppDelegate.swift */,
-				95C227F81B8A33B5005BBBC2 /* Supporting Files */,
+				95FD182E1BD3AA3500126E8C /* Libs */,
+				95FD18351BD3AA3500126E8C /* Models */,
+				95FD183B1BD3AA3500126E8C /* Views */,
+				95FD18291BD3AA3500126E8C /* Controllers */,
+				95FD182C1BD3AA3500126E8C /* Helpers */,
+				95FD18361BD3AA3500126E8C /* Services */,
+				95FD18271BD3AA3500126E8C /* App */,
+				95FD18371BD3AA3500126E8C /* Supporting Files */,
 			);
 			path = Glug;
 			sourceTree = "<group>";
 		};
-		95C227F81B8A33B5005BBBC2 /* Supporting Files */ = {
+		95FD18271BD3AA3500126E8C /* App */ = {
 			isa = PBXGroup;
 			children = (
-				95C228011B8A33B5005BBBC2 /* Images.xcassets */,
-				95C227F91B8A33B5005BBBC2 /* Info.plist */,
+				95FD18281BD3AA3500126E8C /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		95FD18291BD3AA3500126E8C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95FD182A1BD3AA3500126E8C /* GameController.swift */,
+				95FD182B1BD3AA3500126E8C /* MenuViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		95FD182C1BD3AA3500126E8C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				95FD182D1BD3AA3500126E8C /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		95FD182E1BD3AA3500126E8C /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				95FD182F1BD3AA3500126E8C /* CharKit+Controller.swift */,
+				95FD18301BD3AA3500126E8C /* CharKit+ControlPanel.swift */,
+				95FD18311BD3AA3500126E8C /* CharKit+Helper.swift */,
+				95FD18321BD3AA3500126E8C /* CharKit.swift */,
+				95FD18331BD3AA3500126E8C /* Directions.swift */,
+				95FD18341BD3AA3500126E8C /* JoystickPad.swift */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		95FD18351BD3AA3500126E8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95FD18361BD3AA3500126E8C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		95FD18371BD3AA3500126E8C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95FD18381BD3AA3500126E8C /* Images.xcassets */,
+				95FD18391BD3AA3500126E8C /* Info.plist */,
+				95FD183A1BD3AA3500126E8C /* Minecraft.ttf */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95FD183B1BD3AA3500126E8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95FD183C1BD3AA3500126E8C /* LaunchScreen.xib */,
+				95FD183D1BD3AA3500126E8C /* Main.storyboard */,
+				95FD183E1BD3AA3500126E8C /* Menu.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +201,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 95C227EC1B8A33B5005BBBC2;
 			productRefGroup = 95C227F61B8A33B5005BBBC2 /* Products */;
@@ -185,9 +217,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C228001B8A33B5005BBBC2 /* Main.storyboard in Resources */,
-				95C228051B8A33B5005BBBC2 /* LaunchScreen.xib in Resources */,
-				95C228021B8A33B5005BBBC2 /* Images.xcassets in Resources */,
+				95FD184C1BD3AA3500126E8C /* LaunchScreen.xib in Resources */,
+				95FD184D1BD3AA3500126E8C /* Main.storyboard in Resources */,
+				95FD184B1BD3AA3500126E8C /* Minecraft.ttf in Resources */,
+				95FD184E1BD3AA3500126E8C /* Menu.storyboard in Resources */,
+				95FD184A1BD3AA3500126E8C /* Info.plist in Resources */,
+				95FD18491BD3AA3500126E8C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,38 +233,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C2281D1B8A341A005BBBC2 /* JoystickPad.swift in Sources */,
-				95C2281C1B8A341A005BBBC2 /* CharKit.swift in Sources */,
-				9571E0371B9B191F004709C9 /* CharKit+Controller.swift in Sources */,
-				9550DAAE1BA58B750082E30E /* CharKit+ControlPanel.swift in Sources */,
-				95C228211B8A3983005BBBC2 /* CharKit+Helper.swift in Sources */,
-				95C2281F1B8A343B005BBBC2 /* GameController.swift in Sources */,
-				95C227FB1B8A33B5005BBBC2 /* AppDelegate.swift in Sources */,
-				954B90AC1B8A4972003A82B6 /* Constants.swift in Sources */,
-				95C389911B9B75EF00D4D04F /* Directions.swift in Sources */,
+				95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */,
+				95FD18411BD3AA3500126E8C /* MenuViewController.swift in Sources */,
+				95FD18401BD3AA3500126E8C /* GameController.swift in Sources */,
+				95FD18481BD3AA3500126E8C /* JoystickPad.swift in Sources */,
+				95FD18451BD3AA3500126E8C /* CharKit+Helper.swift in Sources */,
+				95FD18421BD3AA3500126E8C /* Constants.swift in Sources */,
+				95FD18431BD3AA3500126E8C /* CharKit+Controller.swift in Sources */,
+				95FD18461BD3AA3500126E8C /* CharKit.swift in Sources */,
+				95FD18471BD3AA3500126E8C /* Directions.swift in Sources */,
+				95FD18441BD3AA3500126E8C /* CharKit+ControlPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		95C227FE1B8A33B5005BBBC2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95C227FF1B8A33B5005BBBC2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		95C228031B8A33B5005BBBC2 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95C228041B8A33B5005BBBC2 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		95C228121B8A33B6005BBBC2 /* Debug */ = {
