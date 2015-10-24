@@ -53,9 +53,7 @@ extension MenuController {
         animateGlugs(bigGlugsConstraints, speed: 2)
         animateGlugs(mediumGlugsConstraints, speed: 1)
         animateGlugs(smallGlugsConstraints, speed: 0.3)
-        animateBathyscaphe(bathyscapheConstraint, speed: 0.2)
-        
-        view.layoutSubviews()
+        animateBathyscaphe(bathyscapheConstraint, speed: 2.2)
     }
     
     func animateGlugs(constraints: [NSLayoutConstraint], speed: CGFloat) {
@@ -74,10 +72,10 @@ extension MenuController {
     
     func animateBathyscaphe(constraint: NSLayoutConstraint, speed: CGFloat) {
         
-        let p: (CGFloat, CGFloat) = (15, 100)
+        let p: (CGFloat, CGFloat) = (15, view.bounds.width / 3)
         let val = constraint.constant
         var dir = bathyscapheDirection ?? .Left
-        if val < p.0 || val > p.1 {
+        if val < p.0 && dir == .Right || val > p.1 && dir == .Left {
             dir.invert()
         }
         bathyscapheDirection = dir

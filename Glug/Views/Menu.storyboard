@@ -271,9 +271,12 @@
                                 <variation key="heightClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="fse-zd-Att" secondAttribute="trailing" constant="68" id="TaP-zn-Slo"/>
-                            <constraint firstAttribute="trailing" secondItem="xjz-n2-ai1" secondAttribute="trailing" constant="78" id="V26-iA-aRd"/>
+                            <constraint firstAttribute="trailing" secondItem="xjz-n2-ai1" secondAttribute="trailing" constant="78" id="V26-iA-aRd">
+                                <variation key="heightClass=regular-widthClass=regular" constant="180"/>
+                            </constraint>
                             <constraint firstItem="fjn-2I-MN9" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="129" id="XB0-ph-rwi">
                                 <variation key="heightClass=compact" constant="180"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="250"/>
                             </constraint>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="STa-1Q-QIG" secondAttribute="bottom" constant="293" id="ZJG-5T-Y50"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="rsD-g5-X5l" secondAttribute="bottom" constant="59" id="aYW-mm-zlY">
@@ -326,7 +329,9 @@
                             <constraint firstItem="h7b-10-pSE" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="49" id="wMJ-Ls-2I8"/>
                             <constraint firstItem="H80-XS-kZc" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="58" id="xDm-bq-geI"/>
                             <constraint firstItem="ghM-IQ-aYU" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="54" id="xyf-oy-WJy"/>
-                            <constraint firstItem="Bx2-Gj-bDS" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="54" id="zEt-XP-IGd"/>
+                            <constraint firstItem="Bx2-Gj-bDS" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="54" id="zEt-XP-IGd">
+                                <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                            </constraint>
                             <constraint firstItem="VXH-n7-hkJ" firstAttribute="top" secondItem="l8y-RJ-1So" secondAttribute="bottom" constant="85" id="zmt-NX-NMs"/>
                         </constraints>
                         <variation key="default">
