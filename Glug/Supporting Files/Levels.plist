@@ -5,20 +5,18 @@
 	<dict>
 		<key>name</key>
 		<string>Relax on the beach</string>
-		<key>number</key>
-		<integer>1</integer>
+		<key>density</key>
+		<string></string>
+		<key>enemy</key>
+		<dict/>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Very deep</string>
-		<key>number</key>
-		<integer>2</integer>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Kill em all</string>
-		<key>number</key>
-		<integer>3</integer>
 	</dict>
 </array>
 </plist>

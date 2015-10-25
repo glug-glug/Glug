@@ -123,6 +123,33 @@ class CharKit {
         init(character ch: Character) {
             self.init(size: Size(1, 1), data: [ch])
         }
+        
+        init(string: String, separator: String = "\n", backgroundChar bg: Character = "◻️") {
+            
+            let array = string.componentsSeparatedByString(separator)
+            
+            let (w, h) = (
+                array.sort({ $0.count > $1.count }).first?.count ?? 0,
+                array.count
+            )
+            
+            var data: [Character?] = []
+            
+            for str in array {
+                for ch in str.characters {
+                    if case bg = ch {
+                        data += [nil]
+                    } else {
+                        data += [ch as Character?]
+                    }
+                }
+                for _ in 0..<(w - str.count) {
+                    data += [nil]
+                }
+            }
+            
+            self.init(size: CKSize(w, h), data: data)
+        }
     }
     
     class Unit {
@@ -205,7 +232,7 @@ class CharKit {
     class Scene {
         
         let size: Size
-        var background: String // TODO: from map
+        var background: String = "Ш" // TODO: from map ?
         
         private var units: [Unit] = []
         
@@ -233,9 +260,8 @@ class CharKit {
             return Rect(origin: Point.zeroPoint, size: size)
         }
         
-        init(width: Int, height: Int, background: String = "Ш") { 
+        init(width: Int, height: Int) {
             size = Size(width, height)
-            self.background = background
         }
         
         convenience init(size: Size) {

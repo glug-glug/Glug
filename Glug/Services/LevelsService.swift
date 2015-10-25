@@ -13,20 +13,23 @@ class LevelsService {
     let kCompletedLevels = "CompletedLevels"
     let file = ("Levels", "plist")
     
-    lazy var levels: Levels = {
+    lazy var levels: List<Level> = {
         let completed = self.completed
-        return self.read().map {
+        var list = List<Level>()        
+        self.read().forEach {
             $0.isComplete = completed.contains($0.number)
-            return $0
+            list.add($0)
         }
+        return list
         }()
     
-    private func read() -> Levels {
+    private func read() -> [Level] {
         guard let url = NSBundle.mainBundle().URLForResource(file.0, withExtension: file.1) else {
             return []
         }
+        var num = 0
         return NSArray(contentsOfURL: url)?.map {
-            Level(dictionary: $0 as! Dictionary)
+            return Level(dictionary: $0 as! Dictionary, number: ++num, service: self)
             } ?? []
     }
 
@@ -37,6 +40,17 @@ class LevelsService {
     func complete(level: Level) {
         let obj = uniq(completed + [level.number])
         defaults.setObject(obj, forKey: kCompletedLevels)
+    }
+        
+    func locked(level: Node<Level>?) -> Bool {
+        guard let level = level else {
+            return true
+        }
+        return !(level.previus?.value.isComplete ?? true)
+    }
+    
+    func locked(level: Level) -> Bool {
+        return locked(levels[level])
     }
 }
 

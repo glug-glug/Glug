@@ -12,6 +12,5 @@ struct Constants {
     
     struct Colors {
         static let background = UIColor(hex: 0x1D222E)
-        static let levelCellSelected = UIColor(hex: 0x666666)
     }
 }

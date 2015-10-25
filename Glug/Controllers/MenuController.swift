@@ -13,16 +13,13 @@ class MenuController: UIViewController {
     @IBOutlet weak var menuTitleLabel: UILabel!
     @IBOutlet weak var tapToPlayButton: UIButton!
     @IBOutlet weak var creditsButton: UIButton!
-
-    //
     
     @IBOutlet var bigGlugsConstraints: [NSLayoutConstraint]!
     @IBOutlet var mediumGlugsConstraints: [NSLayoutConstraint]!
     @IBOutlet var smallGlugsConstraints: [NSLayoutConstraint]!
-
     @IBOutlet weak var bathyscapheConstraint: NSLayoutConstraint!
+    
     var bathyscapheDirection: Directions?
-    //
     
     lazy var updater: Updater = {
         return Updater(ti: 0.01) { [weak self] _ in
@@ -53,7 +50,7 @@ extension MenuController {
         animateGlugs(bigGlugsConstraints, speed: 2)
         animateGlugs(mediumGlugsConstraints, speed: 1)
         animateGlugs(smallGlugsConstraints, speed: 0.3)
-        animateBathyscaphe(bathyscapheConstraint, speed: 2.2)
+        animateBathyscaphe(bathyscapheConstraint, speed: 0.2)
     }
     
     func animateGlugs(constraints: [NSLayoutConstraint], speed: CGFloat) {

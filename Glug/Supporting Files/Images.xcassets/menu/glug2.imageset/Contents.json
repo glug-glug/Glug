@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "fish2.png"
+      "filename" : "glug2.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

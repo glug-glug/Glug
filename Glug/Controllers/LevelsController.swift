@@ -14,12 +14,8 @@ class LevelsController: UIViewController {
     
     lazy var levelsService = LevelsService()
     
-    var levels: Levels {
+    var levels: List<Level> {
         return levelsService.levels
-    }
-    
-    subscript (idx: Int) -> Level? {
-        return 0..<levels.count ~= idx ? levels[idx] : nil
     }
     
     private lazy var controlPanel: ControlPanel = {
@@ -45,14 +41,26 @@ class LevelsController: UIViewController {
         tableView.backgroundColor = Constants.Colors.background
     }
 }
+
 extension LevelsController {
     
+    var selected: Node<Level>? {
+        guard let indexPath = tableView.indexPathForSelectedRow else {
+            return nil
+        }
+        return levels[indexPath.row]
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        let controller = segue.destinationViewController as? GameController
+        controller?.level = selected?.value
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        return true
+        if let level = selected where !levelsService.locked(level) {
+            return true
+        }
+        return false
     }
 }
 
@@ -63,15 +71,13 @@ extension LevelsController: UITableViewDataSource {
         return levels.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {        
         let cell: LevelCell = tableView.dequeue(.Level, indexPath)
         cell.level = levels[indexPath.row]
-
         return cell
     }
-}
-
-extension LevelsController: UITableViewDelegate {
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }

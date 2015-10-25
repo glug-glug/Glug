@@ -17,6 +17,8 @@ public enum Directions: String {
     case LeftUp     = "↖️"
     case Up         = "⬆️"
     case UpRight    = "↗️"
+    
+    static let stop = "⏹"
 }
 
 extension Directions {

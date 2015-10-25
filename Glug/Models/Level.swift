@@ -8,21 +8,33 @@
 
 import Foundation
 
-typealias Levels = [Level]
-
 class Level {
-    
+
     var name: String!
     var number: Int!
     var isComplete: Bool = false
+
+    weak var service: LevelsService?
     
-    init(dictionary d: [String: AnyObject]) {
-        name   <! d["name"]
-        number <! d["number"]
+    init(dictionary d: [String: AnyObject], number: Int, service: LevelsService?) {
+        name <! d["name"]
+        self.number = number
+        self.service = service
     }
 
     func complete() {
         isComplete = true
-        LevelsService().complete(self)
+        service?.complete(self)
+    }
+    
+    var locked: Bool {
+        return service?.locked(self) ?? true
     }
 }
+
+func == (lhs: Level, rhs: Level) -> Bool {
+    return lhs.number == rhs.number
+}
+
+extension Level: Equatable {}
+

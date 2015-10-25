@@ -53,43 +53,50 @@
                                                         </label>
                                                     </subviews>
                                                     <animations/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="2f6-TR-DHZ"/>
                                                         <constraint firstItem="g9N-Hm-cMk" firstAttribute="centerY" secondItem="IT7-V9-Z5K" secondAttribute="centerY" id="HnV-cq-Zar"/>
                                                         <constraint firstItem="g9N-Hm-cMk" firstAttribute="centerX" secondItem="IT7-V9-Z5K" secondAttribute="centerX" id="R3u-UP-gtV"/>
                                                         <constraint firstAttribute="width" constant="60" id="pfd-EO-JU7"/>
                                                     </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="30"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPr-I0-taK">
-                                                    <rect key="frame" x="60" y="10" width="460" height="59.5"/>
+                                                    <rect key="frame" x="60" y="10" width="454" height="59.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sY-oe-Mcn">
+                                                    <rect key="frame" x="520" y="42" width="32" height="32"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="Vhl-Pq-atW"/>
+                                                        <constraint firstAttribute="height" constant="32" id="hgu-oC-bwv"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.17999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="UPr-I0-taK" firstAttribute="leading" secondItem="AoO-yR-2ll" secondAttribute="leading" constant="60" id="7Ud-4w-zAE"/>
                                                 <constraint firstItem="UPr-I0-taK" firstAttribute="centerY" secondItem="AoO-yR-2ll" secondAttribute="centerY" id="ITB-XD-GFY"/>
-                                                <constraint firstItem="IT7-V9-Z5K" firstAttribute="leading" secondItem="UPr-I0-taK" secondAttribute="trailing" constant="10" id="QIZ-TI-D19"/>
+                                                <constraint firstItem="IT7-V9-Z5K" firstAttribute="leading" secondItem="UPr-I0-taK" secondAttribute="trailing" constant="16" id="Oud-Mb-3Wr"/>
+                                                <constraint firstItem="5sY-oe-Mcn" firstAttribute="leading" secondItem="IT7-V9-Z5K" secondAttribute="leading" constant="-10" id="S2g-A6-sJJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="IT7-V9-Z5K" secondAttribute="trailing" constant="10" id="Wxk-yp-u7T"/>
                                                 <constraint firstItem="IT7-V9-Z5K" firstAttribute="top" secondItem="AoO-yR-2ll" secondAttribute="top" constant="10" id="jfX-YK-O4P"/>
+                                                <constraint firstItem="5sY-oe-Mcn" firstAttribute="top" secondItem="IT7-V9-Z5K" secondAttribute="top" constant="32" id="jl0-qN-U63"/>
                                                 <constraint firstAttribute="bottom" secondItem="UPr-I0-taK" secondAttribute="bottom" constant="10" id="jns-KB-sA1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
+                                            <outlet property="lockImageView" destination="5sY-oe-Mcn" id="DtM-BK-f1o"/>
                                             <outlet property="nameLabel" destination="UPr-I0-taK" id="UbA-nd-Lhu"/>
                                             <outlet property="numberLabel" destination="g9N-Hm-cMk" id="n6o-Yk-6bx"/>
-                                            <segue destination="KCB-Vs-uBb" kind="show" id="8Kr-li-8N6"/>
+                                            <outlet property="numberView" destination="IT7-V9-Z5K" id="GAC-NA-l6C"/>
+                                            <segue destination="KCB-Vs-uBb" kind="show" id="yAl-Ku-zek"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

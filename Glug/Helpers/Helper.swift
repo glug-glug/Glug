@@ -8,6 +8,10 @@
 
 import UIKit
 
+func log(text: String?) {
+    print(text ?? "")
+}
+
 infix operator <! {}
 
 func <!<T>(inout lhs: T, rhs: AnyObject?) {
@@ -25,3 +29,66 @@ var defaults: NSUserDefaults {
     return NSUserDefaults.standardUserDefaults()
 }
 
+class Node<T> {
+    
+    typealias N = Node<T>
+    
+    weak var previus: N? = nil
+    weak var next: N? = nil
+    var value: T
+
+    init(value: T, previus: N? = nil, next: N? = nil) {
+        self.value = value
+        self.previus = previus
+    }
+}
+
+class List<T: Equatable> {
+    
+    typealias N = Node<T>
+    
+    var items: [N] = []
+    
+    var first: N? {
+        return items.first
+    }
+
+    var last: N? {
+        return items.last
+    }
+    
+    func add(item: T) {        
+        let node = Node(value: item, previus: last)
+        last?.next = node
+        items.append(node)
+    }
+    
+    var count: Int {
+        return items.count
+    }
+    
+    subscript (idx: Int) -> N? {
+        return 0..<items.count ~= idx ? items[idx] : nil
+    }
+
+    subscript (idx: Int) -> T? {
+        return (self[idx] as N?)?.value
+    }
+    
+    subscript (item: T) -> N? {
+        return items.filter({ $0.value == item }).first
+    }
+}
+
+infix operator <^> {}
+
+func <^> (lhs: CKUnit, rhs: Directions?) {
+    lhs.direction = rhs
+}
+
+extension String {
+    
+    var count: Int {
+        return self.characters.count
+    }
+}

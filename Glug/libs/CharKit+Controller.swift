@@ -8,8 +8,13 @@
 
 import UIKit
 
-typealias CKController = CharKit.Controller
+#if DEBUG_SCENE
+let kDebugScene = true
+#else
+let kDebugScene = false
+#endif
 
+typealias CKController = CharKit.Controller
 typealias CKControllerProtocol = CharKitControllerProtocol
 
 protocol CharKitControllerProtocol {
@@ -48,12 +53,15 @@ extension CharKit {
         
         convenience init(fontSize: CGFloat, color: UIColor) {
             self.init()
-            self.color = color
             self.fontSize = fontSize
-            // testing grid
-            // backgroundColor = UIColor.whiteColor()
+            self.color = color
             backgroundColor = color
-        }        
+            
+            if kDebugScene {
+                backgroundColor = UIColor.whiteColor()
+                self.color = UIColor.lightGrayColor()
+            }
+        }
     }
     
     class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol {
