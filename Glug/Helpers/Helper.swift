@@ -89,6 +89,13 @@ func <^> (lhs: CKUnit, rhs: Directions?) {
 extension String {
     
     var count: Int {
-        return self.characters.count
+        return characters.count
+    }
+}
+
+public extension Int {
+
+    public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
+        return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
 }

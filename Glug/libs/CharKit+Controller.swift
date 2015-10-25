@@ -17,7 +17,7 @@ let kDebugScene = false
 typealias CKController = CharKit.Controller
 typealias CKControllerProtocol = CharKitControllerProtocol
 
-protocol CharKitControllerProtocol {
+protocol CharKitControllerProtocol: Updateble {
     var scene: CKScene { get set }
     var joystick: JoystickPad { get }
     func initializeScene() -> CKScene
@@ -29,7 +29,7 @@ protocol CharKitControllerProtocol {
 extension CharKit {
     
     class GameView: CKView {
-        
+
         var fontSize: CGFloat!
         var color: UIColor!
 
@@ -63,7 +63,7 @@ extension CharKit {
             }
         }
     }
-    
+
     class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol {
         
         var orientation = UIDevice.currentDevice().orientation
@@ -164,8 +164,12 @@ extension CharKit {
         // CharKitControllerProtocol
         
         func initializeScene() -> CKScene {
-            return CKScene(size: optimalSceneSize)
+            let scene = CKScene(size: optimalSceneSize)
+            scene.delegate = self
+            return scene
         }
+        
+        func update(time: UpdateTime) { }
         
         func stop() {
             gameView.stop()

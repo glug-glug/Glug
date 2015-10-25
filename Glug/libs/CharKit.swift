@@ -16,6 +16,10 @@ typealias CKSize = CharKit.Size
 typealias CKUnit = CharKit.Unit
 typealias CKSprite = CharKit.Sprite
 
+protocol Updateble: class {
+    func update(time: UpdateTime)
+}
+
 func +=(inout point: CKPoint, direction: Directions) {
     point = point + direction
 }
@@ -56,6 +60,18 @@ func -(p1: CKPoint, p2: CKPoint) -> CKPoint {
     return CKPoint(p1.x - p2.x, p1.y - p2.y)
 }
 
+func +(p1: CKPoint, p2: CKPoint) -> CKPoint {
+    return CKPoint(p1.x + p2.x, p1.y + p2.y)
+}
+
+func /(s: CKSize, rhs: Int) -> CKSize {
+    return CKSize(s.width / rhs, s.height / rhs)
+}
+
+func /(p: CKPoint, rhs: Int) -> CKPoint {
+    return CKPoint(p.x / rhs, p.y / rhs)
+}
+
 func >(u1: CKUnit, u2: CKUnit) -> Bool {
     return u1.zPosition > u2.zPosition
 }
@@ -80,9 +96,16 @@ class CharKit {
             self.y = y
         }
         
+        init(_ size: Size) {
+            self.init(size.width - 1, size.height - 1)
+        }
+        
         func inRect(rect: Rect) -> Bool {
             let (x, y) = (rect.origin.x, rect.origin.y)
             let (w, h) = (rect.size.width, rect.size.height)
+            guard w > 0 && h > 0 else {
+                return false
+            }            
             return x...(x + w - 1) ~= self.x && y...(y + h - 1) ~= self.y
         }
     }
@@ -95,6 +118,10 @@ class CharKit {
         init(_ width: Int, _ height: Int) {
             self.width = width
             self.height = height
+        }
+        
+        var point: Point {
+            return Point(width, height)
         }
         
         static var zeroSize: Size {
@@ -124,9 +151,7 @@ class CharKit {
             self.init(size: Size(1, 1), data: [ch])
         }
         
-        init(string: String, separator: String = "\n", backgroundChar bg: Character = "◻️") {
-            
-            let array = string.componentsSeparatedByString(separator)
+        init(_ array: [String], backgroundChar bg: Character = "◻️") {
             
             let (w, h) = (
                 array.sort({ $0.count > $1.count }).first?.count ?? 0,
@@ -150,9 +175,17 @@ class CharKit {
             
             self.init(size: CKSize(w, h), data: data)
         }
+        
+        init(_ string: String, separator: String = "\n", backgroundChar bg: Character = "◻️") {
+            self.init(string.componentsSeparatedByString(separator), backgroundChar: bg)
+        }
+        
+        static var emptySprite: Sprite {
+            return Sprite(size: Size(0, 0), data: [])
+        }
     }
     
-    class Unit {
+    class Unit: Updateble {
         
         typealias Chunk = Character
         
@@ -161,20 +194,33 @@ class CharKit {
         var position: Point
         var zPosition: Int
         var sprite: Sprite
-        var direction: Directions? {
-            didSet {
-                saveDirection(oldValue)
+        var direction: Directions?
+        var speed: Int = 0
+        
+        var center: Point {
+            get {
+                return position + sprite.size.point / 2
+            }
+            set (p) {
+                position = p - (sprite.size / 2).point
             }
         }
-        var lastDirection: (horizontal: Directions?, vertical: Directions?)
-        var speed: Int = 0
         
         var rect: Rect {
             return Rect(origin: position, size: sprite.size)
         }
         
+        // TODO: !!
         var outOfScene: Bool {
             return position.inRect(scene.rect)
+        }
+        
+//        // TOD: test, tmp
+        var nexOutOfScene: Bool {
+            guard let d = direction else {
+                return false
+            }
+            return !(position + d).inRect(scene.rect)
         }
         
         var nextPosition: Point {
@@ -182,31 +228,40 @@ class CharKit {
                 let pos = position + dir
                 for p in [pos, Point(position.x, pos.y), Point(pos.x, position.y)] {
                     if Rect(origin: p, size: sprite.size).inRect(scene.rect) {
+
+// TODO: check collisions !!
+
+//                        let r = Rect(origin: p, size: sprite.size)
+//                        for v in (scene[r] as [Unit]?) ?? [] {
+//                            if v !== self {
+//                                return position
+//                            }
+//                        }
+                        
                         return p
                     }
                 }
             }
             return position
         }
-        
-        func saveDirection(direction: Directions?) {
-            if let direction = direction?.split() {
-                if let direction = direction.horizontal {
-                    lastDirection.horizontal = direction
-                }
-                if let direction = direction.vertical {
-                    lastDirection.vertical = direction
-                }
-            }
-        }
-        
-        init(sprite: Sprite, position: Point, speed: Int = 0, direction: Directions? = nil, zPosition: Int = 0) {
-            self.sprite = sprite
-            self.position = position
+
+        init(sprite: Sprite? = nil,
+            position: Point? = nil,
+            center: Point? = nil,
+            speed: Int = 0,
+            direction: Directions? = nil,
+            zPosition: Int = 0) {
+                
+            self.sprite = sprite ?? Sprite.emptySprite
+            self.position = position ?? Point.zeroPoint
             self.zPosition = zPosition
-            self.direction = direction
             self.speed = speed
-            saveDirection(direction)
+            
+            if let center = center {
+                self.center = center
+            }
+            
+            let _ = { self.direction = direction }()
         }
         
         subscript(point: Point) -> Character? {
@@ -229,12 +284,14 @@ class CharKit {
         }
     }
     
-    class Scene {
+    class Scene: Updateble {
         
         let size: Size
-        var background: String = "Ш" // TODO: from map ?
+        var background: String = "⎢" // TODO: from map ? "Ш" "⎢" !!!
         
         private var units: [Unit] = []
+        
+        weak var delegate: Updateble?
         
         func addUnit(unit: Unit) {
             unit.scene = self
@@ -308,6 +365,17 @@ class CharKit {
             return (self[point] as UnitChunk?)?.unit
         }
         
+        // TODO:
+        subscript(rect: Rect) -> [Unit]? {
+            var res = [Unit]()
+            for unit in units {
+                if unit.rect.inRect(rect) {
+                    res.append(unit)
+                }
+            }
+            return res.isEmpty ? nil : res
+        }
+
         var presentation: String {
             
             var res = ""
@@ -336,10 +404,11 @@ class CharKit {
             for unit in units {
                 unit.update(time)
             }
+            delegate?.update(time)
         }
     }
     
-    class View: UITextView {
+    class View: UITextView, Updateble {
         
         private let ti = 0.08
         
@@ -365,7 +434,7 @@ class CharKit {
             return scene?.presentation ?? ""
         }
         
-        private func update(time: UpdateTime) {
+        func update(time: UpdateTime) {
             scene?.update(time)
             render()
         }

@@ -25,6 +25,15 @@ class GameController: CKController {
         let _ = serice
     }
     
+    override func update(time: UpdateTime) {
+        super.update(time)
+        
+        // TODO: test
+        //        if time % 1 == 0 {
+            serice.addFish()
+        //        }
+    }
+    
     override func joystickDirectionChanged(direction: Directions?) {
         serice.direction = direction
         

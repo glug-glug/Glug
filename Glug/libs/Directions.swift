@@ -47,5 +47,30 @@ extension Directions {
         case .UpRight:      return (D.Right, D.Up)
         }
     }
+    
+    var horizontal: Directions? {
+        return split().horizontal
+    }
+    
+    var vertical: Directions? {
+        return split().vertical
+    }
 }
 
+
+extension Directions {
+    init?(_ raw: Int) {
+        switch raw {
+        case 0: self = Right
+        case 1: self = RightDown
+        case 2: self = Down
+        case 3: self = DownLeft
+        case 4: self = Left
+        case 5: self = LeftUp
+        case 6: self = Up
+        case 7: self = UpRight
+        default:
+            return nil
+        }
+    }
+}

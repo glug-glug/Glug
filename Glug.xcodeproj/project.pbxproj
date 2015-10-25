@@ -18,13 +18,15 @@
 		95185CC11BD43088001396C3 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95185CC01BD43088001396C3 /* Updater.swift */; };
 		952A086A1BD3B05B00C194F2 /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A08691BD3B05B00C194F2 /* CreditsController.swift */; };
 		95A498C11BD3AEF200179B99 /* Credits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A498C01BD3AEF200179B99 /* Credits.storyboard */; };
-		95A4AF9F1BDCC854006E1A18 /* Diver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AF9E1BDCC854006E1A18 /* Diver.swift */; };
-		95A4AFA11BDCC86F006E1A18 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFA01BDCC86F006E1A18 /* Ship.swift */; };
-		95A4AFA31BDCC8BF006E1A18 /* Tube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFA21BDCC8BF006E1A18 /* Tube.swift */; };
-		95A4AFA51BDCC8DC006E1A18 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFA41BDCC8DC006E1A18 /* Fish.swift */; };
-		95A4AFA71BDCC902006E1A18 /* Treasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFA61BDCC902006E1A18 /* Treasure.swift */; };
 		95A4AFA91BDCD142006E1A18 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFA81BDCD142006E1A18 /* GameService.swift */; };
-		95A4AFAB1BDCD9B7006E1A18 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFAA1BDCD9B7006E1A18 /* Units.swift */; };
+		95A4AFAF1BDD31CD006E1A18 /* CharKit+TurnedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFAE1BDD31CD006E1A18 /* CharKit+TurnedUnit.swift */; };
+		95A4AFBA1BDD473F006E1A18 /* Diver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB31BDD473F006E1A18 /* Diver.swift */; };
+		95A4AFBB1BDD473F006E1A18 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB41BDD473F006E1A18 /* Fish.swift */; };
+		95A4AFBC1BDD473F006E1A18 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB51BDD473F006E1A18 /* Ship.swift */; };
+		95A4AFBD1BDD473F006E1A18 /* Treasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB61BDD473F006E1A18 /* Treasure.swift */; };
+		95A4AFBE1BDD473F006E1A18 /* Tube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB71BDD473F006E1A18 /* Tube.swift */; };
+		95A4AFBF1BDD473F006E1A18 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB81BDD473F006E1A18 /* Unit.swift */; };
+		95A4AFC01BDD473F006E1A18 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB91BDD473F006E1A18 /* Units.swift */; };
 		95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18281BD3AA3500126E8C /* AppDelegate.swift */; };
 		95FD18401BD3AA3500126E8C /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD182A1BD3AA3500126E8C /* GameController.swift */; };
 		95FD18411BD3AA3500126E8C /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD182B1BD3AA3500126E8C /* MenuController.swift */; };
@@ -54,13 +56,15 @@
 		95185CC01BD43088001396C3 /* Updater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		952A08691BD3B05B00C194F2 /* CreditsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
 		95A498C01BD3AEF200179B99 /* Credits.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credits.storyboard; sourceTree = "<group>"; };
-		95A4AF9E1BDCC854006E1A18 /* Diver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diver.swift; sourceTree = "<group>"; };
-		95A4AFA01BDCC86F006E1A18 /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
-		95A4AFA21BDCC8BF006E1A18 /* Tube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tube.swift; sourceTree = "<group>"; };
-		95A4AFA41BDCC8DC006E1A18 /* Fish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
-		95A4AFA61BDCC902006E1A18 /* Treasure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Treasure.swift; sourceTree = "<group>"; };
 		95A4AFA81BDCD142006E1A18 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
-		95A4AFAA1BDCD9B7006E1A18 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
+		95A4AFAE1BDD31CD006E1A18 /* CharKit+TurnedUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+TurnedUnit.swift"; sourceTree = "<group>"; };
+		95A4AFB31BDD473F006E1A18 /* Diver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diver.swift; sourceTree = "<group>"; };
+		95A4AFB41BDD473F006E1A18 /* Fish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
+		95A4AFB51BDD473F006E1A18 /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		95A4AFB61BDD473F006E1A18 /* Treasure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Treasure.swift; sourceTree = "<group>"; };
+		95A4AFB71BDD473F006E1A18 /* Tube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tube.swift; sourceTree = "<group>"; };
+		95A4AFB81BDD473F006E1A18 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		95A4AFB91BDD473F006E1A18 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		95C227F51B8A33B5005BBBC2 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95FD18281BD3AA3500126E8C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95FD182A1BD3AA3500126E8C /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,20 @@
 				95185CBC1BD3F28F001396C3 /* Images.xcassets */,
 			);
 			path = Asssets;
+			sourceTree = "<group>";
+		};
+		95A4AFB21BDD4728006E1A18 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				95A4AFB81BDD473F006E1A18 /* Unit.swift */,
+				95A4AFB91BDD473F006E1A18 /* Units.swift */,
+				95A4AFB31BDD473F006E1A18 /* Diver.swift */,
+				95A4AFB41BDD473F006E1A18 /* Fish.swift */,
+				95A4AFB51BDD473F006E1A18 /* Ship.swift */,
+				95A4AFB71BDD473F006E1A18 /* Tube.swift */,
+				95A4AFB61BDD473F006E1A18 /* Treasure.swift */,
+			);
+			path = Units;
 			sourceTree = "<group>";
 		};
 		95C227EC1B8A33B5005BBBC2 = {
@@ -165,6 +183,7 @@
 				95185CBB1BD3F28F001396C3 /* Asssets */,
 				95FD18321BD3AA3500126E8C /* CharKit.swift */,
 				95FD182F1BD3AA3500126E8C /* CharKit+Controller.swift */,
+				95A4AFAE1BDD31CD006E1A18 /* CharKit+TurnedUnit.swift */,
 				95FD18311BD3AA3500126E8C /* Constraint.swift */,
 				95FD18301BD3AA3500126E8C /* ControlPanel.swift */,
 				95FD18331BD3AA3500126E8C /* Directions.swift */,
@@ -177,13 +196,8 @@
 		95FD18351BD3AA3500126E8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95A4AFB21BDD4728006E1A18 /* Units */,
 				95185CAC1BD3BE0E001396C3 /* Level.swift */,
-				95A4AF9E1BDCC854006E1A18 /* Diver.swift */,
-				95A4AFA01BDCC86F006E1A18 /* Ship.swift */,
-				95A4AFA21BDCC8BF006E1A18 /* Tube.swift */,
-				95A4AFA41BDCC8DC006E1A18 /* Fish.swift */,
-				95A4AFA61BDCC902006E1A18 /* Treasure.swift */,
-				95A4AFAA1BDCD9B7006E1A18 /* Units.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,26 +312,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */,
-				95A4AFAB1BDCD9B7006E1A18 /* Units.swift in Sources */,
-				95A4AFA31BDCC8BF006E1A18 /* Tube.swift in Sources */,
+				95A4AFC01BDD473F006E1A18 /* Units.swift in Sources */,
 				95FD18411BD3AA3500126E8C /* MenuController.swift in Sources */,
 				95185CB31BD3D9E2001396C3 /* Helper.swift in Sources */,
 				95FD18401BD3AA3500126E8C /* GameController.swift in Sources */,
+				95A4AFBA1BDD473F006E1A18 /* Diver.swift in Sources */,
+				95A4AFBE1BDD473F006E1A18 /* Tube.swift in Sources */,
+				95A4AFBD1BDD473F006E1A18 /* Treasure.swift in Sources */,
 				95185CAF1BD3BE14001396C3 /* LevelsService.swift in Sources */,
 				95FD18481BD3AA3500126E8C /* JoystickPad.swift in Sources */,
-				95A4AFA51BDCC8DC006E1A18 /* Fish.swift in Sources */,
+				95A4AFBB1BDD473F006E1A18 /* Fish.swift in Sources */,
 				95185CBF1BD426B1001396C3 /* Cells.swift in Sources */,
 				95185CB11BD3BED2001396C3 /* LevelsController.swift in Sources */,
 				952A086A1BD3B05B00C194F2 /* CreditsController.swift in Sources */,
 				95FD18451BD3AA3500126E8C /* Constraint.swift in Sources */,
 				95A4AFA91BDCD142006E1A18 /* GameService.swift in Sources */,
-				95A4AF9F1BDCC854006E1A18 /* Diver.swift in Sources */,
+				95A4AFBF1BDD473F006E1A18 /* Unit.swift in Sources */,
 				95185CAD1BD3BE0E001396C3 /* Level.swift in Sources */,
-				95A4AFA11BDCC86F006E1A18 /* Ship.swift in Sources */,
 				95FD18421BD3AA3500126E8C /* Constants.swift in Sources */,
 				95FD18431BD3AA3500126E8C /* CharKit+Controller.swift in Sources */,
+				95A4AFAF1BDD31CD006E1A18 /* CharKit+TurnedUnit.swift in Sources */,
+				95A4AFBC1BDD473F006E1A18 /* Ship.swift in Sources */,
 				95FD18461BD3AA3500126E8C /* CharKit.swift in Sources */,
-				95A4AFA71BDCC902006E1A18 /* Treasure.swift in Sources */,
 				95FD18471BD3AA3500126E8C /* Directions.swift in Sources */,
 				95FD18441BD3AA3500126E8C /* ControlPanel.swift in Sources */,
 				95185CC11BD43088001396C3 /* Updater.swift in Sources */,
