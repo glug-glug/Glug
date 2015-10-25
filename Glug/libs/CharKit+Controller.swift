@@ -8,7 +8,8 @@
 
 import UIKit
 
-#if DEBUG_SCENE
+// TODO:
+#if !DEBUG_SCENE
 let kDebugScene = true
 #else
 let kDebugScene = false

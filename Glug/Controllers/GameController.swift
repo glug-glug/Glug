@@ -29,9 +29,13 @@ class GameController: CKController {
         super.update(time)
         
         // TODO: test
-        //        if time % 1 == 0 {
+        if time % 20 == 0 {
             serice.addFish()
-        //        }
+        }
+        
+        if time % 200 == 0 {
+            serice.addBigFish()
+        }
     }
     
     override func joystickDirectionChanged(direction: Directions?) {

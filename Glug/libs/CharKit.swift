@@ -196,6 +196,10 @@ class CharKit {
         var sprite: Sprite
         var direction: Directions?
         var speed: Int = 0
+
+        // TODO: tmp
+        var canOut: Bool = false
+        
         
         var center: Point {
             get {
@@ -226,6 +230,11 @@ class CharKit {
         var nextPosition: Point {
             if let dir = direction where speed > 0 {
                 let pos = position + dir
+                
+                if canOut {
+                    return pos
+                }
+                
                 for p in [pos, Point(position.x, pos.y), Point(pos.x, position.y)] {
                     if Rect(origin: p, size: sprite.size).inRect(scene.rect) {
 

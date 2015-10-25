@@ -14,12 +14,17 @@ class Fish: CKUnit {
         super.update(time)
         
         // TODO: tmp test
-        if nexOutOfScene {
+        if nexOutOfScene && !canOut {
             direction?.invert()
         }
     }
     
     init(center: CKPoint, direction: Directions, speed: Int = 1, sprite: CKSprite) {
         super.init(sprite: sprite, center: center, direction: direction, speed: speed)
+    }
+    // TODO:
+    init(position: CKPoint, direction: Directions, speed: Int = 1, sprite: CKSprite, canOut: Bool = false) {
+        super.init(sprite: sprite, position: position, direction: direction, speed: speed)
+        self.canOut = canOut
     }
 }

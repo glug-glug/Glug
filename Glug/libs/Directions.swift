@@ -25,12 +25,14 @@ extension Directions {
     
     mutating func invert() {
         switch self {
-        case .Left:  self = .Right
-        case .Right: self = .Left
-        case .Up:    self = .Down
-        case .Down:  self = .Up
-        default:
-            break // TODO:
+        case .Left:      self = .Right
+        case .Right:     self = .Left
+        case .Up:        self = .Down
+        case .Down:      self = .Up
+        case .RightDown: self = LeftUp
+        case .DownLeft:  self = UpRight
+        case .LeftUp:    self = RightDown
+        case .UpRight:   self = DownLeft
         }
     }
     
