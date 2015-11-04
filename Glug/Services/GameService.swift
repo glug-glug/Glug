@@ -14,7 +14,9 @@ class GameService {
     var level: Level
     
     lazy var units: Units = {        
-        return Units.create(self.level, scene: self.scene)
+        let units = self.createUnits()
+        self.scene.addUnits(units.all)
+        return units
     }()
 
     var direction: Directions? {
@@ -26,24 +28,87 @@ class GameService {
     init(scene: CKScene, level: Level) {
         self.level = level
         self.scene = scene
-        scene.addUnits(units.all)
+        let _ = units
+    }
+    
+    func remove(unit: CKUnit) {
+        switch unit {
+        case let unit as Fish:
+            remove(unit, &units.fishes)
+        case let unit as Treasure:
+            remove(unit, &units.treasures)
+        default:
+            // TODO:
+            break
+        }
     }
 }
 
-extension Units {
+extension GameService {
     
-    static func create(level: Level, scene: CKScene) -> Units {
+    private func createUnits() -> Units {
+       
+        let size = scene.size
         
-        let diver = Diver(center: CKPoint(scene.size / 2))
+        let diver = Diver(center: CKPoint(size / 2))
         let ship = Ship(center: CKPoint(diver.center.x, 0))
-        let tube = Tube()        
+        let tube = Tube()
+        let sky = Sky(rect: CKRect(origin: CKPoint(0, 0), size: CKSize(size.width, 1)))
+        let ground = Ground()
+        let herbs = Herb.create(size, density: .Hard) // TODO: density
         
-        let units = Units(diver: diver, ship: ship, tube: tube)
+        let units = Units(diver: diver, ship: ship, tube: tube, sky: sky, ground: ground, herbs: herbs)
         return units
     }
 }
 
 extension GameService {
+    
+    private func remove<T: CKUnit>(unit: T, inout _ array: [T]) {
+        var j = 0
+        for (i, u) in array.enumerate() {
+            guard u === unit else {
+                continue
+            }
+            array.removeAtIndex(i + j--)
+        }
+        unit.remove()
+    }
+    
+    private func add<T: CKUnit>(unit: T, inout _ array: [T]) {
+        array.append(unit)
+        scene.addUnit(unit)
+    }
+}
+
+
+
+extension GameService {
+
+    func addSolidUnit() {
+        
+        let s =
+        "🔴◻️◻️◻️◻️◻️🔴🔴🔴🔴🔴\n" +
+        "◻️🔴◻️◻️◻️◻️◻️◻️◻️◻️◻️\n" +
+        "◻️🔴🔴◻️◻️◻️◻️◻️◻️◻️◻️\n" +
+        "◻️🔴🔴🔴◻️◻️◻️◻️◻️◻️◻️\n" +
+        "🔴◻️◻️🔴🔴◻️◻️◻️◻️◻️◻️\n" +
+        "◻️◻️◻️◻️🔴🔴◻️◻️◻️◻️◻️\n" +
+        "◻️◻️◻️◻️◻️◻️🔴🔴🔴🔴◻️\n"
+        
+        let fish = Fish(position: CKPoint(0, 10), direction: .Right, speed: .Zero, sprite: CKSprite(s), solid: true)
+        
+        scene.addUnit(fish)
+        units.add(fish)
+    }
+
+    func addRightFish() {
+        
+        let fish = Fish(position: CKPoint(0, 10), direction: .Right, speed: .Low, sprite: CKSprite("😑"), solid: true)
+        
+        scene.addUnit(fish)
+        units.add(fish)
+    }
     
     // TODO: test
     func addFish() {
@@ -55,12 +120,12 @@ extension GameService {
         }
         
         func d() -> Directions {
-            //            var d: Directions!
-            //            repeat {
-            //                d = Directions(Int.random(0, 7))!
-            //            } while d.horizontal == nil
-            //            return d.horizontal!
-            return Directions(Int.random(0, 7))!
+            var d: Directions!
+            repeat {
+                d = Directions(Int.random(0, 7))!
+            } while d.horizontal == nil
+            return d.horizontal!
+//            return Directions(Int.random(0, 7))!
         }
         
         func f() -> String {
@@ -83,11 +148,14 @@ extension GameService {
             }
         }
         
-        func s() -> Int {
-            return Int.random(1, 3)
+        func s() -> CKSpeed {
+            return CKSpeed.random()
         }
         
-        scene.addUnit(Fish(center: p(), direction: d(), speed: s(), sprite: CKSprite(f())))
+        let fish = Fish(center: p(), direction: d(), speed: s(), sprite: CKSprite(f()), solid: true)
+        
+        scene.addUnit(fish)
+        units.add(fish)
     }
     
     func addBigFish() {
@@ -101,6 +169,9 @@ extension GameService {
         "◻️◻️◻️◻️🔴🔴🔴🔴◻️◻️◻️\n" +
         "◻️◻️◻️◻️◻️◻️🔴🔴🔴🔴◻️\n"
         
-        scene.addUnit(Fish(position: CKPoint(0, 3), direction: .Right, speed: 1, sprite: CKSprite(s), canOut: true))
+        let fish = Fish(position: CKPoint(0, 3), direction: .Right, speed: CKSpeed.Max, sprite: CKSprite(s), canOut: true)
+        
+        scene.addUnit(fish)
+        units.add(fish)
     }
 }

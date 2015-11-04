@@ -10,17 +10,21 @@ import Foundation
 
 class Diver: CKTurnedUnit {
     
+    let baseSpeed = CKSpeed.High
+    
     override var direction: Directions? {
         didSet {
             if direction == nil {
-                speed = 0
+                speed = .Zero
             } else {
-                speed = 1
+                speed = baseSpeed
             }
         }
     }
     
     lazy var sprites: (left: CKSprite, right: CKSprite) = {
+        
+        let b = CharKit.bg
         
         let left =
         "◻️👀◻️\n" +
@@ -57,6 +61,7 @@ class Diver: CKTurnedUnit {
 
         direction = .Right
         direction = nil
+        solid = true
     }
 }
 

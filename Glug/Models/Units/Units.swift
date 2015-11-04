@@ -13,31 +13,46 @@ class Units {
     var diver: Diver
     var ship: Ship
     var tube: Tube
-    var fishes: [Fish]?
-    var treasures: [Treasure]?
+    var sky: Sky
+    var ground: Ground?
+    var herbs: [Herb]?
+    var fishes: [Fish] = []
+    var treasures: [Treasure] = []
     
     var all: [CKUnit] {
-        return [diver, ship, tube] //+ fishes + treasures
+        var all: [CKUnit] = [diver, ship, tube, sky] + fishes
+        all += treasures as [CKUnit]
+        all += ground == nil ? [] : [ground!]
+        all += (herbs ?? []) as [CKUnit]
+        return all
     }
     
 //    var background:
-//    var units: [CKUnit] = []
-    
-//    init(diver: Diver, ship: Ship, tube: Tube, fishes: [Fish] = [], treasures: [Treasure]) {
-//        self.diver = diver
-//        self.ship = ship
-//        self.tube = tube
-//        self.fishes = fishes
-//        self.treasures = treasures
-//    }
 
-    init(diver: Diver, ship: Ship, tube: Tube) {
-        self.diver = diver
-        self.ship = ship
-        self.tube = tube
-        
-        ship.diver = diver
-        tube.ship = ship
-        tube.diver = diver
+    func add(fish: Fish) {
+        fishes.append(fish)
+    }
+    
+    init(diver: Diver,
+        ship: Ship,
+        tube: Tube,
+        sky: Sky,
+        ground: Ground?,
+        herbs: [Herb]? = nil,
+        fishes: [Fish] = [],
+        treasures: [Treasure] = []) {
+            
+            self.diver = diver
+            self.ship = ship
+            self.tube = tube
+            self.sky = sky
+            self.ground = ground
+            self.herbs = herbs
+            self.fishes = fishes
+            self.treasures = treasures
+            
+            ship.diver = diver
+            tube.ship = ship
+            tube.diver = diver
     }
 }

@@ -147,3 +147,5 @@ extension ControlPanel {
         var images: (home: UIImage?, play: UIImage?) = (UIImage(named: "cp-home"), UIImage(named: "cp-play"))
     }
 }
+
+

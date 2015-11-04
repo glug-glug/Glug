@@ -93,9 +93,25 @@ extension String {
     }
 }
 
-public extension Int {
+extension Int {
 
     public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
 }
+
+func * (lhs: String, rhs: Int) -> String {
+    var s = ""
+    for _ in 0..<rhs {
+        s += lhs
+    }
+    return s
+}
+
+func * (lhs: Character, rhs: Int) -> String {
+    return String(lhs) * rhs
+}
+
+
+
+    

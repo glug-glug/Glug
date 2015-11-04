@@ -8,11 +8,13 @@
 
 import UIKit
 
+// TODO: delegate render for custom bg color ??
+
 class GameController: CKController {
     
     var level: Level!
 
-    lazy var serice: GameService = {
+    lazy var service: GameService = {
         return GameService(scene: self.scene, level: self.level) // set background ?
     }()
     
@@ -22,30 +24,33 @@ class GameController: CKController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let _ = serice
+        let _ = service
     }
     
     override func update(time: UpdateTime) {
         super.update(time)
         
         // TODO: test
-        if time % 20 == 0 {
-            serice.addFish()
+        if time == 1 || time % 100 == 0 {
+            service.addFish()
         }
         
-        if time % 200 == 0 {
-            serice.addBigFish()
-        }
+//        if time % 200 == 0 {
+//            service.addBigFish()
+//        }
     }
     
     override func joystickDirectionChanged(direction: Directions?) {
-        serice.direction = direction
+        service.direction = direction
         
         log(direction?.rawValue ?? Directions.stop)
     }
     
     override func joystickFired() {
         log("🔴")
+        service.units.fishes.forEach {
+            service.remove($0)
+        }
     }
 }
 

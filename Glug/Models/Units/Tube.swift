@@ -30,20 +30,16 @@ class Tube: CKUnit {
     
     override func update(time: UpdateTime) {
         super.update(time)
-        configure()
+
+        guard let diver = diver, ship = ship else {
+            return
+        }
+        
+        position = CKPoint(ship.center.x, (ship.position + ship.sprite.size.point).y)
+        length = (diver.position - ship.position - ship.sprite.size.point).y
     }
     
     init() {
         super.init(sprite: CKSprite(chunk))
-    }
-    
-    func configure() {
-        
-        guard let diver = diver, ship = ship else {
-            return
-        }
-
-        position = CKPoint(ship.center.x, (ship.position + ship.sprite.size.point).y)
-        length = (diver.position - ship.position - ship.sprite.size.point).y       
-    }
+    }    
 }
