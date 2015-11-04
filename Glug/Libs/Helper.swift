@@ -18,6 +18,12 @@ func <!<T>(inout lhs: T, rhs: AnyObject?) {
     lhs = rhs as! T
 }
 
+infix operator <~ {}
+
+func <~<T>(inout lhs: T, rhs: AnyObject?) {
+    lhs = (rhs as? T) ?? lhs
+}
+
 func uniq<S: SequenceType, E: Hashable where E == S.Generator.Element>(source: S) -> [E] {
     var seen: [E: Bool] = [:]
     return source.filter { v -> Bool in
@@ -91,12 +97,49 @@ extension String {
     var count: Int {
         return characters.count
     }
+    
+// TODO:
+//    mutating func replace(string: String, atIdex: Int) {        
+//        let start = startIndex.advancedBy(atIdex, limit: self.endIndex)
+//        let end = startIndex.advancedBy(atIdex + 1, limit: self.endIndex)
+//        let range = start ..< end
+//        self.replaceRange(range, with: string)
+//    }
+//    
+//    // TODO: limits
+//    subscript(idx: Int) -> String {
+//        get {
+//            return String(self[startIndex.advancedBy(idx, limit: self.endIndex)])
+//        }
+//        set {
+//            self.replace(newValue, atIdex: idx)
+//        }
+//    }
 }
 
 extension Int {
 
-    public static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
+    static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+    }
+    
+    static func random(lower: Int = 0, _ upper: Int = 100, count: Int, exclude: [Int] = []) -> [Int] {
+        
+        var tmp = [Int]()
+        let attempts = 100
+        
+        func r() -> Int {
+            var (r, cnt) = (lower, 0)
+            repeat {
+                r = Int.random(lower, upper)
+            } while (tmp.contains(r) || exclude.contains(r)) && cnt++ < attempts
+            tmp.append(r)
+            return r
+        }
+
+        return (0..<count).map { _ in
+            r()
+        }
     }
 }
 

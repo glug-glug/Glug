@@ -23,6 +23,7 @@ class Ship: CKUnit {
     }
     
     init(center: CKPoint) {
-        super.init(sprite: CKSprite("⛵️"), center: center)
+        super.init(sprite: CKSprite("🚤"), center: center) //⛵️
+//        super.init(sprite: CKSprite("Ш"), center: center)
     }
 }

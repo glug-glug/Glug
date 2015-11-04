@@ -10,12 +10,7 @@ import Foundation
 
 class Herb: CKUnit {
     
-    enum Density: Int {
-        case Easy   = 1
-        case Normal = 2
-        case Hard   = 3
-        case Zero   = 0
-    }
+    static let data = ("🍁", "🌵")
     
     private let root: CKPoint
     private let to: Int
@@ -30,9 +25,7 @@ class Herb: CKUnit {
     
     private var height = 0 {
         didSet {
-            let ch = "🌵"
-            let data = Array(count: height, repeatedValue: ch)
-            
+            let data = Array(count: height, repeatedValue: Herb.data.1)            
             sprite = CKSprite(data)
             position = root - CKPoint(0, height > 1 ? height - 1 : 0)
             
@@ -46,8 +39,7 @@ class Herb: CKUnit {
         guard sprite.data.count > 0 else {
             return
         }
-        let ch: Character = "🍁"
-        sprite.data[0] = ch
+        sprite.data[0] = Character(Herb.data.0)
     }
     
     override func update(time: UpdateTime) {
@@ -75,38 +67,23 @@ class Herb: CKUnit {
         let _ = { self.height = from }()
     }
     
-    static func create(size: CKSize, density: Density = .Normal) -> [Herb]? {
+    static func create(area: CKSize, count: Int, exclude: [Int] = []) -> [Herb]? {
         
-        if density == .Zero {
+        if count < 1 {
             return nil
         }
         
-        var s: CKSize
-
-        do {
-            let h = size.height / 2
-            let r = CKRect(origin: CKPoint(0, size.height - h), size: CKSize(size.width, h))
-            s = r.size
-        }
+        let xPoints = Int.random(0, area.width - 1, count: count, exclude: exclude)
+        let y = area.height - 1
         
         var roots = [CKPoint]()
         
-        do {
-            func x() -> Int {
-                var (x, cnt) = (0, 0)
-                repeat {
-                    x = Int.random(0, s.width - 1)
-                } while roots.filter( { $0.x == x } ).first != nil && cnt++ < 10
-                return x
-            }
-            let y = size.height - 1
-            for _ in 0..<density.rawValue {
-                roots.append(CKPoint(x(), y))
-            }
-        }
+        for x in xPoints {
+            roots.append(CKPoint(x, y))
+        }        
 
         func h() -> Int {
-            return Int.random(2, s.height)
+            return Int.random(2, area.height / 2)
         }
         
         return roots.map {

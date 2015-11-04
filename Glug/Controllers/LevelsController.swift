@@ -57,6 +57,7 @@ extension LevelsController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        return true // TODO: test
         if let level = selected where !levelsService.locked(level) {
             return true
         }

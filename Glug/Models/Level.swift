@@ -10,14 +10,17 @@ import Foundation
 
 class Level {
 
-    var name: String!
-    var number: Int!
-    var isComplete: Bool = false
+    let number: Int
+    
+    var name = ""
+    var herbs = 0
+    var isComplete = false
 
     weak var service: LevelsService?
     
     init(dictionary d: [String: AnyObject], number: Int, service: LevelsService?) {
-        name <! d["name"]
+        name  <~ d["name"]
+        herbs <~ d["herbs"]
         self.number = number
         self.service = service
     }

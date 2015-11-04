@@ -52,5 +52,9 @@ class GameController: CKController {
             service.remove($0)
         }
     }
+    
+    override func render(val: CKRenderString) -> CKRenderString {
+        return service.render(val)
+    }
 }
 

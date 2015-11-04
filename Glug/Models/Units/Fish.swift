@@ -16,6 +16,7 @@ class Fish: CKUnit {
         // TODO: tmp test
         if next == nil {
             direction?.invert()
+//            remove()
         }
     }
     

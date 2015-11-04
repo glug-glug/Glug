@@ -20,7 +20,7 @@ extension CharKit {
             self.data = data
         }
         
-        convenience init(character ch: Character) {
+        convenience init(_ ch: Character) {
             self.init(size: Size(1, 1), data: [ch])
         }
         

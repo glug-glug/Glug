@@ -9,14 +9,16 @@
 import UIKit
 
 // TODO:
-#if !DEBUG_SCENE
-let kDebugScene = true
+#if DEBUG_SCENE_RENDER
+let kDebugRender = true
 #else
-let kDebugScene = false
+let kDebugRender = false
 #endif
 
 typealias CKController = CharKit.Controller
 typealias CKControllerProtocol = CharKitControllerProtocol
+typealias CKRender = CharKitRender
+typealias CKRenderString = NSMutableAttributedString
 
 protocol CharKitControllerProtocol: Updateble {
     var scene: CKScene { get set }
@@ -27,15 +29,25 @@ protocol CharKitControllerProtocol: Updateble {
     func home()
 }
 
+protocol CharKitRender: class  {
+    func render(value: CKRenderString) -> CKRenderString
+}
+
+extension CharKitRender {
+    func render(value: CKRenderString) -> CKRenderString {
+        return value
+    }
+}
+
 extension CharKit {
     
     class GameView: CKView {
 
         var fontSize: CGFloat!
-        var color: UIColor!
 
+        weak var renderDelegate: CKRender?
+        
         lazy var attributes: [String: AnyObject] = {
-            let color = self.color
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.maximumLineHeight = self.fontSize - 2
             paragraphStyle.alignment = .Center
@@ -44,28 +56,27 @@ extension CharKit {
                 NSKernAttributeName: -1,
                 NSFontAttributeName: font,
                 NSParagraphStyleAttributeName: paragraphStyle,
-                NSForegroundColorAttributeName: color
+                NSBackgroundColorAttributeName: kDebugRender ? UIColor(hex: 0x888888) : UIColor(hex: 0xFFFFFF, alpha: 0),
+                NSForegroundColorAttributeName: kDebugRender ? UIColor(hex: 0xDDDDDD) : UIColor(hex: 0xFFFFFF, alpha: 0)
             ]
             }()
         
         override func render() {
-            attributedText = NSAttributedString(string: presentation, attributes: attributes)
+            let str = CKRenderString(string: presentation, attributes: attributes)
+            attributedText = renderDelegate?.render(str) ?? str
         }
         
         convenience init(fontSize: CGFloat, color: UIColor) {
             self.init()
             self.fontSize = fontSize
-            self.color = color
             backgroundColor = color
-            
-            if kDebugScene {
-                backgroundColor = UIColor.whiteColor()
-                self.color = UIColor.lightGrayColor()
+            if kDebugRender {
+                backgroundColor = UIColor.darkGrayColor()
             }
         }
     }
 
-    class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol {
+    class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol, CKRender {
         
         var orientation = UIDevice.currentDevice().orientation
         
@@ -104,6 +115,7 @@ extension CharKit {
 
         private lazy var gameView: GameView = {
             let view = GameView(fontSize: self.optimalFontSize, color: self.color)
+            view.renderDelegate = self
             view.userInteractionEnabled = false
             view.multipleTouchEnabled = true
             self.joystick.addSubview(view)
@@ -184,7 +196,13 @@ extension CharKit {
         
         func home() {
             dismissViewControllerAnimated(true, completion: nil)
-        }        
+        }
+        
+        // Render
+        
+        func render(val: CKRenderString) -> CKRenderString {
+            return val
+        }
     }
 }
 

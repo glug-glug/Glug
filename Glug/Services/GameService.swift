@@ -6,7 +6,7 @@
 //  Copyright © 2015 anukhov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class GameService {
 
@@ -55,9 +55,19 @@ extension GameService {
         let tube = Tube()
         let sky = Sky(rect: CKRect(origin: CKPoint(0, 0), size: CKSize(size.width, 1)))
         let ground = Ground()
-        let herbs = Herb.create(size, density: .Hard) // TODO: density
+        let treasures = Treasure.create(size)
+        let herbs = Herb.create(size, count: level.herbs, exclude: treasures.map { $0.position.x }) // TODO: density
         
-        let units = Units(diver: diver, ship: ship, tube: tube, sky: sky, ground: ground, herbs: herbs)
+        let units = Units(
+            diver: diver,
+            ship: ship,
+            tube: tube,
+            sky: sky,
+            ground: ground,
+            herbs: herbs,
+            treasures: treasures
+        )
+        
         return units
     }
 }
@@ -141,8 +151,8 @@ extension GameService {
             case 7: return "🐋"
             case 8: return "🐊"
             case 9: return "🐛"
-            case 10: return "🦀"
-            case 11: return "🕷"
+//            case 10: return "🦀"
+//            case 11: return "🕷"
             default:
                 return "🐸"
             }
@@ -174,4 +184,20 @@ extension GameService {
         scene.addUnit(fish)
         units.add(fish)
     }
+}
+
+extension GameService {
+    
+    // TODO: add background color to CKUnit; move logic to CharKit
+    func render(val: CKRenderString) -> CKRenderString {
+
+        let c = UIColor(hex: 0x00B8D9)
+        
+        val.addAttributes([
+            NSBackgroundColorAttributeName: c
+            ], range: NSMakeRange(0, scene.size.width + 1 + 1))
+        
+        return val
+    }
+    
 }

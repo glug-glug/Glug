@@ -17,7 +17,7 @@ typealias CKUnit = CharKit.Unit
 typealias CKSprite = CharKit.Sprite
 
 struct CharKit {
-    static let bg = "⎢" //"⎢" // TODO: from map ? "Ш" "⎢" !!!
+    static let bg = "⎢" //"—"
     static let spriteBg: Character = "◻️"
 }
 
