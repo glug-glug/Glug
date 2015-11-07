@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Relax on the beach</string>
+		<key>density</key>
+		<string></string>
+		<key>enemy</key>
+		<dict/>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Very deep</string>
+		<key>herbs</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Kill em all</string>
+		<key>herbs</key>
+		<integer>3</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string></string>
+		<key>herbs</key>
+		<integer>3</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string></string>
+		<key>herbs</key>
+		<integer>2</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string></string>
+		<key>herbs</key>
+		<integer>2</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string></string>
+		<key>herbs</key>
+		<integer>3</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string></string>
+		<key>herbs</key>
+		<integer>3</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string></string>
+		<key>herbs</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string></string>
+		<key>herbs</key>
+		<integer>5</integer>
+	</dict>
+</array>
+</plist>
