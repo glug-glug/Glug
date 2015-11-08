@@ -12,7 +12,7 @@ extension CharKit {
     
     class View: UITextView, Updateble {
         
-        var ti = 0.04
+        var ti = 0.04 // ~24 ps
         
         private lazy var updater: Updater = {
             return Updater(ti: self.ti) { [weak self] time in
@@ -20,17 +20,7 @@ extension CharKit {
             }
         }()
         
-        var scene: CKScene? {
-            didSet {
-                updater.reset()
-            }
-        }
-        
-        private var timer: NSTimer? {
-            willSet{
-                stop()
-            }
-        }
+        var scene: CKScene?
         
         var presentation: String {
             return scene?.presentation ?? ""
@@ -55,6 +45,8 @@ extension CharKit {
         
         deinit {
             stop()
-        }
+        }        
     }
 }
+
+

@@ -8,16 +8,17 @@
 
 import Foundation
 
-class Herb: CKUnit {
+class Herb: CKUnit, HitProtocol {
     
     static let data = ("🍁", "🌵")
     
     private let root: CKPoint
     private let to: Int
+    private var bloomed = false
     
     private var ready = false {
         didSet {
-            if ready {
+            if ready || bloomed {
                 bloom()
             }
         }
@@ -25,13 +26,14 @@ class Herb: CKUnit {
     
     private var height = 0 {
         didSet {
+            if height == oldValue {
+                return
+            }
             let data = Array(count: height, repeatedValue: Herb.data.1)            
             sprite = CKSprite(data)
             position = root - CKPoint(0, height > 1 ? height - 1 : 0)
             
-            if height >= to {
-                ready = true
-            }
+            ready = height >= to
         }
     }
     
@@ -40,6 +42,7 @@ class Herb: CKUnit {
             return
         }
         sprite.data[0] = Character(Herb.data.0)
+        bloomed = true
     }
     
     override func update(time: UpdateTime) {
@@ -64,7 +67,7 @@ class Herb: CKUnit {
             solid: true
         )
         
-        let _ = { self.height = from }()
+        _ = { self.height = from }()
     }
     
     static func create(area: CKSize, count: Int, exclude: [Int] = []) -> [Herb]? {
@@ -89,5 +92,9 @@ class Herb: CKUnit {
         return roots.map {
             Herb(root: $0, from: 1, to: h())
         }
+    }
+    
+    func hit() {
+        height--
     }
 }

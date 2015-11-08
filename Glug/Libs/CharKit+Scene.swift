@@ -17,6 +17,10 @@ extension CharKit {
         
         private var units: [Unit] = []
         
+        var countUnits: Int {
+            return units.count ?? 0
+        }
+        
         weak var delegate: Updateble?
         
         func addUnit(unit: Unit) {
@@ -30,13 +34,8 @@ extension CharKit {
             }
         }
         
-        func removeUnit(unit: Unit) {
-            var j = 0
-            for (i, u) in units.enumerate() {
-                if u === unit {
-                    units.removeAtIndex(i + j--)
-                }
-            }
+        func removeUnit(unit: Unit) {            
+            units.remove(unit)
         }
 
         var rect: Rect {
@@ -91,7 +90,13 @@ extension CharKit {
         }
 
         subscript(unit: Unit, filter: (Unit -> Bool)?) -> [Unit] {
-            return self[unit.position, unit.sprite, filter]
+            return self[unit.position, unit.sprite, {
+                return $0 !== unit && (filter?($0) ?? true)
+            }]
+        }
+
+        subscript(unit: Unit) -> [Unit] {
+            return self[unit, nil]
         }
         
         var presentation: String {
@@ -123,3 +128,6 @@ extension CharKit {
     }
 }
 
+//extension CKScene {
+//    
+//}

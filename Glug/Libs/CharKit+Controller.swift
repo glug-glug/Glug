@@ -8,13 +8,6 @@
 
 import UIKit
 
-// TODO:
-#if DEBUG_SCENE_RENDER
-let kDebugRender = true
-#else
-let kDebugRender = false
-#endif
-
 typealias CKController = CharKit.Controller
 typealias CKControllerProtocol = CharKitControllerProtocol
 typealias CKRender = CharKitRender
@@ -68,11 +61,17 @@ extension CharKit {
         
         convenience init(fontSize: CGFloat, color: UIColor) {
             self.init()
+            
             self.fontSize = fontSize
             backgroundColor = color
             if kDebugRender {
                 backgroundColor = UIColor.darkGrayColor()
             }
+            //
+            editable = false
+            selectable = false
+            userInteractionEnabled = false
+            multipleTouchEnabled = true
         }
     }
 
@@ -116,8 +115,6 @@ extension CharKit {
         private lazy var gameView: GameView = {
             let view = GameView(fontSize: self.optimalFontSize, color: self.color)
             view.renderDelegate = self
-            view.userInteractionEnabled = false
-            view.multipleTouchEnabled = true
             self.joystick.addSubview(view)
             return view
             }()
@@ -140,6 +137,40 @@ extension CharKit {
             return view
         }()
         
+        private lazy var statisticLabel: UILabel = {
+            let view = self.view
+            let label = UILabel()
+            label.numberOfLines = 0
+            label.font = UIFont.boldSystemFontOfSize(14)
+            label.textColor = UIColor.redColor()
+            label.backgroundColor = UIColor(hex: 0xffffff, alpha: 0.5)
+            view.addSubview(label)
+            label.bringSubviewToFront(view)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            let views = ["l": label]
+            Constraint.add(view, "H:[l(60)]|", views)
+            Constraint.add(view, "V:[l(50)]|", views)
+            return label
+        }()
+        
+        var statistic: (time: NSDate?, frames: Int?)
+        
+        func refreshStatistic(time: UpdateTime) {
+            let (time, frames) = (statistic.time ?? NSDate(), statistic.frames ?? 0)
+            statistic.time = time
+            statistic.frames = frames + 1
+            let ti = -time.timeIntervalSinceNow
+            if ti < 1 {
+                return
+            }
+            defer {
+                statistic.time = NSDate()
+                statistic.frames = 0
+            }
+            let fps = Int(Double(frames) / ti)
+            statisticLabel.text = "units: \(scene.countUnits ?? 0)\nfps: \(fps)"
+        }
+        
         override func viewDidLoad() {
             super.viewDidLoad()
             view.backgroundColor = color
@@ -151,7 +182,7 @@ extension CharKit {
         
         private func configureConstraints() {
 
-            let _ = [gameView, joystick].map {
+            [gameView, joystick].forEach {
                 $0.translatesAutoresizingMaskIntoConstraints = false
             }
             
@@ -182,7 +213,13 @@ extension CharKit {
             return scene
         }
         
-        func update(time: UpdateTime) { }
+        func update(time: UpdateTime) {
+            if kDebugRender {
+                refreshStatistic(time)
+            }
+            
+            gameView.clearsOnInsertion = true
+        }
         
         func stop() {
             gameView.stop()

@@ -155,6 +155,23 @@ func * (lhs: Character, rhs: Int) -> String {
     return String(lhs) * rhs
 }
 
-
-
+extension Array {
     
+     mutating func remove<T: Equatable>(element: T) {
+        var j = 0
+        for (i, el) in enumerate() {
+            guard el as? T == element else {
+                continue
+            }
+            removeAtIndex(i + j--)
+        }
+    }
+
+    mutating func add(element: Element) {
+        self.append(element)
+    }
+}
+
+
+
+

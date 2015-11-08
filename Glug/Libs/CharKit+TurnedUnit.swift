@@ -31,17 +31,19 @@ extension CharKit {
             }
             
             if let direction = dir.horizontal {
-                if direction != turn.horizontal {
+                let changed = direction != turn.horizontal
+                turn.horizontal = direction
+                if changed {
                     turnChanged?(direction)
                 }
-                turn.horizontal = direction
             }
             
             if let direction = dir.vertical {
-                if direction != turn.vertical {
+                let changed = direction != turn.vertical
+                turn.vertical = direction
+                if changed {
                     turnChanged?(direction)
                 }
-                turn.vertical = direction
             }
         }
     }

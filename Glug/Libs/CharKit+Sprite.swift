@@ -19,7 +19,7 @@ extension CharKit {
             self.size = size
             self.data = data
         }
-        
+
         convenience init(_ ch: Character) {
             self.init(size: Size(1, 1), data: [ch])
         }
@@ -51,6 +51,10 @@ extension CharKit {
         
         convenience init(_ string: String, separator: String = "\n", bg: Character = CharKit.spriteBg) {
             self.init(string.componentsSeparatedByString(separator), bg: bg)
+        }
+        
+        func copy() -> CKSprite {
+            return CKSprite(size: size, data: data)
         }
         
         static var emptySprite: Sprite {
