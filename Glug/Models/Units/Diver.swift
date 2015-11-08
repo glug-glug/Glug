@@ -12,6 +12,10 @@ class Diver: CKTurnedUnit {
     
     let baseSpeed = CKSpeed.High
     
+    weak var ship: Ship?
+    
+    var killed = false
+    
     override var direction: Directions? {
         didSet {
             if direction == nil {
@@ -21,18 +25,20 @@ class Diver: CKTurnedUnit {
             }
         }
     }
+
+    var treasure: Treasure?
     
     lazy var sprites: (left: CKSprite, right: CKSprite) = {
         
         let b = CharKit.bg
         
         let left =
-        "◻️👀◻️\n" +
-        "👈⚪️◻️"
+        "👀\n" +
+        "👈"
         
         let right =
-        "◻️👀◻️\n" +
-        "◻️⚪️👉"
+        "👀\n" +
+        "👉"
         
         return (
             CKSprite(left),
@@ -40,43 +46,70 @@ class Diver: CKTurnedUnit {
         )
     }()
     
+    func refreshSprite() {
+        var s = sprites.right
+        if case .Left? = self.turn.horizontal {
+            s = sprites.left
+        }
+        sprite = s
+    }
+    
     override func update(time: UpdateTime) {
         super.update(time)
+        
+        if let treasure = treasure {
+            treasure.center = center
+        }
     }
 
     init(center: CKPoint) {
         
-        super.init(center: center)
+        super.init(center: center, solid: true)
 
         turnChanged = { [weak self] turn in
-            guard let s = self else {
+            guard let s = self where turn == .Left || turn == .Right else {
                 return
             }
             if case .Left = turn {
                 s.sprite = s.sprites.left
-            } else if case .Right = turn {
+            } else {
                 s.sprite = s.sprites.right
             }
         }
 
         direction = .Right
         direction = nil
-        solid = true
+    }
+    
+    func fire() -> Bullet? {
+        
+        // TODO:
+        //        if treasure != nil {
+        //            return nil
+        //        }
+        
+        guard let dir = turn.horizontal else {
+            return nil
+        }
+        
+        let x = position.x + (dir == .Left ? 0 : sprite.size.width - 1)
+        let y = position.y + 1
+        let center = CKPoint(x, y)
+        
+        let bullet = Bullet(center: center, direction: dir)
+        
+        return bullet
+    }
+    
+    func checkTreasure() {
+        
+        if let treasure = treasure {
+            if ship?.loaderArea.intersects(rect) ?? false {
+                treasure.deliver()
+                self.treasure = nil
+            }
+        } else {
+            self.treasure = scene?[self, { $0 is Treasure }].first as? Treasure
+        }
     }
 }
-
-//        if let d = dir(hero.lastDirection.horizontal) {
-//
-//            let x = d == .Left ? hero.position.x : hero.position.x + 2
-//
-//            let pos = CKPoint(x, hero.position.y + 1)
-//            let unit = CKUnit(sprite: CKSprite(character: "🔹"), position: pos, speed: 1, direction: d)
-//            rockets.insert(unit, atIndex: 0)
-//            scene.addUnit(unit)
-//
-//            while rockets.count > 30 {
-//                let unit = rockets.last!
-//                scene.removeUnit(unit)
-//                rockets.removeLast()
-//            }
-//        }

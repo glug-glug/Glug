@@ -88,7 +88,7 @@ class ControlPanel: UIView {
     
     private func configureConstraints() {
         
-        let _ = [homeImageView, playImageView].map {
+        _ = [homeImageView, playImageView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         

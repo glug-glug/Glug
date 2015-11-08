@@ -14,34 +14,45 @@ class Updater: NSObject {
     
     let ti: NSTimeInterval
     
-    var onUpdate: ((UpdateTime) -> ())?
+    lazy var delta: Int64 = {
+       return Int64(self.ti * Double(NSEC_PER_SEC))
+    }()
     
-    private var timer: NSTimer? {
-        willSet{
-            stop()
-        }
+    var active = false {
         didSet {
-            timer?.fire()
+            if active && !oldValue {
+                update()
+            }
         }
     }
     
-    var time: UpdateTime = 0
+    var onUpdate: ((UpdateTime) -> ())?
     
-    func reset() {
-        time = 0
+    var time: UpdateTime = 0 {
+        didSet {
+            if time > 100 {
+                time = 0
+            }
+        }
     }
     
     func play() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(ti, target: self, selector: "update", userInfo: nil, repeats: true)
+        active = true
     }
-    
+
     func stop() {
-        timer?.invalidate()
+        active = false
     }
     
-    func update() {
+    private func update() {
+        if !active {
+            return
+        }
         time++
         onUpdate?(time)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delta), dispatch_get_main_queue()) {
+            self.update()
+        }
     }
     
     init(ti: NSTimeInterval = 0.1, onUpdate: ((UpdateTime) -> ())? = nil) {

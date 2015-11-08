@@ -14,7 +14,7 @@ class Treasure: CKUnit {
         case Custom(Character)
         
         static let count = 3
-//        static let data = "👑🍉🍟🍺🏆🎺📱🕌💰🎁👙🎂🍹🍷🍦🔱"
+        //        static let data = "👑🍉🍟🍺🏆🎺📱🕌💰🎁👙🎂🍹🍷🍦🔱"
         static let data = "👑🍉🍟🎺📱💰👙🍷🍦"
         
         var value: Character {
@@ -36,7 +36,15 @@ class Treasure: CKUnit {
     }
     
     let kind: Kinds
-    let origin: CKPoint
+//    let origin: CKPoint
+    
+    var delivered = false {
+        didSet {
+            if delivered {
+                remove()
+            }
+        }
+    }
     
     override func update(time: UpdateTime) {
         super.update(time)
@@ -45,15 +53,20 @@ class Treasure: CKUnit {
     init(position: CKPoint, kind: Kinds) {
         
         self.kind = kind
-        origin = position
+//        origin = position
         
         super.init(
             position: position,
-            sprite: CKSprite(kind.value),
-            solid: true
+            sprite: CKSprite(kind.value)
         )
+        
+        zPosition = 1
     }
     
+    func resetPosition() {
+// TODO:
+    }
+
     static func create(area: CKSize) -> [Treasure] {
         
         let kinds = Kinds.set
@@ -70,4 +83,7 @@ class Treasure: CKUnit {
         }
     }
     
+    func deliver() {
+        delivered = true
+    }
 }

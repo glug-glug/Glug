@@ -12,6 +12,11 @@ class Ship: CKUnit {
 
     weak var diver: Diver?
     
+    var loaderArea: CKRect {
+        let r = rect
+        return CKRect(origin: r.origin, size: r.size + CKSize(0, 1))
+    }
+    
     override func update(time: UpdateTime) {
         super.update(time)
         
@@ -23,7 +28,6 @@ class Ship: CKUnit {
     }
     
     init(center: CKPoint) {
-        super.init(sprite: CKSprite("🚤"), center: center) //⛵️
-//        super.init(sprite: CKSprite("Ш"), center: center)
+        super.init(sprite: CKSprite("🚤"), center: center) 
     }
 }

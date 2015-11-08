@@ -8,6 +8,13 @@
 
 import UIKit
 
+// TODO:
+#if DEBUG_SCENE_RENDER
+let kDebugRender = true
+#else
+let kDebugRender = false
+#endif
+
 typealias CKScene = CharKit.Scene
 typealias CKView = CharKit.View
 typealias CKPoint = CharKit.Point
@@ -105,8 +112,16 @@ func == (s1: CKSize, s2: CKSize) -> Bool {
     return s1.width == s2.width && s1.height == s2.height
 }
 
+func + (s1: CKSize, s2: CKSize) -> CKSize {
+    return CKSize(s1.width + s2.width, s1.height + s2.height)
+}
+
 func == (r1: CKRect, r2: CKRect) -> Bool {
     return r1.origin == r2.origin && r1.size == r2.size
+}
+
+func + (r1: CKRect, r2: CKRect) -> CKRect {
+    return CKRect(origin: r1.origin + r2.origin, size: r1.size + r2.size)
 }
 
 extension CGRect {

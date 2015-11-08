@@ -8,21 +8,33 @@
 
 import Foundation
 
+func == (lhs: CKUnit, rhs: CKUnit) -> Bool {
+    return lhs === rhs
+}
+
 extension CharKit {
     
-    class Unit: Updateble {
+    class Unit: Updateble, Equatable {
         
         typealias Chunk = Character
         
-        weak var scene: Scene!
+        weak var scene: Scene?
         
-        var position: Point
         var zPosition: Int
         var sprite: Sprite
         var direction: Directions?
         var speed: Speed
         var canOut: Bool
         var solid: Bool
+        var removed = false
+        
+        var position: Point {
+            didSet {
+                if outOfScene && !removed {
+                    remove()
+                }
+            }
+        }
         
         var center: Point {
             get {
@@ -37,10 +49,12 @@ extension CharKit {
             return Rect(origin: position, size: sprite.size)
         }
         
-        // TODO: check all sprite
-//        var outOfScene: Bool {
-//            return !position.inRect(scene.rect)
-//        }
+        var outOfScene: Bool {
+            guard let scene = scene else {
+                return false
+            }
+            return !rect.intersects(scene.rect)
+        }
         
         init(sprite: Sprite? = nil,
             position: Point? = nil,
@@ -69,7 +83,8 @@ extension CharKit {
         }
         
         func remove() {
-            scene.removeUnit(self)
+            removed = true
+            scene?.removeUnit(self)
         }
         
         func update(time: UpdateTime) {
@@ -99,7 +114,7 @@ extension CKUnit {
     
     var next: CKPoint? {
         
-        guard let dir = direction else {
+        guard let scene = scene, dir = direction else {
             return nil
         }
         
