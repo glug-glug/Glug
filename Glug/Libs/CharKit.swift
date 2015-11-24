@@ -9,14 +9,16 @@
 import UIKit
 
 // TODO:
-#if DEBUG_SCENE_RENDER
+#if !DEBUG_SCENE_RENDER
 let kDebugRender = true
 #else
 let kDebugRender = false
 #endif
 
 typealias CKScene = CharKit.Scene
-typealias CKView = CharKit.View
+typealias CKTextView = CharKit.TextView
+typealias CKAttributedView = CharKit.AttributedView
+typealias CKGLView = CharKit.GLView
 typealias CKPoint = CharKit.Point
 typealias CKRect = CharKit.Rect
 typealias CKSize = CharKit.Size
@@ -24,7 +26,7 @@ typealias CKUnit = CharKit.Unit
 typealias CKSprite = CharKit.Sprite
 
 struct CharKit {
-    static let bg = "⎢" //"—"
+    static let bg = "—" //"⎢—"
     static let spriteBg: Character = "◻️"
 }
 

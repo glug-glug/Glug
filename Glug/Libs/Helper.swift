@@ -172,6 +172,45 @@ extension Array {
     }
 }
 
+enum Device {
+    
+    enum Orientation {
+        case H
+        case V
+    }
+
+    case iPadPro(Orientation)
+    case iPad(Orientation)
+    case iPhone4(Orientation)
+    case iPhone5(Orientation)
+    case iPhone6(Orientation)
+    case iPhone6p(Orientation)
+    
+    init() {
+        
+        let r = UIScreen.mainScreen().bounds.size
+        print(r)
+        
+        let o: Orientation = r.width > r.height ? .H : .V
+        let h = max(r.width, r.height)
+        
+        switch h {
+        case _ where h <= 480:
+            self = iPhone4(o)
+        case _ where h <= 568:
+            self = iPhone5(o)
+        case _ where h <= 667:
+            self = iPhone6(o)
+        case _ where h <= 736:
+            self = iPhone6p(o)
+        case _ where h <= 1024:
+            self = iPad(o)
+        default:
+            self = iPadPro(o)
+        }
+    }
+}
+
 
 
 

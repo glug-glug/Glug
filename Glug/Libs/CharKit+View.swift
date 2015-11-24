@@ -10,7 +10,7 @@ import UIKit
 
 extension CharKit {
     
-    class View: UITextView, Updateble {
+    class TextView: UITextView, Updateble {
         
         var ti = 0.04 // ~24 ps
         
@@ -40,7 +40,10 @@ extension CharKit {
         }
         
         func render() {
-            text = presentation
+            let text = presentation
+            dispatch_sync(dispatch_get_main_queue()) {
+                self.text = text
+            }
         }
         
         deinit {

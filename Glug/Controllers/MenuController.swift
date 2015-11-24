@@ -23,7 +23,9 @@ class MenuController: UIViewController {
     
     lazy var updater: Updater = {
         return Updater(ti: 0.01) { [weak self] _ in
-            self?.animate()
+            dispatch_sync(dispatch_get_main_queue()) {
+                self?.animate()
+            }
         }
     }()
     

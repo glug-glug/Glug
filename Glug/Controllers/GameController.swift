@@ -42,8 +42,8 @@ class GameController: CKController {
         service.fire()
     }
     
-    override func render(val: CKRenderString) -> CKRenderString {
-        return service.render(val)
-    }
+//    override func render(val: CKRenderString) -> CKRenderString {
+//        return service.render(val)
+//    }
 }
 

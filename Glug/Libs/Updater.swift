@@ -44,14 +44,28 @@ class Updater: NSObject {
         active = false
     }
     
+    lazy var queue = {
+        return dispatch_queue_create("updater.queue", DISPATCH_QUEUE_SERIAL)
+    }()
+    
     private func update() {
-        if !active {
-            return
+
+        let act = {
+            if !self.active {
+                return
+            }
+            self.time++
+            self.onUpdate?(self.time)
         }
-        time++
-        onUpdate?(time)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delta), dispatch_get_main_queue()) {
-            self.update()
+        
+        dispatch_async(queue) {
+            act()
+            if !self.active {
+                return
+            }
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, self.delta), self.queue) {
+                self.update()
+            }
         }
     }
     

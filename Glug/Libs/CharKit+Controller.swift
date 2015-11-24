@@ -10,8 +10,6 @@ import UIKit
 
 typealias CKController = CharKit.Controller
 typealias CKControllerProtocol = CharKitControllerProtocol
-typealias CKRender = CharKitRender
-typealias CKRenderString = NSMutableAttributedString
 
 protocol CharKitControllerProtocol: Updateble {
     var scene: CKScene { get set }
@@ -22,69 +20,14 @@ protocol CharKitControllerProtocol: Updateble {
     func home()
 }
 
-protocol CharKitRender: class  {
-    func render(value: CKRenderString) -> CKRenderString
-}
-
-extension CharKitRender {
-    func render(value: CKRenderString) -> CKRenderString {
-        return value
-    }
-}
-
 extension CharKit {
     
-    class GameView: CKView {
-
-        var fontSize: CGFloat!
-
-        weak var renderDelegate: CKRender?
-        
-        lazy var attributes: [String: AnyObject] = {
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.maximumLineHeight = self.fontSize - 2
-            paragraphStyle.alignment = .Center
-            let font = UIFont(name: "Helvetica-Light", size: self.fontSize)!
-            return [
-                NSKernAttributeName: -1,
-                NSFontAttributeName: font,
-                NSParagraphStyleAttributeName: paragraphStyle,
-                NSBackgroundColorAttributeName: kDebugRender ? UIColor(hex: 0x888888) : UIColor(hex: 0xFFFFFF, alpha: 0),
-                NSForegroundColorAttributeName: kDebugRender ? UIColor(hex: 0xDDDDDD) : UIColor(hex: 0xFFFFFF, alpha: 0)
-            ]
-            }()
-        
-        override func render() {
-            let str = CKRenderString(string: presentation, attributes: attributes)
-            attributedText = renderDelegate?.render(str) ?? str
-        }
-        
-        convenience init(fontSize: CGFloat, color: UIColor) {
-            self.init()
-            
-            self.fontSize = fontSize
-            backgroundColor = color
-            if kDebugRender {
-                backgroundColor = UIColor.darkGrayColor()
-            }
-            //
-            editable = false
-            selectable = false
-            userInteractionEnabled = false
-            multipleTouchEnabled = true
-        }
-    }
-
     class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol, CKRender {
         
         var orientation = UIDevice.currentDevice().orientation
         
-        var optimalSceneSize: Size {
-            return Controller.optimalSceneSize(view.bounds)
-        }
-        
-        var optimalFontSize: CGFloat {
-            return Controller.optimalFontSize(view.bounds)
+        var size: CKSize {
+            return CharKit.Optimal.sceneSize
         }
         
         var color: UIColor {
@@ -93,13 +36,13 @@ extension CharKit {
         
         var scene: Scene {
             get {
-                if gameView.scene == nil {
+                if gameView.ckScene == nil {
                     self.scene = initializeScene()
                 }
-                return gameView.scene!
+                return gameView.ckScene!
             }
             set(scene) {
-                gameView.scene = scene
+                gameView.ckScene = scene
             }
         }
         
@@ -112,12 +55,19 @@ extension CharKit {
             return joystick
             }()
 
-        private lazy var gameView: GameView = {
-            let view = GameView(fontSize: self.optimalFontSize, color: self.color)
-            view.renderDelegate = self
+//        private lazy var gameView: AttributedView = {
+//            let view = AttributedView(fontSize: self.optimalFontSize, color: self.color)
+//            view.renderDelegate = self
+//            self.joystick.addSubview(view)
+//            return view
+//            }()
+
+        private lazy var gameView: GLView = {
+            let view = GLView(size: self.size)
+            view.color = self.color
             self.joystick.addSubview(view)
             return view
-            }()
+        }()
         
         private lazy var controlPanel: ControlPanel = {
             var preferenses = ControlPanel.Preferences()
@@ -142,14 +92,14 @@ extension CharKit {
             let label = UILabel()
             label.numberOfLines = 0
             label.font = UIFont.boldSystemFontOfSize(14)
-            label.textColor = UIColor.redColor()
+            label.textColor = UIColor.whiteColor()
             label.backgroundColor = UIColor(hex: 0xffffff, alpha: 0.5)
             view.addSubview(label)
             label.bringSubviewToFront(view)
             label.translatesAutoresizingMaskIntoConstraints = false
             let views = ["l": label]
             Constraint.add(view, "H:[l(60)]|", views)
-            Constraint.add(view, "V:[l(50)]|", views)
+            Constraint.add(view, "V:[l(50)]-50-|", views)
             return label
         }()
         
@@ -168,7 +118,11 @@ extension CharKit {
                 statistic.frames = 0
             }
             let fps = Int(Double(frames) / ti)
-            statisticLabel.text = "units: \(scene.countUnits ?? 0)\nfps: \(fps)"
+            let text = "units: \(scene.countUnits ?? 0)\nfps: \(fps)"
+
+//            dispatch_sync(dispatch_get_main_queue()) {
+                self.statisticLabel.text = text
+//            }
         }
         
         override func viewDidLoad() {
@@ -176,7 +130,11 @@ extension CharKit {
             view.backgroundColor = color
             configureConstraints()
             scene = initializeScene()
-            view.bringSubviewToFront(controlPanel)            
+            view.bringSubviewToFront(controlPanel)
+        }
+
+        override func viewWillAppear(animated: Bool) {
+            super.viewWillAppear(animated)
             self.play()
         }
         
@@ -208,7 +166,7 @@ extension CharKit {
         // CharKitControllerProtocol
         
         func initializeScene() -> CKScene {
-            let scene = CKScene(size: optimalSceneSize)
+            let scene = CKScene(size: size)
             scene.delegate = self
             return scene
         }
@@ -217,8 +175,6 @@ extension CharKit {
             if kDebugRender {
                 refreshStatistic(time)
             }
-            
-            gameView.clearsOnInsertion = true
         }
         
         func stop() {
@@ -243,76 +199,7 @@ extension CharKit {
     }
 }
 
-extension CKController {
 
-    // TODO: analize device model ?
-    
-    static func optimalSceneSize(bounds: CGRect) -> CKSize {
-        
-        var res: CKSize!
-        
-        if bounds.width > bounds.height {
-            
-            switch bounds.width {
-            case 568..<768:
-                res = CKSize(22, 13)
-            case let w where w >= 768:
-                res = CKSize(19, 14)
-            default:
-                res = CKSize(19, 13)
-            }
-            
-        } else {
-
-            switch bounds.height {
-            case 568..<667:
-                res = CKSize(12, 21)
-            case 667..<768:
-                res = CKSize(13, 23)
-            case let w where w >= 768:
-                res = CKSize(14, 19)
-            default:
-                res = CKSize(12, 18)
-            }
-        }
-        
-        return CKSize(res.width - 1, res.height - 0)
-    }
-    
-    static func optimalFontSize(bounds: CGRect) -> CGFloat {
-
-        var res: CGFloat!
-        
-        if bounds.width > bounds.height {
-            
-            switch bounds.width {
-            case 667..<736:
-                res = 30
-            case 736..<768:
-                res = 33
-            case let w where w >= 768:
-                res = 55
-            default:
-                res = 26
-            }
-            
-        } else {
-            
-            switch bounds.height {
-            case 667..<736:
-                res = 30
-            case 736..<768:
-                res = 33
-            case let w where w >= 768:
-                res = 54
-            default:
-                res = 27
-            }
-        }
-        
-        return res
-    }
-}
 
 
 

@@ -18,10 +18,13 @@
 		95185CC11BD43088001396C3 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95185CC01BD43088001396C3 /* Updater.swift */; };
 		952A086A1BD3B05B00C194F2 /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A08691BD3B05B00C194F2 /* CreditsController.swift */; };
 		952F70501BE4E299002DDE70 /* CharKit+Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F704F1BE4E299002DDE70 /* CharKit+Speed.swift */; };
+		953BEAAA1C02094F00BA6703 /* CharKit+AttributedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953BEAA91C02094F00BA6703 /* CharKit+AttributedView.swift */; };
+		953BEAAC1C0209D200BA6703 /* CharKit+GLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953BEAAB1C0209D200BA6703 /* CharKit+GLView.swift */; };
 		9561BFA81BE00567002FAF81 /* CharKit+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561BFA71BE00567002FAF81 /* CharKit+Scene.swift */; };
 		9561BFAA1BE0057D002FAF81 /* CharKit+Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561BFA91BE0057D002FAF81 /* CharKit+Unit.swift */; };
 		9561BFAC1BE00593002FAF81 /* CharKit+Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561BFAB1BE00593002FAF81 /* CharKit+Sprite.swift */; };
 		9561BFAE1BE005AB002FAF81 /* CharKit+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561BFAD1BE005AB002FAF81 /* CharKit+View.swift */; };
+		9573B0CC1C0259ED0091705C /* CharKit+Optimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573B0CB1C0259ED0091705C /* CharKit+Optimal.swift */; };
 		9590FA941BE6863600F64706 /* Sky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590FA931BE6863600F64706 /* Sky.swift */; };
 		9590FA961BE690E600F64706 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590FA951BE690E600F64706 /* Helper.swift */; };
 		95A498C11BD3AEF200179B99 /* Credits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A498C01BD3AEF200179B99 /* Credits.storyboard */; };
@@ -65,10 +68,13 @@
 		95185CC01BD43088001396C3 /* Updater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		952A08691BD3B05B00C194F2 /* CreditsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
 		952F704F1BE4E299002DDE70 /* CharKit+Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+Speed.swift"; sourceTree = "<group>"; };
+		953BEAA91C02094F00BA6703 /* CharKit+AttributedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+AttributedView.swift"; sourceTree = "<group>"; };
+		953BEAAB1C0209D200BA6703 /* CharKit+GLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+GLView.swift"; sourceTree = "<group>"; };
 		9561BFA71BE00567002FAF81 /* CharKit+Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+Scene.swift"; sourceTree = "<group>"; };
 		9561BFA91BE0057D002FAF81 /* CharKit+Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+Unit.swift"; sourceTree = "<group>"; };
 		9561BFAB1BE00593002FAF81 /* CharKit+Sprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+Sprite.swift"; sourceTree = "<group>"; };
 		9561BFAD1BE005AB002FAF81 /* CharKit+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+View.swift"; sourceTree = "<group>"; };
+		9573B0CB1C0259ED0091705C /* CharKit+Optimal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+Optimal.swift"; sourceTree = "<group>"; };
 		9590FA931BE6863600F64706 /* Sky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sky.swift; sourceTree = "<group>"; };
 		9590FA951BE690E600F64706 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		95A498C01BD3AEF200179B99 /* Credits.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credits.storyboard; sourceTree = "<group>"; };
@@ -206,10 +212,13 @@
 				952F704F1BE4E299002DDE70 /* CharKit+Speed.swift */,
 				9561BFA71BE00567002FAF81 /* CharKit+Scene.swift */,
 				9561BFAD1BE005AB002FAF81 /* CharKit+View.swift */,
+				953BEAA91C02094F00BA6703 /* CharKit+AttributedView.swift */,
+				953BEAAB1C0209D200BA6703 /* CharKit+GLView.swift */,
 				9561BFAB1BE00593002FAF81 /* CharKit+Sprite.swift */,
 				9561BFA91BE0057D002FAF81 /* CharKit+Unit.swift */,
 				95FD182F1BD3AA3500126E8C /* CharKit+Controller.swift */,
 				95A4AFAE1BDD31CD006E1A18 /* CharKit+TurnedUnit.swift */,
+				9573B0CB1C0259ED0091705C /* CharKit+Optimal.swift */,
 				95FD18311BD3AA3500126E8C /* Constraint.swift */,
 				95FD18301BD3AA3500126E8C /* ControlPanel.swift */,
 				95FD18331BD3AA3500126E8C /* Directions.swift */,
@@ -347,6 +356,7 @@
 				9561BFAA1BE0057D002FAF81 /* CharKit+Unit.swift in Sources */,
 				9590FA961BE690E600F64706 /* Helper.swift in Sources */,
 				95A4AFBA1BDD473F006E1A18 /* Diver.swift in Sources */,
+				9573B0CC1C0259ED0091705C /* CharKit+Optimal.swift in Sources */,
 				95A4AFBE1BDD473F006E1A18 /* Tube.swift in Sources */,
 				95B7B3A21BEA21F4009F6B8D /* Herb.swift in Sources */,
 				95A4AFBD1BDD473F006E1A18 /* Treasure.swift in Sources */,
@@ -357,6 +367,7 @@
 				95185CBF1BD426B1001396C3 /* Cells.swift in Sources */,
 				95C17D121BEE06F700BD1C5B /* Bullet.swift in Sources */,
 				9561BFAE1BE005AB002FAF81 /* CharKit+View.swift in Sources */,
+				953BEAAA1C02094F00BA6703 /* CharKit+AttributedView.swift in Sources */,
 				95185CB11BD3BED2001396C3 /* LevelsController.swift in Sources */,
 				952A086A1BD3B05B00C194F2 /* CreditsController.swift in Sources */,
 				95FD18451BD3AA3500126E8C /* Constraint.swift in Sources */,
@@ -371,6 +382,7 @@
 				95FD18461BD3AA3500126E8C /* CharKit.swift in Sources */,
 				95FD18471BD3AA3500126E8C /* Directions.swift in Sources */,
 				95FD18441BD3AA3500126E8C /* ControlPanel.swift in Sources */,
+				953BEAAC1C0209D200BA6703 /* CharKit+GLView.swift in Sources */,
 				951704551BE6AE22001E73A0 /* Ground.swift in Sources */,
 				95185CC11BD43088001396C3 /* Updater.swift in Sources */,
 			);

@@ -100,20 +100,31 @@ extension CharKit {
         }
         
         var presentation: String {
+            return presentationData.joinWithSeparator("\n")
+        }
+        
+        var presentationData: [String] {
             
-            var res = ""
+            var res = [String]()
             var y = 0
+            
+            var buf = ""
             
             for point in points {
                 if point.y > y {
-                    res += "\n"
+                    res.append(buf)
+                    buf = ""
                 }
                 y = point.y
                 if let ch: Unit.Chunk = self[point] {
-                    res += ch
+                    buf += ch
                 } else {
-                    res += background
+                    buf += background
                 }
+            }
+            
+            if !buf.isEmpty {
+                res.append(buf)
             }
             
             return res
