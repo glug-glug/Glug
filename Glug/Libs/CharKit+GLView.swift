@@ -36,6 +36,10 @@ extension CharKit {
             showsFPS = true
             showsNodeCount = true
             ignoresSiblingOrder = true
+
+//            allowsTransparency = true
+            
+            frameInterval = 2
             
             userInteractionEnabled = false
             multipleTouchEnabled = true
@@ -46,20 +50,15 @@ extension CharKit {
             presentScene(scene)
         }
         
-        var active = false 
-        
         func play() {
-            active = true
+            paused = false
         }
         
         func stop() {
-            active = false
+            paused = true
         }
         
         func update(time: UpdateTime) {
-            if !active {
-                return
-            }
             ckScene?.update(time)
             glScene?.presentation = ckScene?.presentationData
         }
@@ -107,9 +106,14 @@ extension CharKit {
             
             func label() -> SKLabelNode {
                 let l = SKLabelNode(fontNamed: "Helvetica-Light")
+
+//                l.color = UIColor.redColor()
+//                l.colorBlendFactor = 1
+                
                 if !kDebugRender {
-                    l.fontColor = UIColor(hex: 0xff0000, alpha: 0)
+                    l.fontColor = UIColor(hex: 0xffffff, alpha: 0.000001)
                 }
+                
                 l.fontSize = fSize
                 l.horizontalAlignmentMode = .Left
                 return l

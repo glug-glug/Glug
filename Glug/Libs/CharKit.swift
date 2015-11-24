@@ -9,7 +9,7 @@
 import UIKit
 
 // TODO:
-#if !DEBUG_SCENE_RENDER
+#if DEBUG_SCENE_RENDER
 let kDebugRender = true
 #else
 let kDebugRender = false
