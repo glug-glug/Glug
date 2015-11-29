@@ -36,8 +36,7 @@ extension CharKit {
             showsFPS = true
             showsNodeCount = true
             ignoresSiblingOrder = true
-
-//            allowsTransparency = true
+            // allowsTransparency = true
             
             frameInterval = 2
             
@@ -50,15 +49,36 @@ extension CharKit {
             presentScene(scene)
         }
         
+        var pause: Bool = true {
+            didSet {
+                paused = pause
+            }
+        }
+        
         func play() {
-            paused = false
+            pause = false
         }
         
         func stop() {
-            paused = true
+            pause = true
+            
+//            let act = SKAction.sequence([
+//                SKAction.waitForDuration(0.0001),
+//                SKAction.performSelector("pauseTimer", onTarget: self)
+//                ])
+//
+//            glScene?.runAction(act, withKey: "pauseTimer")
         }
         
+//        func pauseTimer() {
+//            paused = true
+//        }
+        
         func update(time: UpdateTime) {
+            if pause {
+                paused = true
+                return
+            }
             ckScene?.update(time)
             glScene?.presentation = ckScene?.presentationData
         }
@@ -106,14 +126,9 @@ extension CharKit {
             
             func label() -> SKLabelNode {
                 let l = SKLabelNode(fontNamed: "Helvetica-Light")
-
-//                l.color = UIColor.redColor()
-//                l.colorBlendFactor = 1
-                
                 if !kDebugRender {
                     l.fontColor = UIColor(hex: 0xffffff, alpha: 0.000001)
                 }
-                
                 l.fontSize = fSize
                 l.horizontalAlignmentMode = .Left
                 return l
@@ -148,6 +163,10 @@ extension CharKit {
         override func update(currentTime: CFTimeInterval) {
             updateDelegate?.update(++time)
         }
+
+//        override func didFinishUpdate() {
+//            updateDelegate?.update(++time)
+//        }
     }
 }
 

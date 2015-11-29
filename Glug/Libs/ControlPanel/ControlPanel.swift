@@ -38,6 +38,9 @@ class ControlPanel: UIView {
     
     var state: States = .Collapsed {
         didSet {
+            if state == oldValue {
+                return
+            }
             UIView.animateWithDuration(0.4) {
                 self.bounds = self.rect
                 self.layoutSubviews()
@@ -123,6 +126,14 @@ class ControlPanel: UIView {
         }
         
         state.invert()
+    }
+    
+    func show() {
+        if state == .Normal {
+            return
+        }
+        state = .Normal
+        onExpand?()
     }
 }
 

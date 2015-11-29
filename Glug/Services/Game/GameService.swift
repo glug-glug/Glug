@@ -216,19 +216,3 @@ extension GameService {
         add(fish)
     }
 }
-
-//extension GameService {
-//    
-//    // TODO: add background color to CKUnit; move logic to CharKit
-//    func render(val: CKRenderString) -> CKRenderString {
-//
-//        let c = UIColor(hex: 0x00B8D9)
-//        
-//        val.addAttributes([
-//            NSBackgroundColorAttributeName: c
-//            ], range: NSMakeRange(0, scene.size.width + 1 + 1))
-//        
-//        return val
-//    }
-//    
-//}

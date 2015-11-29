@@ -41,9 +41,5 @@ class GameController: CKController {
         log("🔴")
         service.fire()
     }
-    
-//    override func render(val: CKRenderString) -> CKRenderString {
-//        return service.render(val)
-//    }
 }
 

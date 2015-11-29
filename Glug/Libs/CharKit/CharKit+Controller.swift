@@ -22,7 +22,7 @@ protocol CharKitControllerProtocol: Updateble {
 
 extension CharKit {
     
-    class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol, CKRender {
+    class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol, CKRender, AppActivating {
         
         var orientation = UIDevice.currentDevice().orientation
         
@@ -131,11 +131,16 @@ extension CharKit {
             configureConstraints()
             scene = initializeScene()
             view.bringSubviewToFront(controlPanel)
+            startListenActivationEnevts()
         }
 
         override func viewWillAppear(animated: Bool) {
             super.viewWillAppear(animated)
             self.play()
+        }
+        
+        deinit {
+            stopListenActivationEnevts()
         }
         
         private func configureConstraints() {
@@ -191,11 +196,13 @@ extension CharKit {
             dismissViewControllerAnimated(true, completion: nil)
         }
         
-        // Render
+        // AppActivating
         
-        func render(val: CKRenderString) -> CKRenderString {
-            return val
+        func appWillResignActive() {
+            controlPanel.show()
         }
+        
+        func appDidBecomeActive() {}
     }
 }
 
