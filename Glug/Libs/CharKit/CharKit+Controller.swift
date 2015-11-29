@@ -132,11 +132,12 @@ extension CharKit {
             scene = initializeScene()
             view.bringSubviewToFront(controlPanel)
             startListenActivationEnevts()
+            self.play()
         }
 
         override func viewWillAppear(animated: Bool) {
             super.viewWillAppear(animated)
-            self.play()
+//            self.play()
         }
         
         deinit {

@@ -38,6 +38,7 @@ class LevelsService {
     }
     
     func complete(level: Level) {
+        level.isComplete = true
         let obj = uniq(completed + [level.number])
         defaults.setObject(obj, forKey: kCompletedLevels)
     }
@@ -51,6 +52,16 @@ class LevelsService {
     
     func locked(level: Level) -> Bool {
         return locked(levels[level])
+    }
+}
+
+extension LevelsService {
+    
+    func reset() {
+        defaults.setObject(nil, forKey: kCompletedLevels)
+        levels.items.forEach {
+            $0.value.isComplete = false
+        }
     }
 }
 

@@ -23,6 +23,8 @@ class GameService {
     var scene: CKScene
     var level: Level
     
+    var onGameOver: ((Bool) -> ())?
+    
     lazy var units: Units = {        
         let units = self.createUnits()
         self.scene.addUnits(units.all)
@@ -72,13 +74,21 @@ extension GameService: Updateble {
         }
 
         units.update(time)
-        
-        if units.missionComplete {
-            print("Mission COMPLETE!")
+
+        if units.missionFailed {
+            onGameOver?(false)
+            return
         }
         
-        if units.missionFailed {
-            print("Mission FAILED!")
+        if units.missionComplete {
+            onGameOver?(true)
+            return
+        }
+        
+        // test
+        
+        if time % 30 == 0 {
+            onGameOver?(true)
         }
     }
 }

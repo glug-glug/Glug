@@ -15,7 +15,11 @@ class GameController: CKController {
     var level: Level!
 
     lazy var service: GameService = {
-        return GameService(scene: self.scene, level: self.level) // set background ?
+        let service = GameService(scene: self.scene, level: self.level) // set background ?
+        service.onGameOver = { [weak self] win in
+            self?.gameOver(win)
+        }
+        return service
     }()
     
     override var color: UIColor {
@@ -40,6 +44,21 @@ class GameController: CKController {
     override func joystickFired() {
         log("🔴")
         service.fire()
+    }
+    
+    //
+    
+    func gameOver(win: Bool) {
+        
+        stop()
+        if win {
+            level.complete()
+        }
+        
+        GameOverController.show(self, result: .Win) { [weak self] action in
+            print(action)
+            self?.home()
+        }
     }
 }
 

@@ -36,6 +36,11 @@ class LevelsController: UIViewController {
         customize()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     func customize() {
         view.backgroundColor = Constants.Colors.background
         tableView.backgroundColor = Constants.Colors.background
@@ -57,14 +62,12 @@ extension LevelsController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        return true // TODO: test
         if let level = selected where !levelsService.locked(level) {
             return true
         }
         return false
     }
 }
-
 
 extension LevelsController: UITableViewDataSource {
 
@@ -80,5 +83,10 @@ extension LevelsController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        // TODO: tmp
+        if indexPath.row == 0 {
+            levelsService.reset()
+        }        
     }
 }

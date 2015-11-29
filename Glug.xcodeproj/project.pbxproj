@@ -10,6 +10,11 @@
 		951704551BE6AE22001E73A0 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951704541BE6AE22001E73A0 /* Ground.swift */; };
 		95185CAB1BD3BDFF001396C3 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95185CAA1BD3BDFF001396C3 /* Levels.plist */; };
 		95185CB71BD3EEF7001396C3 /* Levels.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95185CB61BD3EEF7001396C3 /* Levels.storyboard */; };
+		952B45F01C0B2545004233D3 /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B45EF1C0B2545004233D3 /* GameOverController.swift */; };
+		952B45F41C0B279D004233D3 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B45F31C0B279D004233D3 /* Storyboard.swift */; };
+		952B45FC1C0B34C5004233D3 /* GameOver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 952B45FB1C0B34C5004233D3 /* GameOver.storyboard */; };
+		952B46001C0B8DFF004233D3 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B45FF1C0B8DFF004233D3 /* GameResult.swift */; };
+		952B46021C0B8EC3004233D3 /* GameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B46011C0B8EC3004233D3 /* GameActions.swift */; };
 		9590FA941BE6863600F64706 /* Sky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590FA931BE6863600F64706 /* Sky.swift */; };
 		95A498C11BD3AEF200179B99 /* Credits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A498C01BD3AEF200179B99 /* Credits.storyboard */; };
 		95A4AFBA1BDD473F006E1A18 /* Diver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB31BDD473F006E1A18 /* Diver.swift */; };
@@ -61,6 +66,11 @@
 		951704541BE6AE22001E73A0 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		95185CAA1BD3BDFF001396C3 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		95185CB61BD3EEF7001396C3 /* Levels.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Levels.storyboard; sourceTree = "<group>"; };
+		952B45EF1C0B2545004233D3 /* GameOverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
+		952B45F31C0B279D004233D3 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		952B45FB1C0B34C5004233D3 /* GameOver.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameOver.storyboard; sourceTree = "<group>"; };
+		952B45FF1C0B8DFF004233D3 /* GameResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
+		952B46011C0B8EC3004233D3 /* GameActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameActions.swift; sourceTree = "<group>"; };
 		9590FA931BE6863600F64706 /* Sky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sky.swift; sourceTree = "<group>"; };
 		95A498C01BD3AEF200179B99 /* Credits.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Credits.storyboard; sourceTree = "<group>"; };
 		95A4AFB31BDD473F006E1A18 /* Diver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diver.swift; sourceTree = "<group>"; };
@@ -121,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		952B45FE1C0B8DF5004233D3 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				952B45FF1C0B8DFF004233D3 /* GameResult.swift */,
+				952B46011C0B8EC3004233D3 /* GameActions.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		95A4AFB21BDD4728006E1A18 /* Units */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +273,7 @@
 			children = (
 				95D3F9091C0B07C2000F1B13 /* LevelsController.swift */,
 				95D3F90A1C0B07C2000F1B13 /* MenuController.swift */,
+				952B45EF1C0B2545004233D3 /* GameOverController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -262,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				95D3F9101C0B07FF000F1B13 /* Constants.swift */,
+				952B45F31C0B279D004233D3 /* Storyboard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -322,6 +343,7 @@
 		95FD18351BD3AA3500126E8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				952B45FE1C0B8DF5004233D3 /* Game */,
 				95D3F9011C0B0769000F1B13 /* Menu */,
 				95A4AFB21BDD4728006E1A18 /* Units */,
 			);
@@ -357,6 +379,7 @@
 				95FD183E1BD3AA3500126E8C /* Menu.storyboard */,
 				95A498C01BD3AEF200179B99 /* Credits.storyboard */,
 				95185CB61BD3EEF7001396C3 /* Levels.storyboard */,
+				952B45FB1C0B34C5004233D3 /* GameOver.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -422,6 +445,7 @@
 				95D3F9001C0B0749000F1B13 /* Images.xcassets in Resources */,
 				95FD184C1BD3AA3500126E8C /* LaunchScreen.xib in Resources */,
 				95A498C11BD3AEF200179B99 /* Credits.storyboard in Resources */,
+				952B45FC1C0B34C5004233D3 /* GameOver.storyboard in Resources */,
 				95FD184D1BD3AA3500126E8C /* Game.storyboard in Resources */,
 				95185CB71BD3EEF7001396C3 /* Levels.storyboard in Resources */,
 				95FD184B1BD3AA3500126E8C /* Minecraft.ttf in Resources */,
@@ -446,11 +470,14 @@
 				95D3F8E71C0B06CE000F1B13 /* CharKit+Optimal.swift in Sources */,
 				95D3F91C1C0B0CE7000F1B13 /* AppActivating.swift in Sources */,
 				95D3F8ED1C0B06CE000F1B13 /* CharKit+View.swift in Sources */,
+				952B46001C0B8DFF004233D3 /* GameResult.swift in Sources */,
 				95A4AFBA1BDD473F006E1A18 /* Diver.swift in Sources */,
 				95D3F8EB1C0B06CE000F1B13 /* CharKit+TurnedUnit.swift in Sources */,
 				95A4AFBE1BDD473F006E1A18 /* Tube.swift in Sources */,
 				95B7B3A21BEA21F4009F6B8D /* Herb.swift in Sources */,
 				95A4AFBD1BDD473F006E1A18 /* Treasure.swift in Sources */,
+				952B45F01C0B2545004233D3 /* GameOverController.swift in Sources */,
+				952B46021C0B8EC3004233D3 /* GameActions.swift in Sources */,
 				95D3F8EE1C0B06CE000F1B13 /* CharKit.swift in Sources */,
 				95A4AFBB1BDD473F006E1A18 /* Fish.swift in Sources */,
 				95D3F9191C0B0834000F1B13 /* GameService.swift in Sources */,
@@ -463,6 +490,7 @@
 				95D3F90E1C0B07C2000F1B13 /* MenuController.swift in Sources */,
 				95D3F8EC1C0B06CE000F1B13 /* CharKit+Unit.swift in Sources */,
 				95D3F8FA1C0B0711000F1B13 /* Constraint.swift in Sources */,
+				952B45F41C0B279D004233D3 /* Storyboard.swift in Sources */,
 				95D3F8E51C0B06CE000F1B13 /* CharKit+Controller.swift in Sources */,
 				95D3F91A1C0B0834000F1B13 /* LevelsService.swift in Sources */,
 				95D3F90D1C0B07C2000F1B13 /* LevelsController.swift in Sources */,

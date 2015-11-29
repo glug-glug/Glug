@@ -61,18 +61,7 @@ extension CharKit {
         
         func stop() {
             pause = true
-            
-//            let act = SKAction.sequence([
-//                SKAction.waitForDuration(0.0001),
-//                SKAction.performSelector("pauseTimer", onTarget: self)
-//                ])
-//
-//            glScene?.runAction(act, withKey: "pauseTimer")
         }
-        
-//        func pauseTimer() {
-//            paused = true
-//        }
         
         func update(time: UpdateTime) {
             if pause {

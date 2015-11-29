@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Minecraft.ttf">
+            <string>Minecraft</string>
+            <string>Minecraft</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Game Over Controller-->
+        <scene sceneID="VPe-H0-j9n">
+            <objects>
+                <viewController storyboardIdentifier="GameOver" id="jG0-kF-mpi" customClass="GameOverController" customModule="Glug" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Ei-Us-PWb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nt4-Fb-ZI9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vF9-qN-r4d">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuK-Ca-2b8">
+                                <rect key="frame" x="150" y="225" width="300" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-U7-iSZ">
+                                        <rect key="frame" x="103" y="20" width="94.5" height="45"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="36"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9m-Hu-f0p">
+                                        <rect key="frame" x="101" y="85" width="98" height="45"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="26"/>
+                                        <state key="normal" title="Action"/>
+                                        <connections>
+                                            <action selector="action:" destination="jG0-kF-mpi" eventType="touchUpInside" id="GmE-mq-uGT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oIn-U7-iSZ" firstAttribute="top" secondItem="FuK-Ca-2b8" secondAttribute="top" constant="20" id="7NB-uB-IgN"/>
+                                    <constraint firstItem="t9m-Hu-f0p" firstAttribute="centerX" secondItem="FuK-Ca-2b8" secondAttribute="centerX" id="ASr-gD-huV"/>
+                                    <constraint firstAttribute="bottom" secondItem="t9m-Hu-f0p" secondAttribute="bottom" constant="20" id="K7V-Sh-Yvf"/>
+                                    <constraint firstAttribute="width" constant="300" id="KoT-u3-aJ4"/>
+                                    <constraint firstItem="oIn-U7-iSZ" firstAttribute="centerX" secondItem="FuK-Ca-2b8" secondAttribute="centerX" id="p9Y-qD-YBd"/>
+                                    <constraint firstAttribute="height" constant="150" id="rNa-9x-B2C"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="0.24898830935251798" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FuK-Ca-2b8" firstAttribute="centerX" secondItem="vF9-qN-r4d" secondAttribute="centerX" id="EY3-lk-l23"/>
+                            <constraint firstItem="FuK-Ca-2b8" firstAttribute="centerY" secondItem="vF9-qN-r4d" secondAttribute="centerY" id="nlX-L5-AFR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="t9m-Hu-f0p" id="n6a-AU-LP8"/>
+                        <outlet property="titleLabel" destination="oIn-U7-iSZ" id="m1G-Ah-Haa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eoE-Dp-feP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="453" y="-120"/>
+        </scene>
+    </scenes>
+</document>
