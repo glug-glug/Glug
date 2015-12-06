@@ -18,9 +18,3 @@ enum GameResult: String {
     }
 }
 
-extension GameResult {
-
-    var action: GameActions {
-        return self == Win ? .Next : .Replay
-    }
-}

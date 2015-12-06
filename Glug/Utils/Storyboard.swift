@@ -11,7 +11,9 @@ import UIKit
 extension UIStoryboard {
     
     enum Controllers : String {
+
         case GameOver = "GameOver"
+        case LevelIntro = "LevelIntro"
 
         private var storyName: String {
             return "\(self)"

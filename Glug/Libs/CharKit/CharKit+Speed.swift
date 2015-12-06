@@ -45,7 +45,11 @@ extension CharKit {
         }
         
         static func random() -> Speed {
-            return Speed(rawValue: Int.random(1, 5)) ?? .Medium
+            return random(.Min, .Max)
+        }
+        
+        static func random(min: Speed, _ max: Speed) -> Speed {
+            return Speed(rawValue: Int.random(min.rawValue, max.rawValue)) ?? .Medium
         }
     }
 }

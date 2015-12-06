@@ -6,14 +6,14 @@
 //  Copyright © 2015 anukhov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension CharKit {
     
     class Scene: Updateble {
         
         let size: Size
-        var background: String = CharKit.bg 
+        var background: String = CharKit.bg
         
         private var units: [Unit] = []
         
@@ -136,9 +136,9 @@ extension CharKit {
             }
             delegate?.update(time)
         }
+        
+        func clear() {
+            units = []
+        }
     }
 }
-
-//extension CKScene {
-//    
-//}

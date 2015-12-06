@@ -30,6 +30,15 @@ extension CharKit {
             }
         }
         
+        var backgroundImage: String? {
+            get {
+                return glScene?.backgroundImage
+            }
+            set {
+                glScene?.backgroundImage = newValue
+            }
+        }
+        
         convenience init(size: CKSize) {
             self.init()
             
@@ -68,8 +77,17 @@ extension CharKit {
                 paused = true
                 return
             }
+            render(time)
+        }
+        
+        private func render(time: UpdateTime) {
             ckScene?.update(time)
             glScene?.presentation = ckScene?.presentationData
+        }
+        
+        func forceRender() {
+            render(-1)
+            paused = false
         }
     }
     
@@ -94,6 +112,28 @@ extension CharKit {
             }
         }
 
+        private var imageNode: SKSpriteNode? {
+            didSet {
+                oldValue?.removeFromParent()
+                if let node = imageNode {
+                    node.size = frame.size
+                    node.position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
+                    node.zPosition = -1
+                    addChild(node)
+                }
+            }
+        }
+        
+        var backgroundImage: String? {
+            didSet {
+                var node: SKSpriteNode?
+                if let name = backgroundImage {
+                    node = SKSpriteNode(imageNamed: name)
+                }
+                imageNode = node
+            }
+        }
+        
         subscript (idx: Int) -> SKLabelNode? {
             return 0..<labels.count ~= idx ? labels[idx] : nil
         }
@@ -139,11 +179,12 @@ extension CharKit {
         
         override func didMoveToView(view: SKView) {
             _ = textNode
+            imageNode = { imageNode }()
         }
         
         var time: UpdateTime = 0 {
             didSet {
-                if time > 100 {
+                if time > 1000 {
                     time = 0
                 }
             }

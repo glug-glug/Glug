@@ -120,6 +120,9 @@ extension String {
 extension Int {
 
     static func random(lower: Int = 0, _ upper: Int = 100) -> Int {
+        if lower > upper {
+            return 0
+        }
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
     
@@ -189,8 +192,7 @@ enum Device {
     init() {
         
         let r = UIScreen.mainScreen().bounds.size
-        print(r)
-        
+
         let o: Orientation = r.width > r.height ? .H : .V
         let h = max(r.width, r.height)
         

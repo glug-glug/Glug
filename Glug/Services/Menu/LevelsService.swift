@@ -53,6 +53,10 @@ class LevelsService {
     func locked(level: Level) -> Bool {
         return locked(levels[level])
     }
+    
+    func next(level: Level) -> Level? {
+        return levels[level]?.next?.value
+    }
 }
 
 extension LevelsService {

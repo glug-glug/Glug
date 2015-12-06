@@ -83,11 +83,6 @@ class Diver: CKTurnedUnit {
     
     func fire() -> Bullet? {
         
-        // TODO:
-        //        if treasure != nil {
-        //            return nil
-        //        }
-        
         guard let dir = turn.horizontal else {
             return nil
         }
@@ -101,7 +96,12 @@ class Diver: CKTurnedUnit {
         return bullet
     }
     
-    func checkTreasure() {
+    func checkCollisions() {
+        checkTreasure()
+        checkFish()
+    }
+    
+    private func checkTreasure() {
         
         if let treasure = treasure {
             if ship?.loaderArea.intersects(rect) ?? false {
@@ -110,6 +110,13 @@ class Diver: CKTurnedUnit {
             }
         } else {
             self.treasure = scene?[self, { $0 is Treasure }].first as? Treasure
+        }
+    }
+    
+    private func checkFish() {
+        let fish = scene?[self, { $0 is Fish }].first
+        if fish != nil {
+            killed = true
         }
     }
 }

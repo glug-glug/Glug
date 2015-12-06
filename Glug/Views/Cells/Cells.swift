@@ -26,8 +26,9 @@ class LevelCell: Cell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var lockImageView: UIImageView!
     @IBOutlet weak var numberView: UIView!
+    
+    var numberLayer: CAGradientLayer?
     
     var level: Level? {
         didSet {
@@ -37,14 +38,14 @@ class LevelCell: Cell {
             }
             nameLabel.text = level.name
             numberLabel.text = String(level.number)
-            lockImageView.image = level.locked ? UIImage(named: "level-locked") : nil
+            numberLayer?.colors = mode.grColor
         }
     }
     
     func clear() {
         nameLabel.text = nil
         numberLabel.text = nil
-        lockImageView.image = nil
+        numberLayer?.colors = Modes.Def.grColor
     }
     
     override func awakeFromNib() {
@@ -58,23 +59,45 @@ class LevelCell: Cell {
         bgColorView.backgroundColor = UIColor(hex: 0xCCCCCC, alpha: 0.4)
         selectedBackgroundView = bgColorView
         
-        customizeNumber()
-    }
-    
-    func customizeNumber() {
-        
         numberView.layer.cornerRadius = numberView.bounds.width / 2
         numberView.backgroundColor = UIColor.clearColor()
         numberView.clipsToBounds = true
         
         let gr = CAGradientLayer()
         gr.frame = numberView.bounds
-        let colors = (
-            UIColor(hex: 0xffffff, alpha: 0.2),
-            UIColor(hex: 0xeeeeee, alpha: 0.5)
-        )
-        gr.colors = [colors.0.CGColor, colors.1.CGColor, colors.0.CGColor]
-        gr.locations = [0, 0.5, 0.9]
+        gr.colors = mode.grColor
+        gr.locations = [0, 1]
         numberView.layer.insertSublayer(gr, atIndex: 0)
+        numberLayer = gr
+
+        numberView.transform = CGAffineTransformMakeScale(2, 2)
+    }
+    
+    enum Modes {
+        case Complete
+        case Locked
+        case Def
+        
+        var color: UIColor {
+            switch self {
+            case .Complete: return UIColor(hex: 0xADFF2F, alpha: 0.4)
+            case .Locked:   return UIColor(hex: 0xFF4500, alpha: 0.4)
+            case .Def:      return UIColor(hex: 0xeeeeee, alpha: 0.4)
+            }
+        }
+        
+        var grColor: [CGColor] {
+            return [color.CGColor, color.CGColor]
+        }
+    }
+    
+    var mode: Modes {
+        if level?.isComplete ?? false {
+            return .Complete
+        } else if level?.locked ?? false {
+            return .Locked
+        } else {
+            return .Def
+        }
     }
 }

@@ -8,27 +8,31 @@
 
 import UIKit
 
-// TODO: delegate render for custom bg color ??
-
 class GameController: CKController {
     
-    var level: Level!
-
     lazy var service: GameService = {
-        let service = GameService(scene: self.scene, level: self.level) // set background ?
-        service.onGameOver = { [weak self] win in
-            self?.gameOver(win)
+        let service = GameService(scene: self.scene, level: self.level)
+        service.onGameOver = { [weak self] result in
+            self?.gameOver(result)
         }
         return service
     }()
-    
+
+    var level: Level! {
+        didSet {
+            if !isViewLoaded() {
+                return
+            }
+            service.level = level
+        }
+    }
+
     override var color: UIColor {
         return Constants.Colors.background
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = service
     }
     
     override func update(time: UpdateTime) {
@@ -46,18 +50,35 @@ class GameController: CKController {
         service.fire()
     }
     
-    //
-    
-    func gameOver(win: Bool) {
-        
-        stop()
-        if win {
-            level.complete()
+    override func start() {
+        _ = service
+        backgroundImage = "bg"
+        forceRender()
+        LevelIntroController.show(self, level: level) {
+            super.start()
         }
+    }
+    
+    func gameOver(result: GameResult) {
+
+        stop()
         
-        GameOverController.show(self, result: .Win) { [weak self] action in
-            print(action)
-            self?.home()
+        var actions: [GameActions] = []
+        
+        if case .Win = result {
+            level.complete()
+            actions.append(level.next == nil ? .Replay : .Next)
+        } else {
+            actions.append(.Replay)
+        }
+
+        GameOverController.show(self, result: result, actions: actions) { action in
+            if case .Next = action {
+                self.level = self.level.next ?? self.level
+            } else {
+                self.level = { self.level }()
+            }
+            self.start()
         }
     }
 }

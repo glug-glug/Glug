@@ -21,11 +21,18 @@ extension HitProtocol {
 class GameService {
 
     var scene: CKScene
-    var level: Level
     
-    var onGameOver: ((Bool) -> ())?
+    var level: Level {
+        didSet {
+            scene.clear()
+            units = nil
+            _ = units
+        }
+    }
     
-    lazy var units: Units = {        
+    var onGameOver: ((GameResult) -> ())?
+    
+    lazy var units: Units! = {
         let units = self.createUnits()
         self.scene.addUnits(units.all)
         return units
@@ -54,9 +61,9 @@ class GameService {
     }
     
     init(scene: CKScene, level: Level) {
-        self.level = level
         self.scene = scene
-        _ = units
+        self.level = level
+        _ = { self.level = level }()
     }
 }
 
@@ -64,45 +71,23 @@ extension GameService: Updateble {
    
     func update(time: UpdateTime) {
 
-//        if time % 10 == 0 {
-//            fire()
-//        }
-        
-        // TODO: test
-        if time == 1 || time % 100 == 0 {
-            addFish()
+        if time % 5 == 0 {
+            addFishes()
         }
 
         units.update(time)
 
-        if units.missionFailed {
-            onGameOver?(false)
-            return
-        }
+//        if units.missionFailed {
+//            onGameOver?(.Lose)
+//            return
+//        }
         
         if units.missionComplete {
-            onGameOver?(true)
+            onGameOver?(.Win)
             return
-        }
-        
-        // test
-        
-        if time % 30 == 0 {
-            onGameOver?(true)
         }
     }
 }
-
-//extension GameService: BulletHitProtocol {
-//    
-//    func bulletHit(bullet: Bullet, targets: [CKUnit]) {
-//        if targets.isEmpty {
-//            return
-//        }
-//        
-//        print("hit: \(targets)")
-//    }
-//}
 
 extension GameService {
     
@@ -114,7 +99,6 @@ extension GameService {
         let ship = Ship(center: CKPoint(diver.center.x, 0))
         let tube = Tube()
         let sky = Sky(rect: CKRect(origin: CKPoint(0, 0), size: CKSize(size.width, 1)))
-        let ground = Ground()
         let treasures = Treasure.create(size)
         let herbs = Herb.create(size, count: level.herbs, exclude: treasures.map { $0.position.x }) // TODO: density
         
@@ -123,7 +107,6 @@ extension GameService {
             ship: ship,
             tube: tube,
             sky: sky,
-            ground: ground,
             herbs: herbs,
             treasures: treasures
         )
@@ -132,97 +115,42 @@ extension GameService {
     }
 }
 
-// TODO: test, remove 
-
 extension GameService {
 
-    func addSolidUnit() {
+    func addFishes() {
         
-        let s =
-        "🔴◻️◻️◻️◻️◻️🔴🔴🔴🔴🔴\n" +
-        "◻️🔴◻️◻️◻️🔴◻️◻️◻️◻️◻️\n" +
-        "◻️◻️◻️◻️◻️🔴◻️◻️◻️◻️◻️\n" +
-        "◻️◻️◻️◻️◻️🔴◻️◻️◻️◻️◻️\n" +
-        "🔴◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️\n" +
-        "◻️◻️◻️◻️◻️🔴◻️◻️◻️◻️◻️\n" +
-        "◻️◻️◻️◻️◻️🔴🔴🔴🔴🔴◻️\n"
+        let fishes = level.fishes
         
-        let fish = Fish(position: CKPoint(0, 0), direction: .Right, speed: .Zero, sprite: CKSprite(s), solid: true)
+        var dif = fishes.density - units.fishes.count
+        dif = Int.random(0, dif)
         
-        add(fish)
-    }
-
-    func addRightFish() {
+        if dif <= 0 {
+            return
+        }
         
-        let fish = Fish(position: CKPoint(0, 10), direction: .Right, speed: .Low, sprite: CKSprite("😑"), solid: true)
-        add(fish)
-    }
-    
-    // TODO: test
-    func addFish() {
+        let centers = Int.random(1, scene.size.height - 1, count: dif)
         
-        func p() -> CKPoint {
-//            let x = Int.random(0, 1) == 0 ? 0 : scene.size.width - 1
+        func center(i: Int) -> CKPoint? {
             let x = scene.size.width - 1
-            let y = Int.random(0 + 1, scene.size.height - 1)
-            return CKPoint(x, y)
+            return 0..<centers.count ~= i ? CKPoint(x, centers[i]) : nil
         }
         
-        func d(p: CKPoint) -> Directions {
-            return p.x > 0 ? .Left : .Right
-            //            var d: Directions!
-//            repeat {
-//                d = Directions(Int.random(0, 7))!
-//            } while d.horizontal == nil
-//            return d.horizontal!
-//            return Directions(Int.random(0, 7))!
-        }
-        
-        func f() -> String {
-            
-            switch Int.random(0, 12) {
-//            case 0: return "🐍"
-            case 1: return "🐟"
-            case 2: return "🐠"
-//            case 3: return "🐝"
-            case 4: return "🐡"
-            case 5: return "🐬"
-            case 6: return "🐳"
-//            case 7: return "🐋"
-//            case 8: return "🐊"
-//            case 9: return "🐛"
-//            case 10: return "🦀"
-//            case 11: return "🕷"
-            default:
-                return "🐟"
+        func fish() -> (CKSprite, CKSpeed, Bool)? {
+            let kinds = fishes.kinds
+            let i = Int.random(0, kinds.count - 1)
+            if 0..<kinds.count ~= i {
+                let k = kinds[i]
+                return (CKSprite(k.sprite), k.speed, k.shark)
+            } else {
+                return nil
             }
         }
         
-        func s() -> CKSpeed {
-//            return .Min
-            return CKSpeed.random()
+        for i in 0..<dif {
+            guard let fish = fish(), center = center(i) else {
+                continue
+            }
+            add(Fish(sprite: fish.0, center, fish.1, shark: fish.2))
         }
-        
-        let center = p()
-        
-        let fish = Fish(center: center, direction: d(center), speed: s(), sprite: CKSprite(f()))
-        
-        add(fish)
-    }
-    
-    func addBigFish() {
-        
-        let s =
-        "🔴◻️◻️◻️🔴🔴🔴🔴🔴◻️◻️\n" +
-        "◻️🔴◻️🔴🔴🔴🔴🔴⚪️🔴◻️\n" +
-        "◻️🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴\n" +
-        "◻️🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴\n" +
-        "🔴◻️◻️🔴🔴🔴🔴🔴◻️🔴🔴\n" +
-        "◻️◻️◻️◻️🔴🔴🔴🔴◻️◻️◻️\n" +
-        "◻️◻️◻️◻️◻️◻️🔴🔴🔴🔴◻️\n"
-        
-        let fish = Fish(position: CKPoint(0, 3), direction: .Right, speed: CKSpeed.Max, sprite: CKSprite(s), canOut: true)
-        
-        add(fish)
     }
 }

@@ -4,65 +4,105 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>Relax on the beach</string>
-		<key>density</key>
-		<string></string>
-		<key>enemy</key>
-		<dict/>
+		<string>Relax</string>
+		<key>fishes</key>
+		<dict>
+			<key>kinds</key>
+			<array>
+				<dict>
+					<key>sprite</key>
+					<string>🐠</string>
+					<key>speed</key>
+					<integer>1</integer>
+				</dict>
+			</array>
+			<key>density</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Beach</string>
+		<key>fishes</key>
+		<dict>
+			<key>kinds</key>
+			<array>
+				<dict>
+					<key>sprite</key>
+					<string>🐠</string>
+					<key>speed</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>sprite</key>
+					<string>🐟</string>
+					<key>speed</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>density</key>
+			<integer>4</integer>
+		</dict>
+		<key>herbs</key>
+		<integer>1</integer>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Very deep</string>
 		<key>herbs</key>
-		<integer>1</integer>
+		<integer>3</integer>
+		<key>fishes</key>
+		<dict>
+			<key>kinds</key>
+			<array>
+                <dict>
+                    <key>sprite</key>
+                    <string>🐳</string>
+                    <key>speed</key>
+                    <integer>1</integer>
+                </dict>
+                <dict>
+                    <key>sprite</key>
+                    <string>🐬</string>
+                    <key>speed</key>
+                    <integer>2</integer>
+                </dict>
+			</array>
+			<key>density</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<dict>
 		<key>name</key>
 		<string>Kill em all</string>
 		<key>herbs</key>
-		<integer>3</integer>
+		<integer>7</integer>
+		<key>fishes</key>
+		<dict>
+			<key>kinds</key>
+			<array>
+                <dict>
+                    <key>sprite</key>
+                    <string>🐠</string>
+                    <key>speed</key>
+                    <integer>1</integer>
+                </dict>
+				<dict>
+					<key>sprite</key>
+					<string>🐡</string>
+					<key>speed</key>
+					<integer>5</integer>
+				</dict>
+			</array>
+			<key>density</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string></string>
-		<key>herbs</key>
-		<integer>3</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string></string>
-		<key>herbs</key>
-		<integer>2</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string></string>
-		<key>herbs</key>
-		<integer>2</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string></string>
-		<key>herbs</key>
-		<integer>3</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string></string>
-		<key>herbs</key>
-		<integer>3</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string></string>
-		<key>herbs</key>
-		<integer>1</integer>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string></string>
-		<key>herbs</key>
-		<integer>5</integer>
+		<string>Run</string>
+		<key>run</key>
+		<true/>
 	</dict>
 </array>
 </plist>

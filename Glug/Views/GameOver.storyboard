@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Nt4-Fb-ZI9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vF9-qN-r4d">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FuK-Ca-2b8">
-                                <rect key="frame" x="150" y="225" width="300" height="150"/>
+                                <rect key="frame" x="50" y="125" width="300" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIn-U7-iSZ">
                                         <rect key="frame" x="103" y="20" width="94.5" height="45"/>
@@ -55,7 +55,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -67,6 +67,8 @@
                             <constraint firstItem="FuK-Ca-2b8" firstAttribute="centerY" secondItem="vF9-qN-r4d" secondAttribute="centerY" id="nlX-L5-AFR"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="400"/>
                     <connections>
                         <outlet property="actionButton" destination="t9m-Hu-f0p" id="n6a-AU-LP8"/>
                         <outlet property="titleLabel" destination="oIn-U7-iSZ" id="m1G-Ah-Haa"/>

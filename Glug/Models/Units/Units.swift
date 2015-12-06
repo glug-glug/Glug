@@ -16,7 +16,6 @@ class Units {
     var ship: Ship
     var tube: Tube
     var sky: Sky
-    var ground: Ground?
     var herbs: [Herb]?
     var fishes: [Fish] = []
     var treasures: [Treasure] = []
@@ -25,7 +24,6 @@ class Units {
     var all: [CKUnit] {
         var all: [CKUnit] = [diver, ship, tube, sky] + fishes
         all += treasures as [CKUnit]
-        all += ground == nil ? [] : [ground!]
         all += (herbs ?? []) as [CKUnit]
         all += bullets as [CKUnit]
         return all
@@ -43,7 +41,6 @@ class Units {
         ship: Ship,
         tube: Tube,
         sky: Sky,
-        ground: Ground?,
         herbs: [Herb]? = nil,
         fishes: [Fish] = [],
         treasures: [Treasure] = [],
@@ -53,7 +50,6 @@ class Units {
             self.ship = ship
             self.tube = tube
             self.sky = sky
-            self.ground = ground
             self.herbs = herbs
             self.fishes = fishes
             self.treasures = treasures
@@ -81,7 +77,8 @@ extension Units: Updateble {
             $0.hits()
         }
         
-        diver.checkTreasure()
+        diver.checkCollisions()
+        
         clean()
     }
 }

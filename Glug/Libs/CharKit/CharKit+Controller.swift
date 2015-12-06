@@ -15,9 +15,11 @@ protocol CharKitControllerProtocol: Updateble {
     var scene: CKScene { get set }
     var joystick: JoystickPad { get }
     func initializeScene() -> CKScene
+    func start()
     func stop()
     func play()
     func home()
+    func forceRender()
 }
 
 extension CharKit {
@@ -32,6 +34,15 @@ extension CharKit {
         
         var color: UIColor {
             return UIColor.blackColor()
+        }
+        
+        var backgroundImage: String? {
+            get {
+                return gameView.backgroundImage
+            }
+            set {
+                gameView.backgroundImage = newValue
+            }
         }
         
         var scene: Scene {
@@ -62,7 +73,7 @@ extension CharKit {
 //            return view
 //            }()
 
-        private lazy var gameView: GLView = {
+        lazy var gameView: GLView = {
             let view = GLView(size: self.size)
             view.color = self.color
             self.joystick.addSubview(view)
@@ -132,12 +143,12 @@ extension CharKit {
             scene = initializeScene()
             view.bringSubviewToFront(controlPanel)
             startListenActivationEnevts()
-            self.play()
+            self.start()
         }
 
-        override func viewWillAppear(animated: Bool) {
-            super.viewWillAppear(animated)
-//            self.play()
+        override func viewDidAppear(animated: Bool) {
+            super.viewDidAppear(animated)
+            backgroundImage = { backgroundImage }()
         }
         
         deinit {
@@ -183,6 +194,10 @@ extension CharKit {
             }
         }
         
+        func start() {
+            play()
+        }
+        
         func stop() {
             gameView.stop()
             joystick.stop()
@@ -195,6 +210,10 @@ extension CharKit {
         
         func home() {
             dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        func forceRender() {
+            gameView.forceRender()
         }
         
         // AppActivating
