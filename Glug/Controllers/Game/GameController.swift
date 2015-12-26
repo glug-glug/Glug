@@ -15,6 +15,9 @@ class GameController: CKController {
         service.onGameOver = { [weak self] result in
             self?.gameOver(result)
         }
+        service.onScore = { [weak self] score in
+            self?.score = score
+        }
         return service
     }()
 
@@ -29,10 +32,6 @@ class GameController: CKController {
 
     override var color: UIColor {
         return Constants.Colors.background
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
     
     override func update(time: UpdateTime) {
@@ -52,8 +51,9 @@ class GameController: CKController {
     
     override func start() {
         _ = service
-        backgroundImage = "bg"
+//        backgroundImage = "bg"
         forceRender()
+        score = 0
         LevelIntroController.show(self, level: level) {
             super.start()
         }

@@ -55,18 +55,18 @@
 		<dict>
 			<key>kinds</key>
 			<array>
-                <dict>
-                    <key>sprite</key>
-                    <string>🐳</string>
-                    <key>speed</key>
-                    <integer>1</integer>
-                </dict>
-                <dict>
-                    <key>sprite</key>
-                    <string>🐬</string>
-                    <key>speed</key>
-                    <integer>2</integer>
-                </dict>
+				<dict>
+					<key>sprite</key>
+					<string>🐳</string>
+					<key>speed</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>sprite</key>
+					<string>🐬</string>
+					<key>speed</key>
+					<integer>3</integer>
+				</dict>
 			</array>
 			<key>density</key>
 			<integer>5</integer>
@@ -81,17 +81,17 @@
 		<dict>
 			<key>kinds</key>
 			<array>
-                <dict>
-                    <key>sprite</key>
-                    <string>🐠</string>
-                    <key>speed</key>
-                    <integer>1</integer>
-                </dict>
+				<dict>
+					<key>sprite</key>
+					<string>🐠</string>
+					<key>speed</key>
+					<integer>1</integer>
+				</dict>
 				<dict>
 					<key>sprite</key>
 					<string>🐡</string>
 					<key>speed</key>
-					<integer>5</integer>
+					<integer>4</integer>
 				</dict>
 			</array>
 			<key>density</key>
@@ -102,7 +102,52 @@
 		<key>name</key>
 		<string>Run</string>
 		<key>run</key>
-		<true/>
+		<dict>
+			<key>herbs-density</key>
+			<integer>3</integer>
+			<key>treasures-density</key>
+			<integer>3</integer>
+		</dict>
+		<key>herbs</key>
+		<integer>3</integer>
+		<key>fishes</key>
+		<dict>
+			<key>kinds</key>
+			<array>
+				<dict>
+					<key>sprite</key>
+					<string>🐠</string>
+					<key>speed</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>sprite</key>
+					<string>🐡</string>
+					<key>speed</key>
+					<integer>4</integer>
+				</dict>
+				<dict>
+					<key>sprite</key>
+					<string>🐳</string>
+					<key>speed</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>sprite</key>
+					<string>🐬</string>
+					<key>speed</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>sprite</key>
+					<string>🐟</string>
+					<key>speed</key>
+					<integer>2</integer>
+				</dict>
+			</array>
+			<key>density</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 </array>
 </plist>

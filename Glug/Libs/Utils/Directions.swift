@@ -23,7 +23,7 @@ public enum Directions: String {
 
 extension Directions {
     
-    mutating func invert() {
+    mutating func invert() -> Directions {
         switch self {
         case .Left:      self = .Right
         case .Right:     self = .Left
@@ -34,6 +34,7 @@ extension Directions {
         case .LeftUp:    self = RightDown
         case .UpRight:   self = DownLeft
         }
+        return self
     }
     
     func split() -> (horizontal: Directions?, vertical: Directions?) {

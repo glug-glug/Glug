@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FaM-9M-w8c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FaM-9M-w8c">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Minecraft.ttf">
+            <string>Minecraft</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Menu Controller-->
         <scene sceneID="vKO-wM-vcG">
@@ -19,13 +24,11 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8y-RJ-1So">
                                 <rect key="frame" x="259" y="190" width="83" height="48"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npk-Oo-dIQ">
                                 <rect key="frame" x="268" y="504" width="65" height="36"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Credits">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,7 +39,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="450-tk-vqI">
                                 <rect key="frame" x="281" y="443" width="38" height="36"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +49,6 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathyscaphe" translatesAutoresizingMaskIntoConstraints="NO" id="DN1-7Y-Luk">
                                 <rect key="frame" x="484" y="96" width="81" height="59"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="M6a-wg-evt"/>
                                     <constraint firstAttribute="height" constant="59" id="yYQ-i6-E6d"/>
@@ -55,7 +56,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish3" translatesAutoresizingMaskIntoConstraints="NO" id="rsD-g5-X5l">
                                 <rect key="frame" x="524" y="511" width="39" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7X9-M4-o5y"/>
                                     <constraint firstAttribute="width" constant="39" id="NA0-dM-9l1"/>
@@ -63,7 +63,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish2" translatesAutoresizingMaskIntoConstraints="NO" id="hBc-F8-dDb">
                                 <rect key="frame" x="54" y="143" width="48" height="36"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="eFf-9r-y9T"/>
                                     <constraint firstAttribute="height" constant="36" id="qJk-ly-Vcf"/>
@@ -71,7 +70,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish1" translatesAutoresizingMaskIntoConstraints="NO" id="VXH-n7-hkJ">
                                 <rect key="frame" x="54" y="323" width="43" height="36"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="AZJ-dj-h8l"/>
                                     <constraint firstAttribute="width" constant="43" id="pQL-FM-Cih"/>
@@ -79,7 +77,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug2" translatesAutoresizingMaskIntoConstraints="NO" id="fjn-2I-MN9">
                                 <rect key="frame" x="129" y="157" width="20" height="19"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="8CM-hk-UWj"/>
                                     <constraint firstAttribute="width" constant="20" id="OUD-7x-H49"/>
@@ -87,7 +84,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug1" translatesAutoresizingMaskIntoConstraints="NO" id="xjz-n2-ai1">
                                 <rect key="frame" x="491" y="36" width="31" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8mH-ww-fhf"/>
                                     <constraint firstAttribute="width" constant="31" id="mCZ-Yc-Mg7"/>
@@ -95,7 +91,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug1" translatesAutoresizingMaskIntoConstraints="NO" id="Bx2-Gj-bDS">
                                 <rect key="frame" x="54" y="84" width="31" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="S4z-gf-3Vf"/>
                                     <constraint firstAttribute="height" constant="30" id="yx7-d5-cc9"/>
@@ -103,7 +98,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="fse-zd-Att">
                                 <rect key="frame" x="522" y="80" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="3Zd-pU-bUb"/>
                                     <constraint firstAttribute="width" constant="10" id="t1Q-QD-MLJ"/>
@@ -111,7 +105,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="Bsc-qQ-9x8">
                                 <rect key="frame" x="500" y="88" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="PkU-7l-gUP"/>
                                     <constraint firstAttribute="width" constant="10" id="phU-hn-b17"/>
@@ -119,7 +112,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="Gqd-Uj-4L1">
                                 <rect key="frame" x="527" y="503" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="5vm-2F-FJF"/>
                                     <constraint firstAttribute="width" constant="10" id="9jN-WF-zmo"/>
@@ -127,7 +119,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="qg0-SB-hEX">
                                 <rect key="frame" x="539" y="480" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="Igj-aF-pFS"/>
                                     <constraint firstAttribute="height" constant="8" id="wcH-xD-bxl"/>
@@ -135,7 +126,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="BFg-1I-OED">
                                 <rect key="frame" x="553" y="308" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="dIf-v5-9wD"/>
                                     <constraint firstAttribute="width" constant="10" id="tM5-o0-kSE"/>
@@ -143,7 +133,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="xk7-Dg-I5B">
                                 <rect key="frame" x="565" y="329" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="WP0-oL-SAG"/>
                                     <constraint firstAttribute="height" constant="8" id="ujJ-n2-yT2"/>
@@ -151,7 +140,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug2" translatesAutoresizingMaskIntoConstraints="NO" id="QrL-Di-4wC">
                                 <rect key="frame" x="544" y="84" width="20" height="19"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="nF3-5v-euH"/>
                                     <constraint firstAttribute="width" constant="20" id="uQN-Ly-PkD"/>
@@ -159,7 +147,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="ghM-IQ-aYU">
                                 <rect key="frame" x="54" y="139" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="3Mq-Er-Xse"/>
                                     <constraint firstAttribute="width" constant="10" id="aGo-cZ-paq"/>
@@ -167,7 +154,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug2" translatesAutoresizingMaskIntoConstraints="NO" id="1aS-2a-Epm">
                                 <rect key="frame" x="481" y="426" width="20" height="19"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="CUt-b2-8Ft"/>
                                     <constraint firstAttribute="height" constant="19" id="grp-q4-jOU"/>
@@ -175,7 +161,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug2" translatesAutoresizingMaskIntoConstraints="NO" id="ScA-zy-sr6">
                                 <rect key="frame" x="430" y="397" width="20" height="19"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="8rk-Tg-YHZ"/>
                                     <constraint firstAttribute="width" constant="20" id="sp4-86-aZp"/>
@@ -183,7 +168,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug2" translatesAutoresizingMaskIntoConstraints="NO" id="H80-XS-kZc">
                                 <rect key="frame" x="58" y="517" width="20" height="19"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="He9-Fo-DxH"/>
                                     <constraint firstAttribute="width" constant="20" id="fKr-Sw-lRO"/>
@@ -191,7 +175,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="WDE-Xk-J4s">
                                 <rect key="frame" x="30" y="503" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="11X-gP-9f4"/>
                                     <constraint firstAttribute="height" constant="8" id="WSM-rW-I0W"/>
@@ -199,7 +182,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="h7b-10-pSE">
                                 <rect key="frame" x="49" y="484" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="kj3-gJ-xc3"/>
                                     <constraint firstAttribute="width" constant="10" id="ntb-lU-bfh"/>
@@ -207,7 +189,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="7AV-yb-fbd">
                                 <rect key="frame" x="85" y="315" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="3dS-Km-gg1"/>
                                     <constraint firstAttribute="height" constant="8" id="BLz-MV-AmR"/>
@@ -215,7 +196,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="STa-1Q-QIG">
                                 <rect key="frame" x="71" y="299" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="EQn-ab-NZB"/>
                                     <constraint firstAttribute="height" constant="8" id="h0f-du-HX9"/>
@@ -223,14 +203,22 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glug3" translatesAutoresizingMaskIntoConstraints="NO" id="Pd0-wj-gfi">
                                 <rect key="frame" x="85" y="281" width="10" height="8"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="BJg-Ma-y6M"/>
                                     <constraint firstAttribute="width" constant="10" id="Rym-If-WqW"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWe-Xt-Y80">
+                                <rect key="frame" x="278" y="268" width="45" height="25"/>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Pd0-wj-gfi" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="85" id="0Lk-xE-Djs">
@@ -292,6 +280,7 @@
                                 <variation key="heightClass=compact" constant="180"/>
                             </constraint>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="fse-zd-Att" secondAttribute="bottom" constant="512" id="dc9-H9-oG3"/>
+                            <constraint firstItem="tWe-Xt-Y80" firstAttribute="top" secondItem="l8y-RJ-1So" secondAttribute="bottom" constant="30" id="e0F-qc-KeA"/>
                             <constraint firstAttribute="trailing" secondItem="Gqd-Uj-4L1" secondAttribute="trailing" constant="63" id="f8r-He-jhl"/>
                             <constraint firstItem="l8y-RJ-1So" firstAttribute="centerX" secondItem="fv7-C6-rpB" secondAttribute="centerX" id="fbm-PS-X3t"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="Npk-Oo-dIQ" secondAttribute="bottom" constant="60" id="fjp-Vg-A2R">
@@ -306,6 +295,7 @@
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="xk7-Dg-I5B" secondAttribute="trailing" constant="25" id="ivF-om-F1Z"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="ghM-IQ-aYU" secondAttribute="bottom" constant="453" id="kfx-EE-ntd"/>
+                            <constraint firstItem="tWe-Xt-Y80" firstAttribute="centerY" secondItem="fv7-C6-rpB" secondAttribute="centerY" id="lot-Ik-RcE"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="h7b-10-pSE" secondAttribute="bottom" constant="108" id="m7Q-zF-2vu">
                                 <variation key="heightClass=compact" constant="78"/>
                             </constraint>
@@ -320,6 +310,7 @@
                                 <variation key="heightClass=compact" constant="59"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="DN1-7Y-Luk" secondAttribute="trailing" constant="35" id="tbc-QI-DMy"/>
+                            <constraint firstItem="tWe-Xt-Y80" firstAttribute="centerX" secondItem="fv7-C6-rpB" secondAttribute="centerX" id="uW7-oe-odg"/>
                             <constraint firstItem="7AV-yb-fbd" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="85" id="ufV-0b-HIy">
                                 <variation key="heightClass=compact" constant="125"/>
                             </constraint>
@@ -336,6 +327,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="lot-Ik-RcE"/>
                                 <exclude reference="slL-TB-0mb"/>
                             </mask>
                         </variation>
@@ -344,6 +336,7 @@
                         <outlet property="bathyscapheConstraint" destination="tbc-QI-DMy" id="1Aj-2f-J9k"/>
                         <outlet property="creditsButton" destination="Npk-Oo-dIQ" id="C94-NP-ISI"/>
                         <outlet property="menuTitleLabel" destination="l8y-RJ-1So" id="yzJ-DH-Udg"/>
+                        <outlet property="scoreLabel" destination="tWe-Xt-Y80" id="Vj8-vv-yi3"/>
                         <outlet property="tapToPlayButton" destination="450-tk-vqI" id="fxS-SN-51l"/>
                         <outletCollection property="mediumGlugsConstraints" destination="7qd-s7-tjr" collectionClass="NSMutableArray" id="n6W-b4-Ek3"/>
                         <outletCollection property="mediumGlugsConstraints" destination="Lal-zm-btk" collectionClass="NSMutableArray" id="Atu-g6-39n"/>

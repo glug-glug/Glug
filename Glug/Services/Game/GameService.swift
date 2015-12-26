@@ -32,12 +32,25 @@ class GameService {
     
     var onGameOver: ((GameResult) -> ())?
     
+    var onScore: ((Score) -> ())?
+    
     lazy var units: Units! = {
+        
         let units = self.createUnits()
         self.scene.addUnits(units.all)
+        
+        units.onScore = { [weak self] score in
+            self?.scoreService.score = score
+            self?.onScore?(score)
+        }
+        
         return units
     }()
 
+    lazy var scoreService: ScoreService = {
+        return ScoreService()
+    }()
+    
     var direction: Directions? {
         didSet {
             units.diver <^> direction
@@ -71,19 +84,20 @@ extension GameService: Updateble {
    
     func update(time: UpdateTime) {
 
-        if time % 5 == 0 {
+        if CKSpeed.Min.checkSlow(time) {
             addFishes()
+            run(time)
         }
-
+        
         units.update(time)
 
-//        if units.missionFailed {
-//            onGameOver?(.Lose)
-//            return
-//        }
+        if units.missionFailed {
+            onGameOver?(.Lose(units.score))
+            return
+        }
         
         if units.missionComplete {
-            onGameOver?(.Win)
+            onGameOver?(.Win(units.score))
             return
         }
     }
@@ -99,10 +113,17 @@ extension GameService {
         let ship = Ship(center: CKPoint(diver.center.x, 0))
         let tube = Tube()
         let sky = Sky(rect: CKRect(origin: CKPoint(0, 0), size: CKSize(size.width, 1)))
-        let treasures = Treasure.create(size)
-        let herbs = Herb.create(size, count: level.herbs, exclude: treasures.map { $0.position.x }) // TODO: density
+        
+        var treasures: [Treasure]?
+        var herbs: [Herb]?
+        
+        if !level.isRun {
+            treasures = Treasure.create(size)
+            herbs = Herb.create(size, count: level.herbs, exclude: treasures?.map { $0.position.x } ?? [])
+        }
         
         let units = Units(
+            level: level,
             diver: diver,
             ship: ship,
             tube: tube,
@@ -117,7 +138,7 @@ extension GameService {
 
 extension GameService {
 
-    func addFishes() {
+    private func addFishes() {
         
         let fishes = level.fishes
         
@@ -153,4 +174,60 @@ extension GameService {
             add(Fish(sprite: fish.0, center, fish.1, shark: fish.2))
         }
     }
+    
+    private func addTreasure() {
+        
+        var dif = (level.run?.treasuresDensity ?? 0) - units.treasures.filter( { !$0.delivered } ).count
+        dif = Int.random(0, dif)
+        
+        if dif <= 0 {
+            return
+        }
+        
+        func p() -> CKPoint {
+            return CKPoint(scene.size.width - 1, scene.size.height - 1)
+        }
+        
+        let treasure = Treasure(position: p(), kind: Treasure.Kinds.random())
+        treasure.direction = .Left
+        treasure.speed = .Min
+        treasure.canOut = true
+        
+        add(treasure)
+    }
+
+    private func addHerb() {
+        
+        var dif = (level.run?.herbsDensity ?? 0) - (units.herbs.count ?? 0)
+        dif = Int.random(0, dif)
+        
+        if dif <= 0 {
+            return
+        }
+        
+        let p = CKPoint(scene.size.width - 1, scene.size.height - 1)
+        
+        if !units.treasures.filter( { $0.position == p } ).isEmpty {
+           return
+        }
+        
+        let h = Int.random(2, scene.size.height / 2)
+        
+        let herb = Herb(root: p, from: h, to: h)
+        herb.direction = .Left
+        herb.speed = .Min
+        herb.canOut = true
+        herb.solid = true
+        
+        add(herb)
+    }
+    
+    private func run(time: UpdateTime) {
+        if !level.isRun {
+            return
+        }
+        addTreasure()
+        addHerb()
+    }
 }
+

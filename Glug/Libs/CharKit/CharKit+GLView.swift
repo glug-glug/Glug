@@ -42,11 +42,14 @@ extension CharKit {
         convenience init(size: CKSize) {
             self.init()
             
-            showsFPS = true
-            showsNodeCount = true
+            if kDebugRender {
+                showsFPS = true
+                showsNodeCount = true
+            }
+            
             ignoresSiblingOrder = true
             // allowsTransparency = true
-            
+
             frameInterval = 2
             
             userInteractionEnabled = false
@@ -126,6 +129,9 @@ extension CharKit {
         
         var backgroundImage: String? {
             didSet {
+                if backgroundImage == oldValue {
+                    return
+                }
                 var node: SKSpriteNode?
                 if let name = backgroundImage {
                     node = SKSpriteNode(imageNamed: name)

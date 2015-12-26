@@ -57,6 +57,11 @@ extension CharKit {
             }
         }
         
+        var score: Score {
+            get { return scoreLabel.score }
+            set { scoreLabel.score = newValue }
+        }
+        
         lazy var joystick: JoystickPad = {            
             let joystick = JoystickPad()
             joystick.delegate = self
@@ -98,43 +103,47 @@ extension CharKit {
             return view
         }()
         
-        private lazy var statisticLabel: UILabel = {
-            let view = self.view
-            let label = UILabel()
-            label.numberOfLines = 0
-            label.font = UIFont.boldSystemFontOfSize(14)
-            label.textColor = UIColor.whiteColor()
-            label.backgroundColor = UIColor(hex: 0xffffff, alpha: 0.5)
-            view.addSubview(label)
-            label.bringSubviewToFront(view)
-            label.translatesAutoresizingMaskIntoConstraints = false
-            let views = ["l": label]
-            Constraint.add(view, "H:[l(60)]|", views)
-            Constraint.add(view, "V:[l(50)]-50-|", views)
-            return label
+        private lazy var scoreLabel: ScoreLabel = {
+            return ScoreLabel(view: self.gameView)
         }()
         
-        var statistic: (time: NSDate?, frames: Int?)
+//        private lazy var statisticLabel: UILabel = {
+//            let view = self.view
+//            let label = UILabel()
+//            label.numberOfLines = 0
+//            label.font = UIFont.boldSystemFontOfSize(14)
+//            label.textColor = UIColor.whiteColor()
+//            label.backgroundColor = UIColor(hex: 0xffffff, alpha: 0.5)
+//            view.addSubview(label)
+//            label.bringSubviewToFront(view)
+//            label.translatesAutoresizingMaskIntoConstraints = false
+//            let views = ["l": label]
+//            Constraint.add(view, "H:[l(60)]|", views)
+//            Constraint.add(view, "V:[l(50)]-50-|", views)
+//            return label
+//        }()
         
-        func refreshStatistic(time: UpdateTime) {
-            let (time, frames) = (statistic.time ?? NSDate(), statistic.frames ?? 0)
-            statistic.time = time
-            statistic.frames = frames + 1
-            let ti = -time.timeIntervalSinceNow
-            if ti < 1 {
-                return
-            }
-            defer {
-                statistic.time = NSDate()
-                statistic.frames = 0
-            }
-            let fps = Int(Double(frames) / ti)
-            let text = "units: \(scene.countUnits ?? 0)\nfps: \(fps)"
-
-//            dispatch_sync(dispatch_get_main_queue()) {
-                self.statisticLabel.text = text
+//        var statistic: (time: NSDate?, frames: Int?)
+        
+//        func refreshStatistic(time: UpdateTime) {
+//            let (time, frames) = (statistic.time ?? NSDate(), statistic.frames ?? 0)
+//            statistic.time = time
+//            statistic.frames = frames + 1
+//            let ti = -time.timeIntervalSinceNow
+//            if ti < 1 {
+//                return
 //            }
-        }
+//            defer {
+//                statistic.time = NSDate()
+//                statistic.frames = 0
+//            }
+//            let fps = Int(Double(frames) / ti)
+//            let text = "units: \(scene.countUnits ?? 0)\nfps: \(fps)"
+//
+////            dispatch_sync(dispatch_get_main_queue()) {
+//                self.statisticLabel.text = text
+////            }
+//        }
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -189,9 +198,9 @@ extension CharKit {
         }
         
         func update(time: UpdateTime) {
-            if kDebugRender {
-                refreshStatistic(time)
-            }
+//            if kDebugRender {
+//                refreshStatistic(time)
+//            }
         }
         
         func start() {

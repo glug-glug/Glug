@@ -13,12 +13,13 @@ class MenuController: UIViewController {
     @IBOutlet weak var menuTitleLabel: UILabel!
     @IBOutlet weak var tapToPlayButton: UIButton!
     @IBOutlet weak var creditsButton: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet var bigGlugsConstraints: [NSLayoutConstraint]!
     @IBOutlet var mediumGlugsConstraints: [NSLayoutConstraint]!
     @IBOutlet var smallGlugsConstraints: [NSLayoutConstraint]!
     @IBOutlet weak var bathyscapheConstraint: NSLayoutConstraint!
-    
+
     var bathyscapheDirection: Directions?
     
     lazy var updater: Updater = {
@@ -38,11 +39,16 @@ class MenuController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         updater.play()
+        refreshScore()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         updater.stop()
+    }
+    
+    private func refreshScore() {
+        scoreLabel.text = ScoreService().text
     }
 }
 

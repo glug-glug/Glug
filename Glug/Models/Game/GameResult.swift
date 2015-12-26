@@ -8,13 +8,26 @@
 
 import Foundation
 
-enum GameResult: String {
+enum GameResult {
 
-    case Win = "Win"
-    case Lose = "Lose"
+    case Win(Score)
+    case Lose(Score)
 
     var name: String {
-        return rawValue
+        if case Win = self {
+            return "Win"
+        } else {
+            return "Lose"
+        }
+    }
+    
+    var score: Score {
+        switch self {
+        case .Win(let score):
+            return score
+        case .Lose(let score):
+            return score
+        }
     }
 }
 

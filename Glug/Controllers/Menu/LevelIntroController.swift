@@ -73,9 +73,5 @@ class LevelIntroController: UIViewController {
         
         Constraint.fill(v)
     }
-    
-    deinit {
-        print("!!!!----")
-    }
 }
 

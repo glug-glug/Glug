@@ -22,7 +22,7 @@ class Level {
                 
                 var s = 0
                 s <~ d["speed"]
-                speed = CKSpeed(rawValue: s) ?? speed
+                speed = CKSpeed(value: s) ?? speed
                 
                 shark  <~ d["shark"]
             }
@@ -44,28 +44,47 @@ class Level {
         }
     }
     
+    struct Run {
+        var herbsDensity = 0
+        var treasuresDensity = 0
+        
+        init?(dictionary d: [String: AnyObject]) {
+            if d.isEmpty {
+                return nil
+            }
+            herbsDensity     <~ d["herbs-density"]
+            treasuresDensity <~ d["treasures-density"]
+        }
+    }
+    
     let number: Int
     
     var name = ""
     var herbs = 0
-    var isRun = false
     var fishes: Fishes
-    
+    var run: Run?
+
     var isComplete = false
 
+    var isRun: Bool {
+        return run != nil
+    }
+    
     weak var service: LevelsService?
     
     init(dictionary d: [String: AnyObject], number: Int, service: LevelsService?) {
         
         name  <~ d["name"]
         herbs <~ d["herbs"]
-        isRun <~ d["run"]
         
         var fishes = [String: AnyObject]()
         fishes <~ d["fishes"]
-
         self.fishes = Fishes(dictionary: fishes)
 
+        var run = [String: AnyObject]()
+        run <~ d["run"]
+        self.run = Run(dictionary: run)
+        
         self.number = number
         self.service = service
     }

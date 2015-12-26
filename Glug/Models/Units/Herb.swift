@@ -12,7 +12,7 @@ class Herb: CKUnit, HitProtocol {
     
     static let data = ("🍁", "🌵")
     
-    private let root: CKPoint
+    private var root: CKPoint
     private let to: Int
     private var bloomed = false
     
@@ -21,6 +21,12 @@ class Herb: CKUnit, HitProtocol {
             if ready || bloomed {
                 bloom()
             }
+        }
+    }
+    
+    override var position: CKPoint {
+        didSet {
+            root.x = position.x
         }
     }
     
@@ -46,8 +52,14 @@ class Herb: CKUnit, HitProtocol {
     }
     
     override func update(time: UpdateTime) {
-        super.update(time)
         
+        solid = false
+        defer {
+            solid = true
+        }
+        
+        super.update(time)
+
         if ready {
             return
         }
@@ -70,10 +82,10 @@ class Herb: CKUnit, HitProtocol {
         _ = { self.height = from }()
     }
     
-    static func create(area: CKSize, count: Int, exclude: [Int] = []) -> [Herb]? {
+    static func create(area: CKSize, count: Int, exclude: [Int] = []) -> [Herb] {
         
         if count < 1 {
-            return nil
+            return []
         }
         
         let xPoints = Int.random(0, area.width - 1, count: count, exclude: exclude)

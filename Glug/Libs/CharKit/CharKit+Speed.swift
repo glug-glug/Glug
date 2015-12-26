@@ -12,18 +12,24 @@ typealias CKSpeed = CharKit.Speed
 
 extension CharKit {
     
-    enum Speed: Int {
+    enum Speed: Double {
         
         case Min = 1
         case Low
         case Medium
-        case High
-        case Max
+        case High = 4.9
+        case Max = 5
         case Zero = 0
 
-        var value: Int {
-            let m = 1
-            return self.rawValue * m
+        static let k = 2.0
+        
+        init?(value: Int) {
+            let val: Double = value == 4 ? High.rawValue : Double(value)
+            self.init(rawValue: val)
+        }
+        
+        var value: Double {
+            return self.rawValue * Speed.k
         }
         
         func check(time: UpdateTime) -> Bool {
@@ -37,19 +43,19 @@ extension CharKit {
             if v > max {
                 return false
             }
-            return v <= min ? true : (time % v) == 0
+            return v <= min ? true : (time % Int(v)) == 0
         }
         
         func checkSlow(time: UpdateTime) -> Bool {
-            return check(time) && (time % (Max.value * 3) == 0)
+            return check(time) && (time % Int(Max.value * 3) == 0)
         }
-        
+
         static func random() -> Speed {
             return random(.Min, .Max)
         }
         
         static func random(min: Speed, _ max: Speed) -> Speed {
-            return Speed(rawValue: Int.random(min.rawValue, max.rawValue)) ?? .Medium
+            return Speed(value: Int.random(Int(min.rawValue), Int(max.rawValue))) ?? .Medium
         }
     }
 }

@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias Score = Int
+
 func log(text: String?) {
     print(text ?? "")
 }
@@ -97,24 +99,6 @@ extension String {
     var count: Int {
         return characters.count
     }
-    
-// TODO:
-//    mutating func replace(string: String, atIdex: Int) {        
-//        let start = startIndex.advancedBy(atIdex, limit: self.endIndex)
-//        let end = startIndex.advancedBy(atIdex + 1, limit: self.endIndex)
-//        let range = start ..< end
-//        self.replaceRange(range, with: string)
-//    }
-//    
-//    // TODO: limits
-//    subscript(idx: Int) -> String {
-//        get {
-//            return String(self[startIndex.advancedBy(idx, limit: self.endIndex)])
-//        }
-//        set {
-//            self.replace(newValue, atIdex: idx)
-//        }
-//    }
 }
 
 extension Int {

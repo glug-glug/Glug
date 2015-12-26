@@ -12,6 +12,7 @@ class GameOverController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var onAction: ((GameActions) -> ())?
     
@@ -33,6 +34,7 @@ class GameOverController: UIViewController {
                 return
             }
             titleLabel.text = result?.name
+            scoreLabel.text = "\(result?.score ?? 0)"
         }
     }
     
@@ -63,10 +65,6 @@ class GameOverController: UIViewController {
         parent.view.addSubview(v)
         
         Constraint.fill(v)
-    }
-    
-    deinit {
-        print("!!!!")
     }
 }
 

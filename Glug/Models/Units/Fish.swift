@@ -10,6 +10,8 @@ import Foundation
 
 class Fish: CKUnit, HitProtocol {
     
+    var killed = false
+    
     init(sprite: CKSprite,
         center: CKPoint,
         speed: CKSpeed = .Medium,
@@ -20,6 +22,7 @@ class Fish: CKUnit, HitProtocol {
             center: center,
             direction: direction,
             speed: speed,
+            zPosition: 3,
             canOut: true
             )
     }
@@ -30,6 +33,11 @@ class Fish: CKUnit, HitProtocol {
             center: center,
             speed: speed
         )
+    }
+    
+    func hit() {
+        killed = true
+        remove()
     }
 }
 
