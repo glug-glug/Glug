@@ -13,7 +13,7 @@ class Tube: CKUnit {
     weak var diver: Diver?
     weak var ship: Ship?
     
-    let chunk = "🔹" // 🔸🔹▫️
+    let chunk = "🔹" // 🔸🔹▫️❕
     
     var length: Int {
         get {
