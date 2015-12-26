@@ -97,7 +97,7 @@ class ControlPanel: UIView {
         
         Constraint.add(self, "H:[v(32)]-15-|", ["v": homeImageView])
         Constraint.add(self, "H:[v(32)]-15-|", ["v": playImageView])
-        Constraint.add(self, "V:[hv(32)]-20-[mv(32)]-15-|", ["hv": homeImageView, "mv": playImageView])
+        Constraint.add(self, "V:[hv(32)]-22-[mv(32)]-15-|", ["hv": homeImageView, "mv": playImageView])
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

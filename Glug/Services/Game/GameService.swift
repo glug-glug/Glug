@@ -8,16 +8,6 @@
 
 import UIKit
 
-protocol HitProtocol {
-    func hit()
-}
-
-extension HitProtocol {
-    func hit() {
-        (self as? CKUnit)?.remove()
-    }
-}
-
 class GameService {
 
     var scene: CKScene
@@ -228,6 +218,23 @@ extension GameService {
         }
         addTreasure()
         addHerb()
+    }
+}
+
+import SpriteKit
+
+extension GameService {
+    
+    func addSurface(gameView: CKGLView) {
+        guard let glScene = gameView.glScene, f = glScene.labels.first?.frame else {
+            return
+        }
+        let color = UIColor(hex: 0xffffff, alpha: 0.4)
+        let l = SKSpriteNode(color: color, size: CGSizeMake(glScene.frame.width, 1))
+        l.anchorPoint = CGPointMake(0, 0)
+        l.position = CGPointMake(0, f.origin.y)
+        glScene.addChild(l)
+        gameView.forceRender()
     }
 }
 

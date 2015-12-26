@@ -53,11 +53,10 @@ extension CharKit {
             }
         }
         
-        convenience init(fontSize: CGFloat, color: UIColor) {
+        convenience init(fontSize: CGFloat) {
             self.init()
             
             self.fontSize = fontSize
-            backgroundColor = color
             if kDebugRender {
                 backgroundColor = UIColor.darkGrayColor()
             }

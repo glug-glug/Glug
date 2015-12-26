@@ -108,8 +108,8 @@ class Diver: CKTurnedUnit {
     
     func checkCollisions() {
         checkTreasure()
-//        checkFish()
-//        checkHerb()
+        checkFish()
+        checkHerb()
     }
     
     private func checkTreasure() {

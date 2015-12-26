@@ -29,9 +29,14 @@ class GameController: CKController {
             service.level = level
         }
     }
-
-    override var color: UIColor {
-        return Constants.Colors.background
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bgColor = Constants.Colors.background
+    }
+    
+    override func customize() {
+        service.addSurface(gameView)
     }
     
     override func update(time: UpdateTime) {
@@ -82,4 +87,8 @@ class GameController: CKController {
         }
     }
 }
+
+
+
+
 

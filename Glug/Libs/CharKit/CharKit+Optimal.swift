@@ -76,5 +76,5 @@ extension CharKit {
             }
         }
     }
-
 }
+

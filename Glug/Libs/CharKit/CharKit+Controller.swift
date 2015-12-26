@@ -15,6 +15,7 @@ protocol CharKitControllerProtocol: Updateble {
     var scene: CKScene { get set }
     var joystick: JoystickPad { get }
     func initializeScene() -> CKScene
+    func customize()
     func start()
     func stop()
     func play()
@@ -26,22 +27,19 @@ extension CharKit {
     
     class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol, CKRender, AppActivating {
         
-        var orientation = UIDevice.currentDevice().orientation
+        let orientation = UIDevice.currentDevice().orientation
         
         var size: CKSize {
             return CharKit.Optimal.sceneSize
         }
         
-        var color: UIColor {
-            return UIColor.blackColor()
-        }
-        
-        var backgroundImage: String? {
+        var bgColor: UIColor? {
             get {
-                return gameView.backgroundImage
+                return view.backgroundColor
             }
             set {
-                gameView.backgroundImage = newValue
+                view.backgroundColor = newValue
+                gameView.bgColor = newValue
             }
         }
         
@@ -72,7 +70,7 @@ extension CharKit {
             }()
 
 //        private lazy var gameView: AttributedView = {
-//            let view = AttributedView(fontSize: self.optimalFontSize, color: self.color)
+//            let view = AttributedView(fontSize: self.optimalFontSize)
 //            view.renderDelegate = self
 //            self.joystick.addSubview(view)
 //            return view
@@ -80,7 +78,6 @@ extension CharKit {
 
         lazy var gameView: GLView = {
             let view = GLView(size: self.size)
-            view.color = self.color
             self.joystick.addSubview(view)
             return view
         }()
@@ -107,57 +104,18 @@ extension CharKit {
             return ScoreLabel(view: self.gameView)
         }()
         
-//        private lazy var statisticLabel: UILabel = {
-//            let view = self.view
-//            let label = UILabel()
-//            label.numberOfLines = 0
-//            label.font = UIFont.boldSystemFontOfSize(14)
-//            label.textColor = UIColor.whiteColor()
-//            label.backgroundColor = UIColor(hex: 0xffffff, alpha: 0.5)
-//            view.addSubview(label)
-//            label.bringSubviewToFront(view)
-//            label.translatesAutoresizingMaskIntoConstraints = false
-//            let views = ["l": label]
-//            Constraint.add(view, "H:[l(60)]|", views)
-//            Constraint.add(view, "V:[l(50)]-50-|", views)
-//            return label
-//        }()
-        
-//        var statistic: (time: NSDate?, frames: Int?)
-        
-//        func refreshStatistic(time: UpdateTime) {
-//            let (time, frames) = (statistic.time ?? NSDate(), statistic.frames ?? 0)
-//            statistic.time = time
-//            statistic.frames = frames + 1
-//            let ti = -time.timeIntervalSinceNow
-//            if ti < 1 {
-//                return
-//            }
-//            defer {
-//                statistic.time = NSDate()
-//                statistic.frames = 0
-//            }
-//            let fps = Int(Double(frames) / ti)
-//            let text = "units: \(scene.countUnits ?? 0)\nfps: \(fps)"
-//
-////            dispatch_sync(dispatch_get_main_queue()) {
-//                self.statisticLabel.text = text
-////            }
-//        }
-        
         override func viewDidLoad() {
             super.viewDidLoad()
-            view.backgroundColor = color
             configureConstraints()
             scene = initializeScene()
             view.bringSubviewToFront(controlPanel)
-            startListenActivationEnevts()
-            self.start()
+            startListenActivationEnevts()            
+            start()
         }
 
         override func viewDidAppear(animated: Bool) {
             super.viewDidAppear(animated)
-            backgroundImage = { backgroundImage }()
+            customize()
         }
         
         deinit {
@@ -177,8 +135,7 @@ extension CharKit {
         }
         
         override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-            let mask: UIInterfaceOrientationMask = orientation.isLandscape ? .Landscape : .Portrait
-            return mask
+            return orientation.isLandscape ? .Landscape : .Portrait
         }
 
         // JoystickPadDelegate
@@ -190,6 +147,8 @@ extension CharKit {
         func joystickFired() { }
         
         // CharKitControllerProtocol
+        
+        func customize() {}
         
         func initializeScene() -> CKScene {
             let scene = CKScene(size: size)
@@ -234,6 +193,49 @@ extension CharKit {
         func appDidBecomeActive() {}
     }
 }
+
+//        private lazy var statisticLabel: UILabel = {
+//            let view = self.view
+//            let label = UILabel()
+//            label.numberOfLines = 0
+//            label.font = UIFont.boldSystemFontOfSize(14)
+//            label.textColor = UIColor.whiteColor()
+//            label.backgroundColor = UIColor(hex: 0xffffff, alpha: 0.5)
+//            view.addSubview(label)
+//            label.bringSubviewToFront(view)
+//            label.translatesAutoresizingMaskIntoConstraints = false
+//            let views = ["l": label]
+//            Constraint.add(view, "H:[l(60)]|", views)
+//            Constraint.add(view, "V:[l(50)]-50-|", views)
+//            return label
+//        }()
+
+//        var statistic: (time: NSDate?, frames: Int?)
+
+//        func refreshStatistic(time: UpdateTime) {
+//            let (time, frames) = (statistic.time ?? NSDate(), statistic.frames ?? 0)
+//            statistic.time = time
+//            statistic.frames = frames + 1
+//            let ti = -time.timeIntervalSinceNow
+//            if ti < 1 {
+//                return
+//            }
+//            defer {
+//                statistic.time = NSDate()
+//                statistic.frames = 0
+//            }
+//            let fps = Int(Double(frames) / ti)
+//            let text = "units: \(scene.countUnits ?? 0)\nfps: \(fps)"
+//
+////            dispatch_sync(dispatch_get_main_queue()) {
+//                self.statisticLabel.text = text
+////            }
+//        }
+
+//override func viewDidAppear(animated: Bool) {
+//    super.viewDidAppear(animated)
+//    customize()
+//}
 
 
 

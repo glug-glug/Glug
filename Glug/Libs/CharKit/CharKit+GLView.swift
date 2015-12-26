@@ -19,7 +19,7 @@ extension CharKit {
             return scene as? GLScene
         }
         
-        var color: UIColor? {
+        var bgColor: UIColor? {
             get {
                 return glScene?.backgroundColor
             }
@@ -30,14 +30,14 @@ extension CharKit {
             }
         }
         
-        var backgroundImage: String? {
-            get {
-                return glScene?.backgroundImage
-            }
-            set {
-                glScene?.backgroundImage = newValue
-            }
-        }
+//        var backgroundImage: String? {
+//            get {
+//                return glScene?.backgroundImage
+//            }
+//            set {
+//                glScene?.backgroundImage = newValue
+//            }
+//        }
         
         convenience init(size: CKSize) {
             self.init()
@@ -102,7 +102,6 @@ extension CharKit {
         
         convenience init(size: CKSize) {
             self.init()
-
             scaleMode = .ResizeFill
             ckSize = size
         }
@@ -115,30 +114,30 @@ extension CharKit {
             }
         }
 
-        private var imageNode: SKSpriteNode? {
-            didSet {
-                oldValue?.removeFromParent()
-                if let node = imageNode {
-                    node.size = frame.size
-                    node.position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
-                    node.zPosition = -1
-                    addChild(node)
-                }
-            }
-        }
-        
-        var backgroundImage: String? {
-            didSet {
-                if backgroundImage == oldValue {
-                    return
-                }
-                var node: SKSpriteNode?
-                if let name = backgroundImage {
-                    node = SKSpriteNode(imageNamed: name)
-                }
-                imageNode = node
-            }
-        }
+//        private var imageNode: SKSpriteNode? {
+//            didSet {
+//                oldValue?.removeFromParent()
+//                if let node = imageNode {
+//                    node.size = frame.size
+//                    node.position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
+//                    node.zPosition = -1
+//                    addChild(node)
+//                }
+//            }
+//        }
+//        
+//        var backgroundImage: String? {
+//            didSet {
+//                if backgroundImage == oldValue {
+//                    return
+//                }
+//                var node: SKSpriteNode?
+//                if let name = backgroundImage {
+//                    node = SKSpriteNode(imageNamed: name)
+//                }
+//                imageNode = node
+//            }
+//        }
         
         subscript (idx: Int) -> SKLabelNode? {
             return 0..<labels.count ~= idx ? labels[idx] : nil
@@ -185,7 +184,7 @@ extension CharKit {
         
         override func didMoveToView(view: SKView) {
             _ = textNode
-            imageNode = { imageNode }()
+//            imageNode = { imageNode }()
         }
         
         var time: UpdateTime = 0 {
@@ -196,13 +195,14 @@ extension CharKit {
             }
         }
         
-        override func update(currentTime: CFTimeInterval) {
-            updateDelegate?.update(++time)
-        }
-
-//        override func didFinishUpdate() {
+//        override func update(currentTime: CFTimeInterval) {
 //            updateDelegate?.update(++time)
 //        }
+
+        override func didFinishUpdate() {
+            updateDelegate?.update(++time)
+        }
     }
 }
+
 
