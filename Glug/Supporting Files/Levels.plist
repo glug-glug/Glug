@@ -100,7 +100,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Run</string>
+		<string>Swim</string>
 		<key>run</key>
 		<dict>
 			<key>herbs-density</key>
@@ -143,6 +143,14 @@
 					<string>🐟</string>
 					<key>speed</key>
 					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>sprite</key>
+					<string>◻️◻️🔴🔴🔴◻️,🔴◻️🔴🔴⚪️◻️,◻️🔴🔴🔴🔴🔴,🔴◻️🔴🔴🔴◻️</string>
+					<key>speed</key>
+					<integer>1</integer>
+					<key>shark</key>
+					<true/>
 				</dict>
 			</array>
 			<key>density</key>

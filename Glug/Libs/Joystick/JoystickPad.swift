@@ -75,16 +75,16 @@ extension UIColor {
 typealias JPreferences = JoystickPadPreferences
 
 struct JoystickPadPreferences {
-    static var diameter: CGFloat = 120
+    static var diameter: CGFloat = 100
     static var centerDiameter: CGFloat = diameter / 3
     static var stickDiameter: CGFloat = diameter / 7
-    static var borderWidth: CGFloat = 2
-    static var alpha: CGFloat = 0.7
+    static var borderWidth: CGFloat = 1.5
+    static var alpha: CGFloat = 0.3
     static var colors = (
-        base: UIColor(white: 0.5, alpha: 0.5),
-        baseAlternative: UIColor(white: 0.4, alpha: 0.5),//UIColor(hex: 0xffffff, alpha: 0.5),
-        stick: UIColor(hex: 0xeeeeee),
-        border: UIColor(hex: 0xcccccc)
+        base: UIColor(white: 0.5, alpha: 0.2),
+        baseAlternative: UIColor(white: 0.6, alpha: 0.2),
+        stick: UIColor(hex: 0xefefef),
+        border: UIColor(white: 0.8, alpha: 0.7)
     )
 }
 

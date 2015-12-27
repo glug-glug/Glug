@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qkF-hp-7Hl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qkF-hp-7Hl">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Minecraft.ttf">
@@ -25,12 +25,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r0J-Ms-c9r">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="SuX-ff-pUI">
                                     <rect key="frame" x="0.0" y="108" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
@@ -43,7 +41,6 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IT7-V9-Z5K">
                                                     <rect key="frame" x="530" y="10" width="60" height="60"/>
-                                                    <animations/>
                                                     <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="2f6-TR-DHZ"/>
@@ -52,20 +49,17 @@
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPr-I0-taK">
                                                     <rect key="frame" x="60" y="10" width="454" height="59.5"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9N-Hm-cMk">
                                                     <rect key="frame" x="552.5" y="28" width="15" height="25"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.17999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="UPr-I0-taK" firstAttribute="leading" secondItem="AoO-yR-2ll" secondAttribute="leading" constant="60" id="7Ud-4w-zAE"/>
@@ -78,7 +72,6 @@
                                                 <constraint firstItem="g9N-Hm-cMk" firstAttribute="centerY" secondItem="IT7-V9-Z5K" secondAttribute="centerY" id="vrH-0h-7Oh"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="nameLabel" destination="UPr-I0-taK" id="UbA-nd-Lhu"/>
                                             <outlet property="numberLabel" destination="g9N-Hm-cMk" id="n6o-Yk-6bx"/>
@@ -93,7 +86,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <constraints>
                             <constraint firstItem="r0J-Ms-c9r" firstAttribute="top" secondItem="0ek-Uk-U5l" secondAttribute="bottom" id="AUg-bf-amr"/>
                             <constraint firstAttribute="trailing" secondItem="r0J-Ms-c9r" secondAttribute="trailing" id="LjE-Eg-dkj"/>

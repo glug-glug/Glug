@@ -104,7 +104,7 @@ class ControlPanel: UIView {
         
         let onSelect: (Options) -> () = { option in
             if option == .Home {
-                self.hidden = true
+                self.hide()
             }
             self.onSelect?(option)
         }
@@ -134,6 +134,33 @@ class ControlPanel: UIView {
         }
         state = .Normal
         onExpand?()
+    }
+    
+    func hide() {
+        hidden = true
+    }
+}
+
+extension ControlPanel {
+    
+    static func backControlPanel(parent: UIView, onSelect: () -> ()) -> ControlPanel {
+        
+        var p = Preferences()
+        (p.images.play, p.images.home) = (p.images.home, nil)
+        
+        let res = ControlPanel(preferences: p)
+        
+        let act = { [weak res] in
+            res?.hide()
+            onSelect()
+        }
+        
+        res.onSelect = { _ in act() }
+        res.onExpand = { act() }
+        
+        parent.addSubview(res)
+        
+        return res
     }
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LevelsController: UIViewController {
+class LevelsController: BaseMenuController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,31 +18,13 @@ class LevelsController: UIViewController {
         return levelsService.levels
     }
     
-    private lazy var controlPanel: ControlPanel = {
-        var preferenses = ControlPanel.Preferences()
-        let onSelect: (ControlPanel.Options) -> () = { [weak self] option in
-            if option == .Home {
-                self?.dismissViewControllerAnimated(true, completion: nil)
-            }
-        }
-        let view = ControlPanel(preferences: preferenses, onSelect: onSelect)
-        self.view.addSubview(view)
-        return view
-        }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.bringSubviewToFront(controlPanel)
-        customize()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
-    func customize() {
-        view.backgroundColor = Constants.Colors.background
+    override func customize() {
+        super.customize()
         tableView.backgroundColor = Constants.Colors.background
     }
 }
@@ -63,9 +45,10 @@ extension LevelsController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         
-        // TODO:
-        return true;//
-        
+        #if !DEBUG
+            return true
+        #endif
+
         if let level = selected where !levelsService.locked(level) {
             return true
         }
@@ -87,10 +70,5 @@ extension LevelsController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        // TODO: tmp
-        if indexPath.row == 0 {
-            levelsService.reset()
-        }        
     }
 }

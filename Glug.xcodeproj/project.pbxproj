@@ -28,6 +28,7 @@
 		95851E001C275C1B007494C2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95851DFF1C275C1B007494C2 /* Level.swift */; };
 		95851E021C2772AA007494C2 /* CharKit+ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95851E011C2772AA007494C2 /* CharKit+ScoreLabel.swift */; };
 		9590FA941BE6863600F64706 /* Sky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590FA931BE6863600F64706 /* Sky.swift */; };
+		9594A3BF1C2FFA310091FBA2 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594A3BE1C2FFA310091FBA2 /* CreditView.swift */; };
 		95A4AFBA1BDD473F006E1A18 /* Diver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB31BDD473F006E1A18 /* Diver.swift */; };
 		95A4AFBB1BDD473F006E1A18 /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB41BDD473F006E1A18 /* Fish.swift */; };
 		95A4AFBC1BDD473F006E1A18 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB51BDD473F006E1A18 /* Ship.swift */; };
@@ -35,9 +36,17 @@
 		95A4AFBE1BDD473F006E1A18 /* Tube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB71BDD473F006E1A18 /* Tube.swift */; };
 		95A4AFBF1BDD473F006E1A18 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB81BDD473F006E1A18 /* Unit.swift */; };
 		95A4AFC01BDD473F006E1A18 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB91BDD473F006E1A18 /* Units.swift */; };
+		95B3C47A1C2FFDAD0047F132 /* CreditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95B3C4791C2FFDAD0047F132 /* CreditView.xib */; };
+		95B3C4811C3006700047F132 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B3C4801C3006700047F132 /* NibView.swift */; };
+		95B3C4831C30067D0047F132 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B3C4821C30067D0047F132 /* BorderedView.swift */; };
+		95B3C4891C30182E0047F132 /* CreditGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95B3C4881C30182E0047F132 /* CreditGroupView.xib */; };
 		95B7B3A21BEA21F4009F6B8D /* Herb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B7B3A11BEA21F4009F6B8D /* Herb.swift */; };
 		95C17D121BEE06F700BD1C5B /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C17D111BEE06F700BD1C5B /* Bullet.swift */; };
 		95CB0B011C2F00EC00E18E59 /* HitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB0B001C2F00EC00E18E59 /* HitProtocol.swift */; };
+		95CB0B031C2F13CD00E18E59 /* Backing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB0B021C2F13CD00E18E59 /* Backing.swift */; };
+		95CB0B051C2F1B7000E18E59 /* BaseMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB0B041C2F1B7000E18E59 /* BaseMenuController.swift */; };
+		95CB0B071C2F22ED00E18E59 /* credits.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95CB0B061C2F22ED00E18E59 /* credits.plist */; };
+		95CB0B091C2F245900E18E59 /* CreditsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB0B081C2F245900E18E59 /* CreditsService.swift */; };
 		95D3F8E41C0B06CE000F1B13 /* CharKit+AttributedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3F8D91C0B06CE000F1B13 /* CharKit+AttributedView.swift */; };
 		95D3F8E51C0B06CE000F1B13 /* CharKit+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3F8DA1C0B06CE000F1B13 /* CharKit+Controller.swift */; };
 		95D3F8E61C0B06CE000F1B13 /* CharKit+GLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3F8DB1C0B06CE000F1B13 /* CharKit+GLView.swift */; };
@@ -88,6 +97,7 @@
 		95851DFF1C275C1B007494C2 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		95851E011C2772AA007494C2 /* CharKit+ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+ScoreLabel.swift"; sourceTree = "<group>"; };
 		9590FA931BE6863600F64706 /* Sky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sky.swift; sourceTree = "<group>"; };
+		9594A3BE1C2FFA310091FBA2 /* CreditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
 		95A4AFB31BDD473F006E1A18 /* Diver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diver.swift; sourceTree = "<group>"; };
 		95A4AFB41BDD473F006E1A18 /* Fish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
 		95A4AFB51BDD473F006E1A18 /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
@@ -95,10 +105,18 @@
 		95A4AFB71BDD473F006E1A18 /* Tube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tube.swift; sourceTree = "<group>"; };
 		95A4AFB81BDD473F006E1A18 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		95A4AFB91BDD473F006E1A18 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
+		95B3C4791C2FFDAD0047F132 /* CreditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditView.xib; sourceTree = "<group>"; };
+		95B3C4801C3006700047F132 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		95B3C4821C30067D0047F132 /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
+		95B3C4881C30182E0047F132 /* CreditGroupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditGroupView.xib; sourceTree = "<group>"; };
 		95B7B3A11BEA21F4009F6B8D /* Herb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Herb.swift; sourceTree = "<group>"; };
 		95C17D111BEE06F700BD1C5B /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 		95C227F51B8A33B5005BBBC2 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CB0B001C2F00EC00E18E59 /* HitProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HitProtocol.swift; sourceTree = "<group>"; };
+		95CB0B021C2F13CD00E18E59 /* Backing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backing.swift; sourceTree = "<group>"; };
+		95CB0B041C2F1B7000E18E59 /* BaseMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMenuController.swift; sourceTree = "<group>"; };
+		95CB0B061C2F22ED00E18E59 /* credits.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credits.plist; sourceTree = "<group>"; };
+		95CB0B081C2F245900E18E59 /* CreditsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsService.swift; sourceTree = "<group>"; };
 		95D3F8D91C0B06CE000F1B13 /* CharKit+AttributedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+AttributedView.swift"; sourceTree = "<group>"; };
 		95D3F8DA1C0B06CE000F1B13 /* CharKit+Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+Controller.swift"; sourceTree = "<group>"; };
 		95D3F8DB1C0B06CE000F1B13 /* CharKit+GLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+GLView.swift"; sourceTree = "<group>"; };
@@ -152,6 +170,9 @@
 			isa = PBXGroup;
 			children = (
 				954CAD931C2EF9150060BD69 /* Credits.storyboard */,
+				95B3C4791C2FFDAD0047F132 /* CreditView.xib */,
+				95B3C4881C30182E0047F132 /* CreditGroupView.xib */,
+				9594A3BE1C2FFA310091FBA2 /* CreditView.swift */,
 			);
 			path = Credits;
 			sourceTree = "<group>";
@@ -188,6 +209,7 @@
 		95851DF01C275ABC007494C2 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				95CB0B041C2F1B7000E18E59 /* BaseMenuController.swift */,
 				95851DF11C275ABC007494C2 /* GameOverController.swift */,
 				95851DF21C275ABC007494C2 /* LevelIntroController.swift */,
 				95851DF31C275ABC007494C2 /* LevelsController.swift */,
@@ -201,6 +223,7 @@
 			children = (
 				95851DFA1C275AEB007494C2 /* LevelsService.swift */,
 				95851DFB1C275AEB007494C2 /* ScoreService.swift */,
+				95CB0B081C2F245900E18E59 /* CreditsService.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -228,6 +251,15 @@
 				95C17D111BEE06F700BD1C5B /* Bullet.swift */,
 			);
 			path = Units;
+			sourceTree = "<group>";
+		};
+		95B3C47F1C3006700047F132 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95B3C4801C3006700047F132 /* NibView.swift */,
+				95B3C4821C30067D0047F132 /* BorderedView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		95C227EC1B8A33B5005BBBC2 = {
@@ -300,11 +332,13 @@
 		95D3F8F31C0B0711000F1B13 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95B3C47F1C3006700047F132 /* Views */,
 				95D3F8F41C0B0711000F1B13 /* Constraint.swift */,
 				95D3F8F51C0B0711000F1B13 /* Directions.swift */,
 				95D3F8F61C0B0711000F1B13 /* Helper.swift */,
 				95D3F8F71C0B0711000F1B13 /* Updater.swift */,
 				95D3F91B1C0B0CE7000F1B13 /* AppActivating.swift */,
+				95CB0B021C2F13CD00E18E59 /* Backing.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -406,6 +440,7 @@
 				95FD18381BD3AA3500126E8C /* Images.xcassets */,
 				95FD18391BD3AA3500126E8C /* Info.plist */,
 				95FD183A1BD3AA3500126E8C /* Minecraft.ttf */,
+				95CB0B061C2F22ED00E18E59 /* credits.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -482,11 +517,14 @@
 				95D3F9001C0B0749000F1B13 /* Images.xcassets in Resources */,
 				954CADA21C2EF9150060BD69 /* Menu.storyboard in Resources */,
 				954CADA11C2EF9150060BD69 /* Levels.storyboard in Resources */,
+				95B3C47A1C2FFDAD0047F132 /* CreditView.xib in Resources */,
 				954CAD9D1C2EF9150060BD69 /* Game.storyboard in Resources */,
+				95CB0B071C2F22ED00E18E59 /* credits.plist in Resources */,
 				954CAD9C1C2EF9150060BD69 /* Credits.storyboard in Resources */,
 				95FD184B1BD3AA3500126E8C /* Minecraft.ttf in Resources */,
 				954CAD9F1C2EF9150060BD69 /* LaunchScreen.xib in Resources */,
 				95185CAB1BD3BDFF001396C3 /* Levels.plist in Resources */,
+				95B3C4891C30182E0047F132 /* CreditGroupView.xib in Resources */,
 				954CAD9E1C2EF9150060BD69 /* GameOver.storyboard in Resources */,
 				95FD18491BD3AA3500126E8C /* Images.xcassets in Resources */,
 			);
@@ -506,6 +544,7 @@
 				95851E001C275C1B007494C2 /* Level.swift in Sources */,
 				95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */,
 				95D3F8FB1C0B0711000F1B13 /* Directions.swift in Sources */,
+				95CB0B051C2F1B7000E18E59 /* BaseMenuController.swift in Sources */,
 				95A4AFC01BDD473F006E1A18 /* Units.swift in Sources */,
 				95D3F8E71C0B06CE000F1B13 /* CharKit+Optimal.swift in Sources */,
 				95D3F91C1C0B0CE7000F1B13 /* AppActivating.swift in Sources */,
@@ -517,6 +556,7 @@
 				95A4AFBA1BDD473F006E1A18 /* Diver.swift in Sources */,
 				95D3F8EB1C0B06CE000F1B13 /* CharKit+TurnedUnit.swift in Sources */,
 				95A4AFBE1BDD473F006E1A18 /* Tube.swift in Sources */,
+				9594A3BF1C2FFA310091FBA2 /* CreditView.swift in Sources */,
 				95B7B3A21BEA21F4009F6B8D /* Herb.swift in Sources */,
 				95A4AFBD1BDD473F006E1A18 /* Treasure.swift in Sources */,
 				952B46021C0B8EC3004233D3 /* GameActions.swift in Sources */,
@@ -530,7 +570,9 @@
 				95D3F9111C0B07FF000F1B13 /* Constants.swift in Sources */,
 				95D3F8EC1C0B06CE000F1B13 /* CharKit+Unit.swift in Sources */,
 				95D3F8FA1C0B0711000F1B13 /* Constraint.swift in Sources */,
+				95CB0B031C2F13CD00E18E59 /* Backing.swift in Sources */,
 				95851DF51C275ABC007494C2 /* GameOverController.swift in Sources */,
+				95B3C4811C3006700047F132 /* NibView.swift in Sources */,
 				952B45F41C0B279D004233D3 /* Storyboard.swift in Sources */,
 				95D3F8E51C0B06CE000F1B13 /* CharKit+Controller.swift in Sources */,
 				95A4AFBF1BDD473F006E1A18 /* Unit.swift in Sources */,
@@ -540,8 +582,10 @@
 				95A4AFBC1BDD473F006E1A18 /* Ship.swift in Sources */,
 				9590FA941BE6863600F64706 /* Sky.swift in Sources */,
 				95D3F8E81C0B06CE000F1B13 /* CharKit+Scene.swift in Sources */,
+				95B3C4831C30067D0047F132 /* BorderedView.swift in Sources */,
 				95D3F8EA1C0B06CE000F1B13 /* CharKit+Sprite.swift in Sources */,
 				95851DF61C275ABC007494C2 /* LevelIntroController.swift in Sources */,
+				95CB0B091C2F245900E18E59 /* CreditsService.swift in Sources */,
 				95D3F8F91C0B0711000F1B13 /* JoystickPad.swift in Sources */,
 				95D3F8E41C0B06CE000F1B13 /* CharKit+AttributedView.swift in Sources */,
 				95D3F8E61C0B06CE000F1B13 /* CharKit+GLView.swift in Sources */,
@@ -591,7 +635,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "-D DEBUG_SCENE_RENDER";
+				OTHER_SWIFT_FLAGS = "-D DEBUG_SCENE_RENDER -D DEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";

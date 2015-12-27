@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Group</key>
+		<true/>
+		<key>Image</key>
+		<string>credit-ios-dev-course</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Piton</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Alina Mihailova</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Nikolai Aksenov</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Alexander Peresypkin</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Vova Uvarov</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Alexander Pryanichnikov</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Pavel Antonov</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Neborzhinsky Vlad</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Roman Radetskiy</string>
+	</dict>
+</array>
+</plist>

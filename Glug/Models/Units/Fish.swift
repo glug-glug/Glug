@@ -11,28 +11,36 @@ import Foundation
 class Fish: CKUnit, HitProtocol {
     
     var killed = false
+    var shark = false
     
     init(sprite: CKSprite,
-        center: CKPoint,
+        position: CKPoint,
         speed: CKSpeed = .Medium,
         direction: Directions = .Left) {
             
-        super.init(
-            sprite: sprite,
-            center: center,
-            direction: direction,
-            speed: speed,
-            zPosition: 3,
-            canOut: true
+            super.init(
+                sprite: sprite,
+                position: position,
+                direction: direction,
+                speed: speed,
+                zPosition: 3,
+                canOut: true
             )
     }
     
-    convenience init(sprite: CKSprite, _ center: CKPoint, _ speed: CKSpeed, shark: Bool = false) {
-        self.init(
-            sprite: sprite,
-            center: center,
-            speed: speed
-        )
+    convenience init(_ sprite: CKSprite,
+        _ position: CKPoint,
+        _ speed: CKSpeed,
+        _ direction: Directions = .Left,
+        _ shark: Bool = false) {
+            
+            self.init(
+                sprite: sprite,
+                position: position,
+                speed: speed,
+                direction: direction
+            )
+            self.shark = shark
     }
     
     func hit() {

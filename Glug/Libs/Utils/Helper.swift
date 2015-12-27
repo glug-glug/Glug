@@ -11,18 +11,25 @@ import UIKit
 typealias Score = Int
 
 func log(text: String?) {
-    print(text ?? "")
+    #if DEBUG
+        print(text ?? "")
+    #endif
 }
 
-infix operator <! {}
-
-func <!<T>(inout lhs: T, rhs: AnyObject?) {
-    lhs = rhs as! T
-}
+//infix operator <! {}
+//
+//func <!<T>(inout lhs: T, rhs: AnyObject?) -> T {
+//    lhs = rhs as! T
+//    return lhs
+//}
 
 infix operator <~ {}
 
 func <~<T>(inout lhs: T, rhs: AnyObject?) {
+    lhs = (rhs as? T) ?? lhs
+}
+
+func <~<T>(inout lhs: T?, rhs: AnyObject?) {
     lhs = (rhs as? T) ?? lhs
 }
 

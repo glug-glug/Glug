@@ -139,29 +139,44 @@ extension GameService {
             return
         }
         
-        let centers = Int.random(1, scene.size.height - 1, count: dif)
+        let positions = Int.random(1, scene.size.height - 1, count: dif)
         
-        func center(i: Int) -> CKPoint? {
-            let x = scene.size.width - 1
-            return 0..<centers.count ~= i ? CKPoint(x, centers[i]) : nil
-        }
-        
-        func fish() -> (CKSprite, CKSpeed, Bool)? {
+        func fish(i: Int) -> (CKSprite, CKPoint, CKSpeed, Directions, shark: Bool)? {
+            
+            func p(i: Int, shark: Bool) -> CKPoint? {
+                let x = shark ? 0 : scene.size.width - 1
+                return 0..<positions.count ~= i ? CKPoint(x, positions[i]) : nil
+            }
+            
             let kinds = fishes.kinds
-            let i = Int.random(0, kinds.count - 1)
-            if 0..<kinds.count ~= i {
-                let k = kinds[i]
-                return (CKSprite(k.sprite), k.speed, k.shark)
-            } else {
+            let j = Int.random(0, kinds.count - 1)
+            guard 0..<kinds.count ~= j  else {
                 return nil
             }
+            let k = kinds[j]
+            
+            guard var pos = p(i, shark: k.shark) else {
+                return nil
+            }
+            
+            let dir: Directions = k.shark ? .Right : .Left
+            let sprite = CKSprite(k.sprite, separator: ",")
+
+            if k.shark {
+                pos.x -= sprite.size.width
+            }
+            
+            return (sprite, pos, k.speed, dir, k.shark)
         }
-        
+
         for i in 0..<dif {
-            guard let fish = fish(), center = center(i) else {
+            guard let fish = fish(i) else {
                 continue
             }
-            add(Fish(sprite: fish.0, center, fish.1, shark: fish.2))
+            if fish.shark && Int.random(0, 100) > 20 {
+                continue
+            }
+            add(Fish(fish.0, fish.1, fish.2, fish.3, fish.4))
         }
     }
     
@@ -188,7 +203,8 @@ extension GameService {
 
     private func addHerb() {
         
-        var dif = (level.run?.herbsDensity ?? 0) - (units.herbs.count ?? 0)
+        let density = (level.run?.herbsDensity ?? 0) 
+        var dif = density - (units.herbs.count ?? 0)
         dif = Int.random(0, dif)
         
         if dif <= 0 {
@@ -237,4 +253,5 @@ extension GameService {
         gameView.forceRender()
     }
 }
+
 

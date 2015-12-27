@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreditGroupView" customModule="Glug" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="Z3G-qn-pAq" id="kri-mi-rbr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BorderedView" customModule="Glug" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit-ios-dev-course" translatesAutoresizingMaskIntoConstraints="NO" id="Z3G-qn-pAq">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.1137254902" green="0.1333333333" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Z3G-qn-pAq" secondAttribute="bottom" id="1Ek-ww-nh6"/>
+                <constraint firstItem="Z3G-qn-pAq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9Ka-GP-eRP"/>
+                <constraint firstAttribute="trailing" secondItem="Z3G-qn-pAq" secondAttribute="trailing" id="IA9-9b-beA"/>
+                <constraint firstItem="Z3G-qn-pAq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rA2-UC-wom"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="2"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+        </view>
+    </objects>
+    <resources>
+        <image name="credit-ios-dev-course" width="150" height="150"/>
+    </resources>
+</document>

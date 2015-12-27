@@ -25,7 +25,7 @@ protocol CharKitControllerProtocol: Updateble {
 
 extension CharKit {
     
-    class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol, CKRender, AppActivating {
+    class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol, CKRender, AppActivating, Backing {
         
         let orientation = UIDevice.currentDevice().orientation
         
@@ -177,7 +177,7 @@ extension CharKit {
         }
         
         func home() {
-            dismissViewControllerAnimated(true, completion: nil)
+            back()
         }
         
         func forceRender() {
