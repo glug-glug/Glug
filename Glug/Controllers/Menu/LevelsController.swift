@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LevelsController: BaseMenuController {
+class LevelsController: BaseMenuController, AudioService {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,13 +45,15 @@ extension LevelsController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         
-        #if !DEBUG
-            return true
-        #endif
+//        #if DEBUG
+//            return true
+//        #endif
 
         if let level = selected where !levelsService.locked(level) {
             return true
         }
+        
+        play(.Wrong)
         return false
     }
 }

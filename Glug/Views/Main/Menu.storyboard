@@ -208,16 +208,16 @@
                                     <constraint firstAttribute="width" constant="10" id="Rym-If-WqW"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWe-Xt-Y80">
-                                <rect key="frame" x="278" y="268" width="45" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O73-He-WM3">
+                                <rect key="frame" x="285" y="268" width="30" height="37"/>
                                 <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="20"/>
-                                <nil key="highlightedColor"/>
+                                <state key="normal" title="0"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </label>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -235,6 +235,7 @@
                             </constraint>
                             <constraint firstItem="WDE-Xk-J4s" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="30" id="7R5-fs-mBw"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="fjn-2I-MN9" secondAttribute="bottom" constant="424" id="7qd-s7-tjr"/>
+                            <constraint firstItem="O73-He-WM3" firstAttribute="centerX" secondItem="fv7-C6-rpB" secondAttribute="centerX" id="7zN-16-NGE"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="Pd0-wj-gfi" secondAttribute="bottom" constant="311" id="8Dg-Zf-sbo"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="ScA-zy-sr6" secondAttribute="bottom" constant="184" id="B6t-Ku-REg">
                                 <variation key="heightClass=compact" constant="154"/>
@@ -280,7 +281,6 @@
                                 <variation key="heightClass=compact" constant="180"/>
                             </constraint>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="fse-zd-Att" secondAttribute="bottom" constant="512" id="dc9-H9-oG3"/>
-                            <constraint firstItem="tWe-Xt-Y80" firstAttribute="top" secondItem="l8y-RJ-1So" secondAttribute="bottom" constant="30" id="e0F-qc-KeA"/>
                             <constraint firstAttribute="trailing" secondItem="Gqd-Uj-4L1" secondAttribute="trailing" constant="63" id="f8r-He-jhl"/>
                             <constraint firstItem="l8y-RJ-1So" firstAttribute="centerX" secondItem="fv7-C6-rpB" secondAttribute="centerX" id="fbm-PS-X3t"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="Npk-Oo-dIQ" secondAttribute="bottom" constant="60" id="fjp-Vg-A2R">
@@ -293,9 +293,9 @@
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="qg0-SB-hEX" secondAttribute="bottom" constant="112" id="gKI-2U-2Px">
                                 <variation key="heightClass=compact" constant="82"/>
                             </constraint>
+                            <constraint firstItem="O73-He-WM3" firstAttribute="top" secondItem="l8y-RJ-1So" secondAttribute="bottom" constant="30" id="iVW-bB-vq8"/>
                             <constraint firstAttribute="trailing" secondItem="xk7-Dg-I5B" secondAttribute="trailing" constant="25" id="ivF-om-F1Z"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="ghM-IQ-aYU" secondAttribute="bottom" constant="453" id="kfx-EE-ntd"/>
-                            <constraint firstItem="tWe-Xt-Y80" firstAttribute="centerY" secondItem="fv7-C6-rpB" secondAttribute="centerY" id="lot-Ik-RcE"/>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="h7b-10-pSE" secondAttribute="bottom" constant="108" id="m7Q-zF-2vu">
                                 <variation key="heightClass=compact" constant="78"/>
                             </constraint>
@@ -310,7 +310,6 @@
                                 <variation key="heightClass=compact" constant="59"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="DN1-7Y-Luk" secondAttribute="trailing" constant="35" id="tbc-QI-DMy"/>
-                            <constraint firstItem="tWe-Xt-Y80" firstAttribute="centerX" secondItem="fv7-C6-rpB" secondAttribute="centerX" id="uW7-oe-odg"/>
                             <constraint firstItem="7AV-yb-fbd" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="85" id="ufV-0b-HIy">
                                 <variation key="heightClass=compact" constant="125"/>
                             </constraint>
@@ -327,7 +326,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="lot-Ik-RcE"/>
                                 <exclude reference="slL-TB-0mb"/>
                             </mask>
                         </variation>
@@ -336,7 +334,7 @@
                         <outlet property="bathyscapheConstraint" destination="tbc-QI-DMy" id="1Aj-2f-J9k"/>
                         <outlet property="creditsButton" destination="Npk-Oo-dIQ" id="C94-NP-ISI"/>
                         <outlet property="menuTitleLabel" destination="l8y-RJ-1So" id="yzJ-DH-Udg"/>
-                        <outlet property="scoreLabel" destination="tWe-Xt-Y80" id="Vj8-vv-yi3"/>
+                        <outlet property="scoreButton" destination="O73-He-WM3" id="jc7-tV-Laf"/>
                         <outlet property="tapToPlayButton" destination="450-tk-vqI" id="fxS-SN-51l"/>
                         <outletCollection property="mediumGlugsConstraints" destination="7qd-s7-tjr" collectionClass="NSMutableArray" id="n6W-b4-Ek3"/>
                         <outletCollection property="mediumGlugsConstraints" destination="Lal-zm-btk" collectionClass="NSMutableArray" id="Atu-g6-39n"/>

@@ -13,7 +13,7 @@ class MenuController: UIViewController {
     @IBOutlet weak var menuTitleLabel: UILabel!
     @IBOutlet weak var tapToPlayButton: UIButton!
     @IBOutlet weak var creditsButton: UIButton!
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var scoreButton: UIButton!
     
     @IBOutlet var bigGlugsConstraints: [NSLayoutConstraint]!
     @IBOutlet var mediumGlugsConstraints: [NSLayoutConstraint]!
@@ -48,7 +48,7 @@ class MenuController: UIViewController {
     }
     
     private func refreshScore() {
-        scoreLabel.text = ScoreService().text
+        scoreButton.setTitle(ScoreService().text, forState: .Normal)
     }
 }
 

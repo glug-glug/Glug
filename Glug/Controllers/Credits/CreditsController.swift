@@ -43,7 +43,22 @@ class CreditsController: BaseMenuController {
                 return
             }
             Q.mainQueue().addOperationWithBlock {
-                self.gravity.gravityDirection = CGVectorMake(CGFloat(m.gravity.x), CGFloat(-m.gravity.y))
+
+                var p = CGPointMake(CGFloat(m.gravity.x), CGFloat(m.gravity.y))
+                
+                switch UIApplication.sharedApplication().statusBarOrientation {
+                case .LandscapeLeft:
+                    (p.x, p.y) = (p.y, 0 - p.x)
+                case .LandscapeRight:
+                    (p.x, p.y) = (0 - p.y, p.x)
+                case .PortraitUpsideDown:
+                    (p.x, p.y) = (-1 * p.x, -1 * p.y)
+                default:
+                    break
+                }
+                
+                let v = CGVectorMake(p.x, 0 - p.y)
+                self.gravity.gravityDirection = v
             }
         }
         return mm

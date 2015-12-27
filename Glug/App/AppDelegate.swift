@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
 
-    func cusomizeAppearance() {
+    func cusomizeAppearance() {        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
 }

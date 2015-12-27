@@ -40,6 +40,7 @@
 		95B3C4811C3006700047F132 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B3C4801C3006700047F132 /* NibView.swift */; };
 		95B3C4831C30067D0047F132 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B3C4821C30067D0047F132 /* BorderedView.swift */; };
 		95B3C4891C30182E0047F132 /* CreditGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95B3C4881C30182E0047F132 /* CreditGroupView.xib */; };
+		95B3C48B1C30420A0047F132 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B3C48A1C30420A0047F132 /* AudioService.swift */; };
 		95B7B3A21BEA21F4009F6B8D /* Herb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B7B3A11BEA21F4009F6B8D /* Herb.swift */; };
 		95C17D121BEE06F700BD1C5B /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C17D111BEE06F700BD1C5B /* Bullet.swift */; };
 		95CB0B011C2F00EC00E18E59 /* HitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB0B001C2F00EC00E18E59 /* HitProtocol.swift */; };
@@ -70,6 +71,7 @@
 		95D3F9111C0B07FF000F1B13 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3F9101C0B07FF000F1B13 /* Constants.swift */; };
 		95D3F9191C0B0834000F1B13 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3F9161C0B0834000F1B13 /* GameService.swift */; };
 		95D3F91C1C0B0CE7000F1B13 /* AppActivating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3F91B1C0B0CE7000F1B13 /* AppActivating.swift */; };
+		95D557C71C307DD700628778 /* GameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D557C61C307DD700628778 /* GameCenterService.swift */; };
 		95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18281BD3AA3500126E8C /* AppDelegate.swift */; };
 		95FD18491BD3AA3500126E8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95FD18381BD3AA3500126E8C /* Images.xcassets */; };
 		95FD184B1BD3AA3500126E8C /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95FD183A1BD3AA3500126E8C /* Minecraft.ttf */; };
@@ -109,6 +111,7 @@
 		95B3C4801C3006700047F132 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		95B3C4821C30067D0047F132 /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
 		95B3C4881C30182E0047F132 /* CreditGroupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditGroupView.xib; sourceTree = "<group>"; };
+		95B3C48A1C30420A0047F132 /* AudioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		95B7B3A11BEA21F4009F6B8D /* Herb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Herb.swift; sourceTree = "<group>"; };
 		95C17D111BEE06F700BD1C5B /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 		95C227F51B8A33B5005BBBC2 /* Glug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glug.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +143,7 @@
 		95D3F9101C0B07FF000F1B13 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		95D3F9161C0B0834000F1B13 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		95D3F91B1C0B0CE7000F1B13 /* AppActivating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppActivating.swift; sourceTree = "<group>"; };
+		95D557C61C307DD700628778 /* GameCenterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterService.swift; sourceTree = "<group>"; };
 		95FD18281BD3AA3500126E8C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95FD18381BD3AA3500126E8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		95FD18391BD3AA3500126E8C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				95851DFA1C275AEB007494C2 /* LevelsService.swift */,
 				95851DFB1C275AEB007494C2 /* ScoreService.swift */,
 				95CB0B081C2F245900E18E59 /* CreditsService.swift */,
+				95B3C48A1C30420A0047F132 /* AudioService.swift */,
+				95D557C61C307DD700628778 /* GameCenterService.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -547,12 +553,14 @@
 				95CB0B051C2F1B7000E18E59 /* BaseMenuController.swift in Sources */,
 				95A4AFC01BDD473F006E1A18 /* Units.swift in Sources */,
 				95D3F8E71C0B06CE000F1B13 /* CharKit+Optimal.swift in Sources */,
+				95D557C71C307DD700628778 /* GameCenterService.swift in Sources */,
 				95D3F91C1C0B0CE7000F1B13 /* AppActivating.swift in Sources */,
 				95D3F8ED1C0B06CE000F1B13 /* CharKit+View.swift in Sources */,
 				95851DFD1C275AEB007494C2 /* ScoreService.swift in Sources */,
 				95851DFC1C275AEB007494C2 /* LevelsService.swift in Sources */,
 				952B46001C0B8DFF004233D3 /* GameResult.swift in Sources */,
 				95CB0B011C2F00EC00E18E59 /* HitProtocol.swift in Sources */,
+				95B3C48B1C30420A0047F132 /* AudioService.swift in Sources */,
 				95A4AFBA1BDD473F006E1A18 /* Diver.swift in Sources */,
 				95D3F8EB1C0B06CE000F1B13 /* CharKit+TurnedUnit.swift in Sources */,
 				95A4AFBE1BDD473F006E1A18 /* Tube.swift in Sources */,
@@ -687,7 +695,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Glug/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "anukhov.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = anukhov.glug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -700,7 +708,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Glug/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "anukhov.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = anukhov.glug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

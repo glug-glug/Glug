@@ -12,7 +12,7 @@ class ScoreService {
     
     let kScore = "Score"
     
-    init() {
+    init() {        
         score = defaults.objectForKey(kScore) as? Score ?? 0
     }
     

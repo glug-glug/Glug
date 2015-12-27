@@ -27,7 +27,7 @@ extension CharKit {
     
     class Controller: UIViewController, JoystickPadDelegate, CKControllerProtocol, CKRender, AppActivating, Backing {
         
-        let orientation = UIDevice.currentDevice().orientation
+//        let orientation = UIDevice.currentDevice().orientation
         
         var size: CKSize {
             return CharKit.Optimal.sceneSize
@@ -134,9 +134,13 @@ extension CharKit {
             Constraint.add(view, "V:[t][v]|", ["t": topLayoutGuide, "v": joystick])
         }
         
-        override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-            return orientation.isLandscape ? .Landscape : .Portrait
+        override func shouldAutorotate() -> Bool {
+            return false
         }
+        
+//        override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+//            return orientation.isLandscape ? .Landscape : .Portrait
+//        }
 
         // JoystickPadDelegate
         

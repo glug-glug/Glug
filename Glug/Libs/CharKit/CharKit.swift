@@ -8,9 +8,8 @@
 
 import UIKit
 
-// TODO:
 #if DEBUG_SCENE_RENDER
-let kDebugRender = false//true
+let kDebugRender = false//true // TODO:
 #else
 let kDebugRender = false
 #endif

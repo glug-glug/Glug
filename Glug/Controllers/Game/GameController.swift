@@ -50,8 +50,8 @@ class GameController: CKController {
     }
     
     override func joystickFired() {
-        log("🔴")
         service.fire()
+        log("🔴")
     }
     
     override func start() {

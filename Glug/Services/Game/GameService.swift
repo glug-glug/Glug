@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameService {
+class GameService: AudioService {
 
     var scene: CKScene
     
@@ -60,6 +60,7 @@ class GameService {
     func fire() {
         if let bullet = units.diver.fire() {
             add(bullet)
+            play(.Fire)
         }
     }
     
@@ -83,11 +84,13 @@ extension GameService: Updateble {
 
         if units.missionFailed {
             onGameOver?(.Lose(units.score))
+            play(.Lose)
             return
         }
         
         if units.missionComplete {
             onGameOver?(.Win(units.score))
+            play(.Win)
             return
         }
     }

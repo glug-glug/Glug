@@ -20,6 +20,7 @@ class LevelsService {
             $0.isComplete = completed.contains($0.number)
             list.add($0)
         }
+        
         return list
         }()
     
