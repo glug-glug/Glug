@@ -19,11 +19,13 @@ class Ship: CKUnit {
     
     override func update(time: UpdateTime) {
         super.update(time)
-        
+        update()
+    }
+    
+    func update() {
         guard let diverCenter = diver?.center else {
             return
         }
-        
         center = CKPoint(diverCenter.x, center.y)
     }
     

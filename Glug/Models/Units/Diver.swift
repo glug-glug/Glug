@@ -13,20 +13,38 @@ class Diver: CKTurnedUnit {
     let baseSpeed = CKSpeed.High
     
     weak var ship: Ship?
+    weak var tube: Tube?
     
     var killed = false
     
     override var direction: Directions? {
         didSet {
-            if direction == nil {
-                speed = .Zero
-            } else {
-                speed = baseSpeed
-            }
+            speed = direction == nil ? .Zero : baseSpeed
         }
     }
 
-    var treasure: Treasure?
+    override var position: CKPoint {
+        didSet {
+            checkHerb()
+            
+            ship?.update()
+            tube?.update()
+            treasure = { treasure }()
+        }
+    }
+    
+    override var removed: Bool {
+        didSet {
+            killed = true
+        }
+    }
+    
+    var treasure: Treasure? {
+        didSet {
+            treasure?.center = center
+            treasure?.canOut = false
+        }
+    }
     
     lazy var sprites: (left: CKSprite, right: CKSprite) = {
         
@@ -54,14 +72,6 @@ class Diver: CKTurnedUnit {
         sprite = s
     }
     
-    override func update(time: UpdateTime) {
-        super.update(time)
-        
-        if let treasure = treasure {
-            treasure.center = center
-        }
-    }
-
     init(center: CKPoint) {
         
         super.init(center: center, solid: true)
@@ -83,11 +93,6 @@ class Diver: CKTurnedUnit {
     
     func fire() -> Bullet? {
         
-        // TODO:
-        //        if treasure != nil {
-        //            return nil
-        //        }
-        
         guard let dir = turn.horizontal else {
             return nil
         }
@@ -101,7 +106,13 @@ class Diver: CKTurnedUnit {
         return bullet
     }
     
-    func checkTreasure() {
+    func checkCollisions() {
+        checkTreasure()
+        checkFish()
+        checkHerb()
+    }
+    
+    private func checkTreasure() {
         
         if let treasure = treasure {
             if ship?.loaderArea.intersects(rect) ?? false {
@@ -109,7 +120,23 @@ class Diver: CKTurnedUnit {
                 self.treasure = nil
             }
         } else {
-            self.treasure = scene?[self, { $0 is Treasure }].first as? Treasure
+            treasure = scene?[self, { $0 is Treasure }].first as? Treasure
         }
+        
+        treasure = { treasure }()
+    }
+    
+    private func checkFish() {
+        let fish = scene?[self, { $0 is Fish }].first
+        if fish != nil {
+            killed = true
+        }
+    }
+    
+    private func checkHerb() {
+        if scene?[self, { $0 is Herb }].isEmpty ?? true {
+            return
+        }
+        position += Directions.Left
     }
 }

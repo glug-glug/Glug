@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Minecraft.ttf">
+            <string>Minecraft</string>
+            <string>Minecraft</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Level Intro Controller-->
+        <scene sceneID="nr5-uJ-uzL">
+            <objects>
+                <viewController storyboardIdentifier="LevelIntro" id="bKo-vJ-SxT" customClass="LevelIntroController" customModule="Glug" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P2c-Rx-Umt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zp2-L4-tVq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="daC-0X-qbE">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHO-kr-ccz">
+                                <rect key="frame" x="50" y="125" width="300" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAl-DP-UZq">
+                                        <rect key="frame" x="20" y="20" width="260" height="45"/>
+                                        <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIv-00-JdA">
+                                        <rect key="frame" x="137" y="85" width="27" height="45"/>
+                                        <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.11372549019607843" green="0.13333333333333333" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ANK-GM-fSw"/>
+                                    <constraint firstItem="wIv-00-JdA" firstAttribute="centerX" secondItem="qHO-kr-ccz" secondAttribute="centerX" id="Wui-M5-SBz"/>
+                                    <constraint firstAttribute="trailing" secondItem="HAl-DP-UZq" secondAttribute="trailing" constant="20" id="XDu-qY-GC9"/>
+                                    <constraint firstItem="HAl-DP-UZq" firstAttribute="leading" secondItem="qHO-kr-ccz" secondAttribute="leading" constant="20" id="Y7O-kF-9h1"/>
+                                    <constraint firstAttribute="height" constant="150" id="hbH-BC-wr3"/>
+                                    <constraint firstItem="HAl-DP-UZq" firstAttribute="top" secondItem="qHO-kr-ccz" secondAttribute="top" constant="20" id="nW2-RC-s7X"/>
+                                    <constraint firstAttribute="bottom" secondItem="wIv-00-JdA" secondAttribute="bottom" constant="20" id="ncE-bT-AzY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.2489883094" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qHO-kr-ccz" firstAttribute="centerX" secondItem="daC-0X-qbE" secondAttribute="centerX" id="OQ1-Yg-KBb"/>
+                            <constraint firstItem="qHO-kr-ccz" firstAttribute="centerY" secondItem="daC-0X-qbE" secondAttribute="centerY" id="t5h-Ww-k3A"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="400"/>
+                    <connections>
+                        <outlet property="countdownLabel" destination="wIv-00-JdA" id="vCN-Gm-Sv0"/>
+                        <outlet property="titleLabel" destination="HAl-DP-UZq" id="AgE-vW-TAV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CG2-qL-y6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="-2"/>
+        </scene>
+    </scenes>
+</document>

@@ -13,7 +13,7 @@ class Tube: CKUnit {
     weak var diver: Diver?
     weak var ship: Ship?
     
-    let chunk = "🔹" // 🔸🔹▫️
+    let chunk = "🔹" // 🔸🔹▫️❕
     
     var length: Int {
         get {
@@ -30,11 +30,13 @@ class Tube: CKUnit {
     
     override func update(time: UpdateTime) {
         super.update(time)
-
+        update()
+    }
+    
+    func update() {
         guard let diver = diver, ship = ship else {
             return
         }
-        
         position = CKPoint(ship.center.x, (ship.position + ship.sprite.size.point).y)
         length = (diver.position - ship.position - ship.sprite.size.point).y
     }

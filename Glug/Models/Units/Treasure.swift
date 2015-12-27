@@ -14,8 +14,11 @@ class Treasure: CKUnit {
         case Custom(Character)
         
         static let count = 3
-        //        static let data = "👑🍉🍟🍺🏆🎺📱🕌💰🎁👙🎂🍹🍷🍦🔱"
-        static let data = "👑🍉🍟🎺📱💰👙🍷🍦"
+        
+        private static let data = "👑🍟🎺📱💰👙🍷🍦"        
+        private static var dataCount: Int {
+            return Array(data.characters).count
+        }
         
         var value: Character {
             switch self {
@@ -24,20 +27,24 @@ class Treasure: CKUnit {
             }
         }
 
+        init(_ idx: Int) {
+            let s = Array(Kinds.data.characters)
+            self = Custom(0..<s.count ~= idx ? s[idx] : s.first!)
+        }
+        
         static var set: [Kinds] {
-            let s = Array(data.characters)
-            func v(i: Int) -> Kinds {
-                return Custom(0..<s.count ~= i ? s[i] : s.first!)
+            return Int.random(0, dataCount - 1, count: count).map {
+                Kinds($0)
             }
-            return Int.random(0, s.count - 1, count: count).map {
-                v($0)
-            }
+        }
+        
+        static func random() -> Kinds {
+            return Kinds(Int.random(0, dataCount - 1))
         }
     }
     
     let kind: Kinds
-//    let origin: CKPoint
-    
+
     var delivered = false {
         didSet {
             if delivered {
@@ -46,14 +53,9 @@ class Treasure: CKUnit {
         }
     }
     
-    override func update(time: UpdateTime) {
-        super.update(time)
-    }
-    
     init(position: CKPoint, kind: Kinds) {
         
         self.kind = kind
-//        origin = position
         
         super.init(
             position: position,
@@ -63,10 +65,6 @@ class Treasure: CKUnit {
         zPosition = 1
     }
     
-    func resetPosition() {
-// TODO:
-    }
-
     static func create(area: CKSize) -> [Treasure] {
         
         let kinds = Kinds.set
@@ -85,5 +83,5 @@ class Treasure: CKUnit {
     
     func deliver() {
         delivered = true
-    }
+    }    
 }

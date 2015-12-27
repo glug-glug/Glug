@@ -10,24 +10,43 @@ import Foundation
 
 class Fish: CKUnit, HitProtocol {
     
-    override func update(time: UpdateTime) {
-        super.update(time)
-        
-        // TODO: tmp test
-//        if next == nil {
-//            direction?.invert()
-//            remove()
-//        }
+    var killed = false
+    var shark = false
+    
+    init(sprite: CKSprite,
+        position: CKPoint,
+        speed: CKSpeed = .Medium,
+        direction: Directions = .Left) {
+            
+            super.init(
+                sprite: sprite,
+                position: position,
+                direction: direction,
+                speed: speed,
+                zPosition: 3,
+                canOut: true
+            )
     }
     
-    init(center: CKPoint, direction: Directions, speed: CKSpeed = .Medium, sprite: CKSprite, solid: Bool = false) {
-        super.init(sprite: sprite, center: center, direction: direction, speed: speed, solid: solid, canOut: true)
+    convenience init(_ sprite: CKSprite,
+        _ position: CKPoint,
+        _ speed: CKSpeed,
+        _ direction: Directions = .Left,
+        _ shark: Bool = false) {
+            
+            self.init(
+                sprite: sprite,
+                position: position,
+                speed: speed,
+                direction: direction
+            )
+            self.shark = shark
     }
     
-    // TODO:
-    init(position: CKPoint, direction: Directions, speed: CKSpeed = .Medium, sprite: CKSprite, canOut: Bool = false, solid: Bool = false) {
-        super.init(sprite: sprite, position: position, direction: direction, speed: speed, solid: solid, canOut: canOut)
-    }    
+    func hit() {
+        killed = true
+        remove()
+    }
 }
 
 
