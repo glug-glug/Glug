@@ -7,6 +7,8 @@
 		<true/>
 		<key>Image</key>
 		<string>credit-ios-dev-course</string>
+		<key>Url</key>
+		<string>https://vk.com/iosdevcourse</string>
 	</dict>
 	<dict>
 		<key>Name</key>

@@ -250,6 +250,7 @@
                                 <variation key="heightClass=compact" constant="125"/>
                             </constraint>
                             <constraint firstItem="EGy-Rq-smC" firstAttribute="top" secondItem="QrL-Di-4wC" secondAttribute="bottom" constant="497" id="Lal-zm-btk"/>
+                            <constraint firstItem="450-tk-vqI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O73-He-WM3" secondAttribute="bottom" priority="900" constant="20" id="OBP-r1-wvx"/>
                             <constraint firstAttribute="trailing" secondItem="BFg-1I-OED" secondAttribute="trailing" constant="37" id="OyJ-Td-6P5"/>
                             <constraint firstItem="VXH-n7-hkJ" firstAttribute="leading" secondItem="fv7-C6-rpB" secondAttribute="leading" constant="54" id="P3m-lh-UY9">
                                 <variation key="heightClass=compact" constant="94"/>

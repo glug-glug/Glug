@@ -16,12 +16,23 @@ class CreditView: NibView {
     override var nibName: String {
         return "CreditView"
     }
+
+    var url: String?
     
     convenience init(_ credit: Credit) {
         self.init()
         nameLabel?.text = credit.name
         if let img = credit.image {
             imageView.image = UIImage(named: img)
+        }
+        url = credit.url
+        
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onTap"))
+    }
+    
+    func onTap() {
+        if let url = url {
+            openUrl(url)
         }
     }
 }
