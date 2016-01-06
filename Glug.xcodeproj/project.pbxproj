@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95185CAB1BD3BDFF001396C3 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95185CAA1BD3BDFF001396C3 /* Levels.plist */; };
+		9525D50B1C3DA02A0045EBE2 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525D50A1C3DA02A0045EBE2 /* Net.swift */; };
 		952B45F41C0B279D004233D3 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B45F31C0B279D004233D3 /* Storyboard.swift */; };
 		952B46001C0B8DFF004233D3 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B45FF1C0B8DFF004233D3 /* GameResult.swift */; };
 		952B46021C0B8EC3004233D3 /* GameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B46011C0B8EC3004233D3 /* GameActions.swift */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		95185CAA1BD3BDFF001396C3 /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
+		9525D50A1C3DA02A0045EBE2 /* Net.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
 		952B45F31C0B279D004233D3 /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		952B45FF1C0B8DFF004233D3 /* GameResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		952B46011C0B8EC3004233D3 /* GameActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameActions.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				95D3F8F71C0B0711000F1B13 /* Updater.swift */,
 				95D3F91B1C0B0CE7000F1B13 /* AppActivating.swift */,
 				95CB0B021C2F13CD00E18E59 /* Backing.swift */,
+				9525D50A1C3DA02A0045EBE2 /* Net.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				95A4AFC01BDD473F006E1A18 /* Units.swift in Sources */,
 				95D3F8E71C0B06CE000F1B13 /* CharKit+Optimal.swift in Sources */,
 				95D557C71C307DD700628778 /* GCService.swift in Sources */,
+				9525D50B1C3DA02A0045EBE2 /* Net.swift in Sources */,
 				95D3F91C1C0B0CE7000F1B13 /* AppActivating.swift in Sources */,
 				95D3F8ED1C0B06CE000F1B13 /* CharKit+View.swift in Sources */,
 				95851DFD1C275AEB007494C2 /* ScoreService.swift in Sources */,

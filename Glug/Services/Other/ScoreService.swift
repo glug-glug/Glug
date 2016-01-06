@@ -8,25 +8,29 @@
 
 import Foundation
 
+typealias Score = Int
+
 class ScoreService {
     
     let kScore = "Score"
     
-    init() {        
+    init() {
         score = defaults.objectForKey(kScore) as? Score ?? 0
     }
     
+    lazy var gcService = {
+       return GCService()
+    }()
+    
     var score: Score {
         didSet {
-            if oldValue >= score {
-                return
+            if score > oldValue {
+                defaults.setObject(score, forKey: kScore)
+                gcService.reportScore(score)
+            } else {
+                score = oldValue
             }
-            defaults.setObject(score, forKey: kScore)
         }
-    }
-    
-    var text: String {
-        return score > 0 ? "\(score)" : ""
     }
 }
 

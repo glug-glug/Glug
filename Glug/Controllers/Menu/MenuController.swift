@@ -8,11 +8,6 @@
 
 import UIKit
 
-func test() {
-//    let gc = GCService()
-//    gc.auth()
-}
-
 class MenuController: UIViewController {
     
     @IBOutlet weak var menuTitleLabel: UILabel!
@@ -34,18 +29,22 @@ class MenuController: UIViewController {
             }
         }
     }()
-    
+
+    lazy var gcService: GCService = {
+        return GCService()
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addAttributeLabelAndButton()        
         view.backgroundColor = Constants.Colors.background
+        _ = gcService
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         updater.play()
         refreshScore()
-
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -54,8 +53,12 @@ class MenuController: UIViewController {
     }
     
     private func refreshScore() {
-        scoreButton.setTitle(ScoreService().text, forState: .Normal)
+        self.scoreButton.setTitle("\(ScoreService().score)", forState: .Normal)
     }
+
+    @IBAction func showLeader(sender: AnyObject) {
+        gcService.showLeader()
+    }    
 }
 
 extension MenuController {

@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias Score = Int
-
 func log(text: String?) {
     #if DEBUG
         print(text ?? "")
@@ -211,5 +209,11 @@ extension UIApplication {
     }
 }
 
+public func openUrl(string: String) {
+    guard let url = NSURL(string: string) else {
+        return
+    }
+    UIApplication.sharedApplication().openURL(url)
+}
 
 
