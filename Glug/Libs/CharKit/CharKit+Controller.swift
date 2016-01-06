@@ -191,6 +191,9 @@ extension CharKit {
         // AppActivating
         
         func appWillResignActive() {
+            if gameView.pause {
+                return
+            }
             controlPanel.show()
         }
         
