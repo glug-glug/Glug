@@ -204,6 +204,12 @@ enum Device {
     }
 }
 
+extension UIApplication {
+
+    static var rootViewController: UIViewController? {
+        return UIApplication.sharedApplication().keyWindow?.rootViewController
+    }
+}
 
 
 

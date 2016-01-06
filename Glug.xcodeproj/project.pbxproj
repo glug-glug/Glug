@@ -27,6 +27,7 @@
 		95851DFD1C275AEB007494C2 /* ScoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95851DFB1C275AEB007494C2 /* ScoreService.swift */; };
 		95851E001C275C1B007494C2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95851DFF1C275C1B007494C2 /* Level.swift */; };
 		95851E021C2772AA007494C2 /* CharKit+ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95851E011C2772AA007494C2 /* CharKit+ScoreLabel.swift */; };
+		95909B2C1C31D07D0085435A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95909B2B1C31D07D0085435A /* GameKit.framework */; };
 		9590FA941BE6863600F64706 /* Sky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590FA931BE6863600F64706 /* Sky.swift */; };
 		9594A3BF1C2FFA310091FBA2 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594A3BE1C2FFA310091FBA2 /* CreditView.swift */; };
 		95A4AFBA1BDD473F006E1A18 /* Diver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4AFB31BDD473F006E1A18 /* Diver.swift */; };
@@ -71,7 +72,7 @@
 		95D3F9111C0B07FF000F1B13 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3F9101C0B07FF000F1B13 /* Constants.swift */; };
 		95D3F9191C0B0834000F1B13 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3F9161C0B0834000F1B13 /* GameService.swift */; };
 		95D3F91C1C0B0CE7000F1B13 /* AppActivating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3F91B1C0B0CE7000F1B13 /* AppActivating.swift */; };
-		95D557C71C307DD700628778 /* GameCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D557C61C307DD700628778 /* GameCenterService.swift */; };
+		95D557C71C307DD700628778 /* GCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D557C61C307DD700628778 /* GCService.swift */; };
 		95FD183F1BD3AA3500126E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FD18281BD3AA3500126E8C /* AppDelegate.swift */; };
 		95FD18491BD3AA3500126E8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95FD18381BD3AA3500126E8C /* Images.xcassets */; };
 		95FD184B1BD3AA3500126E8C /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95FD183A1BD3AA3500126E8C /* Minecraft.ttf */; };
@@ -98,6 +99,7 @@
 		95851DFB1C275AEB007494C2 /* ScoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreService.swift; sourceTree = "<group>"; };
 		95851DFF1C275C1B007494C2 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		95851E011C2772AA007494C2 /* CharKit+ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharKit+ScoreLabel.swift"; sourceTree = "<group>"; };
+		95909B2B1C31D07D0085435A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		9590FA931BE6863600F64706 /* Sky.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sky.swift; sourceTree = "<group>"; };
 		9594A3BE1C2FFA310091FBA2 /* CreditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
 		95A4AFB31BDD473F006E1A18 /* Diver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diver.swift; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 		95D3F9101C0B07FF000F1B13 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		95D3F9161C0B0834000F1B13 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		95D3F91B1C0B0CE7000F1B13 /* AppActivating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppActivating.swift; sourceTree = "<group>"; };
-		95D557C61C307DD700628778 /* GameCenterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterService.swift; sourceTree = "<group>"; };
+		95D557C61C307DD700628778 /* GCService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCService.swift; sourceTree = "<group>"; };
 		95FD18281BD3AA3500126E8C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95FD18381BD3AA3500126E8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		95FD18391BD3AA3500126E8C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95909B2C1C31D07D0085435A /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +232,7 @@
 				95851DFB1C275AEB007494C2 /* ScoreService.swift */,
 				95CB0B081C2F245900E18E59 /* CreditsService.swift */,
 				95B3C48A1C30420A0047F132 /* AudioService.swift */,
-				95D557C61C307DD700628778 /* GameCenterService.swift */,
+				95D557C61C307DD700628778 /* GCService.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -240,6 +243,14 @@
 				95851DFF1C275C1B007494C2 /* Level.swift */,
 			);
 			path = Levels;
+			sourceTree = "<group>";
+		};
+		95909B2D1C31D08A0085435A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95909B2B1C31D07D0085435A /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		95A4AFB21BDD4728006E1A18 /* Units */ = {
@@ -272,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				95C227F71B8A33B5005BBBC2 /* Glug */,
+				95909B2D1C31D08A0085435A /* Frameworks */,
 				95C227F61B8A33B5005BBBC2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -494,6 +506,12 @@
 				TargetAttributes = {
 					95C227F41B8A33B5005BBBC2 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 82AURWGE2R;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -553,7 +571,7 @@
 				95CB0B051C2F1B7000E18E59 /* BaseMenuController.swift in Sources */,
 				95A4AFC01BDD473F006E1A18 /* Units.swift in Sources */,
 				95D3F8E71C0B06CE000F1B13 /* CharKit+Optimal.swift in Sources */,
-				95D557C71C307DD700628778 /* GameCenterService.swift in Sources */,
+				95D557C71C307DD700628778 /* GCService.swift in Sources */,
 				95D3F91C1C0B0CE7000F1B13 /* AppActivating.swift in Sources */,
 				95D3F8ED1C0B06CE000F1B13 /* CharKit+View.swift in Sources */,
 				95851DFD1C275AEB007494C2 /* ScoreService.swift in Sources */,
@@ -692,11 +710,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Glug/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = anukhov.glug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -705,11 +726,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Glug/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = anukhov.glug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

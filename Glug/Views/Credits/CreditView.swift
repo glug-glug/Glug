@@ -23,7 +23,6 @@ class CreditView: NibView {
         if let img = credit.image {
             imageView.image = UIImage(named: img)
         }
-//        imageView.image = UIImage(named: "credit-ios-dev-course")
     }
 }
 
@@ -32,7 +31,6 @@ class CreditGroupView: CreditView {
     override var nibName: String {
         return "CreditGroupView"
     }
-
 }
 
 extension CreditView {

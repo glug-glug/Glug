@@ -8,6 +8,11 @@
 
 import UIKit
 
+func test() {
+//    let gc = GCService()
+//    gc.auth()
+}
+
 class MenuController: UIViewController {
     
     @IBOutlet weak var menuTitleLabel: UILabel!
@@ -20,12 +25,12 @@ class MenuController: UIViewController {
     @IBOutlet var smallGlugsConstraints: [NSLayoutConstraint]!
     @IBOutlet weak var bathyscapheConstraint: NSLayoutConstraint!
 
-    var bathyscapheDirection: Directions?
+    var bathyscapheDirection: Directions = .Left
     
     lazy var updater: Updater = {
-        return Updater(ti: 0.01) { [weak self] _ in
+        return Updater(ti: 1) { [weak s = self] _ in
             dispatch_sync(dispatch_get_main_queue()) {
-                self?.animate()
+                s?.animate()
             }
         }
     }()
@@ -40,6 +45,7 @@ class MenuController: UIViewController {
         super.viewWillAppear(animated)
         updater.play()
         refreshScore()
+
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -55,36 +61,58 @@ class MenuController: UIViewController {
 extension MenuController {
     
     func animate() {
-        animateGlugs(bigGlugsConstraints, speed: 2)
-        animateGlugs(mediumGlugsConstraints, speed: 1)
-        animateGlugs(smallGlugsConstraints, speed: 0.3)
-        animateBathyscaphe(bathyscapheConstraint, speed: 0.2)
+
+        let k = 6.0
+        
+        animateGlugs(bigGlugsConstraints, k * 1)
+        animateGlugs(mediumGlugsConstraints, k * 2)
+        animateGlugs(smallGlugsConstraints, k * 5)
+        
+        animateBathyscaphe(bathyscapheConstraint, k * 1)
     }
     
-    func animateGlugs(constraints: [NSLayoutConstraint], speed: CGFloat) {
-        
-        let h = view.bounds.height
-        let delay: CGFloat = 200
-        
-        for v in constraints {
-            var next = v.constant + speed
-            if next - delay > h {
-                next = 0
-            }
-            v.constant = next
+    func animateGlugs(constraints: [NSLayoutConstraint], _ duration: Double) {
+
+        let h = max(view.bounds.height, view.bounds.width)
+
+        for v in constraints where v.constant < h {
+
+            let y = v.constant
+
+            UIView.animateWithDuration(duration,
+                delay: 0,
+                options: [.CurveLinear],
+                animations: {
+                    v.constant += y > 0 ? h : 2 * h
+                    self.view.layoutIfNeeded()
+                },
+                completion: { _ in
+                    v.constant -= 2 * h
+                }
+            )
         }
     }
     
-    func animateBathyscaphe(constraint: NSLayoutConstraint, speed: CGFloat) {
+    func animateBathyscaphe(constraint: NSLayoutConstraint, _ duration: Double) {
         
-        let p: (CGFloat, CGFloat) = (15, view.bounds.width / 3)
-        let val = constraint.constant
-        var dir = bathyscapheDirection ?? .Left
-        if val < p.0 && dir == .Right || val > p.1 && dir == .Left {
-            dir.invert()
+        let p: (CGFloat, CGFloat) = (min(view.bounds.height, view.bounds.width) / 3, 15)
+        let x = constraint.constant
+        let dir = bathyscapheDirection
+        
+        if x > p.1 && dir == .Right || x < p.0 && dir == .Left {
+            
+            UIView.animateWithDuration(duration,
+                delay: 0,
+                options: [.CurveLinear],
+                animations: {
+                    constraint.constant = (dir == .Left ? p.0 : p.1)
+                    self.view.layoutIfNeeded()
+                },
+                completion: { _ in
+                    self.bathyscapheDirection.invert()
+                }
+            )
         }
-        bathyscapheDirection = dir
-        constraint.constant += speed * (dir == .Left ? 1 : -1)
     }
 }
 
