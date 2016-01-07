@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias Score = Int
-
 func log(text: String?) {
     #if DEBUG
         print(text ?? "")
@@ -204,6 +202,18 @@ enum Device {
     }
 }
 
+extension UIApplication {
 
+    static var rootViewController: UIViewController? {
+        return UIApplication.sharedApplication().keyWindow?.rootViewController
+    }
+}
+
+public func openUrl(string: String) {
+    guard let url = NSURL(string: string) else {
+        return
+    }
+    UIApplication.sharedApplication().openURL(url)
+}
 
 
